@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <cn.appoa.wximageselector.view.PhotoViewPager
+        android:id="@+id/vp_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_black_bg_image" />
+
+    <TextView
+        android:id="@+id/tv_image_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        android:text="0/0"
+        android:textColor="@android:color/white"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="@dimen/height_bar_top"
+        android:layout_height="@dimen/height_bar_top"
+        android:clickable="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_back"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_bar_top"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/preview_picture"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="invisible" />
+
+</RelativeLayout>

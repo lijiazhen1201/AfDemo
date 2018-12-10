@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/com/megabox/android/slide
+END
+ActivityInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/com/megabox/android/slide/ActivityInterface.java
+END
+ActivityInterfaceImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/com/megabox/android/slide/ActivityInterfaceImpl.java
+END
+SlideBackActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/com/megabox/android/slide/SlideBackActivity.java
+END
+SlideFrameLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/com/megabox/android/slide/SlideFrameLayout.java
+END
+ActivityStackManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/com/megabox/android/slide/ActivityStackManager.java
+END
+ActivityLifecycleCallbacksImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/com/megabox/android/slide/ActivityLifecycleCallbacksImpl.java
+END

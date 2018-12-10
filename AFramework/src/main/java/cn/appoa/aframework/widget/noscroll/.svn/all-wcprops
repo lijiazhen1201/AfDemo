@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/cn/appoa/aframework/widget/noscroll
+END
+NoScrollViewPager.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/cn/appoa/aframework/widget/noscroll/NoScrollViewPager.java
+END
+NoScrollGridView.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/cn/appoa/aframework/widget/noscroll/NoScrollGridView.java
+END
+NoScrollImageGridView.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/cn/appoa/aframework/widget/noscroll/NoScrollImageGridView.java
+END
+NoScrollRecyclerView.java
+K 25
+svn:wc:ra_dav:version-url
+V 170
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/cn/appoa/aframework/widget/noscroll/NoScrollRecyclerView.java
+END
+NoScrollListView.java
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/cn/appoa/aframework/widget/noscroll/NoScrollListView.java
+END

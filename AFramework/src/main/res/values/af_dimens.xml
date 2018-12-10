@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 高度(标题栏) -->
+    <dimen name="height_title_bar">48dp</dimen>
+    <!-- 高度(标题栏默认) -->
+    <dimen name="height_default_titlebar">48dp</dimen>
+    <!-- 高度(分割线) -->
+    <dimen name="height_divider">0.5dp</dimen>
+    <!-- 高度(分割线) -->
+    <dimen name="height_divider_large">1dp</dimen>
+    <!-- 高度(超大) -->
+    <dimen name="height_huge">160dp</dimen>
+    <!-- 高度(极大) -->
+    <dimen name="height_large">96dp</dimen>
+    <!-- 高度(大) -->
+    <dimen name="height_big">64dp</dimen>
+    <!-- 高度(一般) -->
+    <dimen name="height_normal">48dp</dimen>
+    <!-- 高度(小) -->
+    <dimen name="height_small">40dp</dimen>
+    <!-- 高度(极小) -->
+    <dimen name="height_little">32dp</dimen>
+    <!-- 间距(巨大) -->
+    <dimen name="padding_huge">24dp</dimen>
+    <!-- 间距(极大) -->
+    <dimen name="padding_large">16dp</dimen>
+    <!-- 间距(大) -->
+    <dimen name="padding_big">12dp</dimen>
+    <!-- 间距(一般) -->
+    <dimen name="padding_normal">8dp</dimen>
+    <!-- 间距(小) -->
+    <dimen name="padding_small">4dp</dimen>
+    <!-- 字体大小(极大) -->
+    <dimen name="text_large">18sp</dimen>
+    <!-- 字体大小(大) -->
+    <dimen name="text_big">16sp</dimen>
+    <!-- 字体大小(一般) -->
+    <dimen name="text_normal">14sp</dimen>
+    <!-- 字体大小(小) -->
+    <dimen name="text_small">12sp</dimen>
+    <!-- 字体大小(极小) -->
+    <dimen name="text_little">10sp</dimen>
+    <!-- 字体大小(极小的) -->
+    <dimen name="text_bit">8sp</dimen>
+    <!-- 轮播点宽高 -->
+    <dimen name="point_width_height">8dp</dimen>
+
+</resources>

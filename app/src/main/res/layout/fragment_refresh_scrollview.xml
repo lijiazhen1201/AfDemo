@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/SimpleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="轮播图"
+        android:textSize="@dimen/height_normal" />
+
+    <View style="@style/HorizontalLine" />
+
+    <TextView
+        style="@style/SimpleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="商品分类"
+        android:textSize="@dimen/height_normal" />
+
+    <View style="@style/HorizontalLine" />
+
+    <TextView
+        style="@style/SimpleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="推荐板块1"
+        android:textSize="@dimen/height_normal" />
+
+    <View style="@style/HorizontalLine" />
+
+    <TextView
+        style="@style/SimpleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="推荐板块2"
+        android:textSize="@dimen/height_normal" />
+
+    <View style="@style/HorizontalLine" />
+
+    <TextView
+        style="@style/SimpleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="推荐板块3"
+        android:textSize="@dimen/height_normal" />
+
+    <View style="@style/HorizontalLine" />
+
+    <cn.appoa.aframework.widget.noscroll.NoScrollListView
+        android:id="@+id/lv_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/colorDivider"
+        android:dividerHeight="@dimen/height_divider"
+        android:scrollbars="none" />
+
+</LinearLayout>

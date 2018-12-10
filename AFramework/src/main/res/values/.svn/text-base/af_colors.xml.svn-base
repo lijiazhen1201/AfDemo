@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- app主题颜色 -->
+    <color name="colorTheme">#ffffff</color>
+    <!-- 字体颜色(文字) -->
+    <color name="colorText">#333333</color>
+    <!-- 字体颜色(深灰) -->
+    <color name="colorTextDarkerGray">#666666</color>
+    <!-- 字体颜色(浅灰) -->
+    <color name="colorTextLighterGray">#aaaaaa</color>
+    <!-- 字体颜色(提示) -->
+    <color name="colorTextHint">#bbbbbb</color>
+    <!-- 背景颜色 -->
+    <color name="colorBgLighterGray">#f6f6f6</color>
+    <!-- 白色 -->
+    <color name="colorWhite">#ffffff</color>
+    <!-- 黑色 -->
+    <color name="colorBlack">#000000</color>
+    <!-- 分割线颜色 -->
+    <color name="colorDivider">#e6e6e6</color>
+    <!-- 透明色 -->
+    <color name="colorTransparent">#00000000</color>
+    <!-- 半透明色 -->
+    <color name="colorTranslucence">#50000000</color>
+    <!-- 默认图背景颜色 -->
+    <color name="colorDefaultImgBg">#eeeeee</color>
+    <!-- 默认图边框颜色 -->
+    <color name="colorDefaultImgLine">#eeeeee</color>
+    <!-- 默认标题栏背景色 -->
+    <color name="colorDefaultTitlebarBg">#ffffff</color>
+    <!-- 默认标题栏标题颜色 -->
+    <color name="colorDefaultTitlebarTextTitle">#333333</color>
+    <!-- 默认标题栏菜单颜色 -->
+    <color name="colorDefaultTitlebarTextMenu">#333333</color>
+    <!-- 轮播点(未选中) -->
+    <color name="colorPointNormal">#50000000</color>
+    <!-- 轮播点(选中) -->
+    <color name="colorPointSelected">#ffffff</color>
+
+</resources>

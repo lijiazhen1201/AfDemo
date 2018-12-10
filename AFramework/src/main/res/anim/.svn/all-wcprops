@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/res/anim
+END
+dialog_anim_left_enter.xml
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/res/anim/dialog_anim_left_enter.xml
+END
+anim_pop_push_top_in.xml
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/res/anim/anim_pop_push_top_in.xml
+END
+dialog_anim_right_exit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/res/anim/dialog_anim_right_exit.xml
+END
+end_alpha.xml
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/res/anim/end_alpha.xml
+END
+anim_pop_push_top_out.xml
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/res/anim/anim_pop_push_top_out.xml
+END
+dialog_anim_right_enter.xml
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/res/anim/dialog_anim_right_enter.xml
+END
+dialog_anim_left_exit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/res/anim/dialog_anim_left_exit.xml
+END
+anim_marquee_in.xml
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/res/anim/anim_marquee_in.xml
+END
+start_alpha.xml
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/res/anim/start_alpha.xml
+END
+anim_marquee_out.xml
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/res/anim/anim_marquee_out.xml
+END

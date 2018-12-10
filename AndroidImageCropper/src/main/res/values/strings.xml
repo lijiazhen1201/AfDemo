@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="pick_image_intent_chooser_title">选择图片</string>
+    <string name="crop_image_activity_no_permissions">无权限</string>
+    <string name="crop_image_menu_flip_horizontally">水平旋转</string>
+    <string name="crop_image_menu_flip_vertically">垂直旋转</string>
+    <string name="crop_image_menu_rotate_left">逆时针旋转</string>
+    <string name="crop_image_menu_rotate_right">顺时针旋转</string>
+    <string name="crop_image_cancel">取消</string>
+    <string name="crop_image_confirm">确定</string>
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="move_up_to_cancel">Finger up to cancel recording</string>
+    <string name="release_to_cancel">Finger release to cancel recording</string>
+    <string name="Recording_without_permission">Recording without permission</string>
+    <string name="The_recording_time_is_too_short">The recording time is too short</string>
+    <string name="recoding_fail">The recording failure, please try again！</string>
+    <string name="Send_voice_need_sdcard_support">Recording voice need sdcard support</string>
+    <string name="button_pushtotalk">Hold to talk</string>
+    <string name="delete_voice">Delete</string>
+
+</resources>

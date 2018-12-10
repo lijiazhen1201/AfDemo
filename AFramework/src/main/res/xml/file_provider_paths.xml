@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- https://www.jianshu.com/p/55eae30d133c -->
+    <!-- <files-path/>代表的根目录： Context.getFilesDir() -->
+    <!-- <external-path/>代表的根目录: Environment.getExternalStorageDirectory() -->
+    <!-- <cache-path/>代表的根目录: getCacheDir() -->
+    <!-- 下例代表外部存储根目录 -->
+    <external-path
+        name="name"
+        path="." />
+</paths>

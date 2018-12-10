@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_green_default">#1aad19</color>
+    <color name="color_black_bg_image">#191919</color>
+    <color name="color_black_bg_bar">#393a3f</color>
+
+</resources>

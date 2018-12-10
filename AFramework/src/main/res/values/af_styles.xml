@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 横线 -->
+    <style name="HorizontalLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/height_divider</item>
+        <item name="android:background">@color/colorDivider</item>
+    </style>
+
+    <!-- 竖线 -->
+    <style name="VerticalLine">
+        <item name="android:layout_width">@dimen/height_divider</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/colorDivider</item>
+    </style>
+
+    <!-- 对话框 -->
+    <style name="SimpleDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <!-- 默认TextView -->
+    <style name="SimpleTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColorHint">@color/colorTextHint</item>
+        <item name="android:background">@color/colorTransparent</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!-- 默认ImageView -->
+    <style name="SimpleImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:src">@drawable/default_img</item>
+    </style>
+
+    <!-- pop上进 -->
+    <style name="PopAnimTopIn">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_push_top_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_push_top_out</item>
+    </style>
+
+    <!-- dialog右进 -->
+    <style name="Dialog_Animation_Right" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_anim_right_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_anim_right_exit</item>
+    </style>
+
+    <!-- dialog左进 -->
+    <style name="Dialog_Animation_Left" mce_bogus="1" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_anim_left_enter</item>
+        <item name="android:windowExitAnimation">@anim/dialog_anim_left_exit</item>
+    </style>
+
+</resources>

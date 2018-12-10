@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/WxCameraView/src/main/java/com/cjt2325/cameralibrary/util
+END
+FileUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/WxCameraView/src/main/java/com/cjt2325/cameralibrary/util/FileUtil.java
+END
+CameraParamUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/WxCameraView/src/main/java/com/cjt2325/cameralibrary/util/CameraParamUtil.java
+END
+AudioUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/WxCameraView/src/main/java/com/cjt2325/cameralibrary/util/AudioUtil.java
+END
+DeviceUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/WxCameraView/src/main/java/com/cjt2325/cameralibrary/util/DeviceUtil.java
+END
+CheckPermission.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/WxCameraView/src/main/java/com/cjt2325/cameralibrary/util/CheckPermission.java
+END
+AngleUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/WxCameraView/src/main/java/com/cjt2325/cameralibrary/util/AngleUtil.java
+END
+ScreenUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/WxCameraView/src/main/java/com/cjt2325/cameralibrary/util/ScreenUtils.java
+END

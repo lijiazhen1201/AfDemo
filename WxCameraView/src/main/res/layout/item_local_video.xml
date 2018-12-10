@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cjt2325.cameralibrary.local.LocalVideoLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/iv_local_video_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/iv_local_video_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:minHeight="48dp"
+        android:minWidth="48dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_video_play" />
+
+</com.cjt2325.cameralibrary.local.LocalVideoLayout>
