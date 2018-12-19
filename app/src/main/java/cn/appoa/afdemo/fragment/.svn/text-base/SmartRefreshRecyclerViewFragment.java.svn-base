@@ -14,7 +14,6 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.scwang.smartrefresh.layout.divider.GridItemDecoration2;
 import com.scwang.smartrefresh.layout.divider.ListItemDecoration;
-import com.scwang.smartrefresh.layout.fragment.PullToRefreshRecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,11 +22,12 @@ import java.util.Map;
 
 import cn.appoa.afdemo.R;
 import cn.appoa.afdemo.activity.SmartRefreshActivity;
+import cn.appoa.afdemo.base.BaseRecyclerFragment;
 import cn.appoa.afdemo.bean.RefreshBean;
 import cn.appoa.afdemo.net.API;
 import cn.appoa.aframework.utils.AtyUtils;
 
-public class SmartRefreshRecyclerViewFragment extends PullToRefreshRecyclerViewFragment<RefreshBean> {
+public class SmartRefreshRecyclerViewFragment extends BaseRecyclerFragment<RefreshBean> {
 
     @Override
     public RecyclerView.LayoutManager initLayoutManager() {
@@ -267,7 +267,7 @@ public class SmartRefreshRecyclerViewFragment extends PullToRefreshRecyclerViewF
         setItemDecoration(
                 isGrid ? new GridItemDecoration2(getActivity(), adapter, true) : new ListItemDecoration(getActivity()));
         // 重新绑定RecyclerView
-        adapter.onAttachedToRecyclerView(refreshView);
+        adapter.onAttachedToRecyclerView(recyclerView);
     }
 
     private View titlebar;
@@ -277,7 +277,7 @@ public class SmartRefreshRecyclerViewFragment extends PullToRefreshRecyclerViewF
     public void setRefreshView() {
         titlebar = ((SmartRefreshActivity) getActivity()).getTitlebar();
         titlebar.getBackground().mutate().setAlpha(0);
-        refreshView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);

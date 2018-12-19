@@ -16,9 +16,10 @@ import java.util.Map;
 import cn.appoa.aframework.utils.AtyUtils;
 
 /**
- * RecyclerView下拉刷新
- *
  * @param <T> 数据源
+ *            <p>
+ *            RecyclerView下拉刷新
+ * @deprecated Use {@link PullToRefreshCoordinatorLayoutFragment} instead.
  */
 public abstract class PullToRefreshRecyclerViewFragment<T> extends PullToRefreshBaseFragment<RecyclerView> {
 

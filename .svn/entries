@@ -26,16 +26,16 @@ svn:special svn:externals svn:needs-lock
 
 1295e4b9-a68d-c440-8850-8f6c68ed46fa
 
-.gitignore
+.gitattributes
 file
-862
+897
 
 
 
-2018-12-05T05:28:54.328000Z
-da7e8bebd7b9067903b9998842419ff3
-2018-12-10T02:05:25.154652Z
-862
+2018-12-10T07:23:52.000000Z
+05bdb783ee6514c8c072e47680af8ff7
+2018-12-19T03:59:10.014635Z
+897
 lijiazhen
 
 
@@ -58,7 +58,41 @@ lijiazhen
 
 
 
-127
+66
+
+.gitignore
+file
+894
+
+
+
+2018-12-10T07:06:52.197000Z
+831c214c7193bf15f0de4898e13035bf
+2018-12-19T03:35:55.715386Z
+894
+lijiazhen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1021
 
 AFramework
 dir
@@ -102,6 +136,40 @@ dir
 
 JiaoZiVideoPlayer
 dir
+
+README.md
+file
+897
+
+
+
+2018-12-10T07:23:52.000000Z
+6018a9a3026882a44241138f15aae40e
+2018-12-19T03:59:10.014635Z
+897
+lijiazhen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+458
 
 SmartRefreshLayoutFragment
 dir

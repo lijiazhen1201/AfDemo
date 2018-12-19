@@ -33,6 +33,9 @@ svn:special svn:externals svn:needs-lock
 
 0
 
+layout
+dir
+
 values
 dir
 

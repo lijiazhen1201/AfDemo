@@ -7,7 +7,13 @@ PullToRefreshRecyclerViewFragment.java
 K 25
 svn:wc:ra_dav:version-url
 V 203
-/svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/SmartRefreshLayoutFragment/src/main/java/com/scwang/smartrefresh/layout/fragment/PullToRefreshRecyclerViewFragment.java
+/svn/YBD_Developer/!svn/ver/894/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/SmartRefreshLayoutFragment/src/main/java/com/scwang/smartrefresh/layout/fragment/PullToRefreshRecyclerViewFragment.java
+END
+PullToRefreshCoordinatorLayoutFragment.java
+K 25
+svn:wc:ra_dav:version-url
+V 208
+/svn/YBD_Developer/!svn/ver/894/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/SmartRefreshLayoutFragment/src/main/java/com/scwang/smartrefresh/layout/fragment/PullToRefreshCoordinatorLayoutFragment.java
 END
 PullToRefreshListViewFragment.java
 K 25

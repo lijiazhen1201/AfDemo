@@ -1,10 +1,10 @@
 package cn.appoa.afdemo.base;
 
-import com.scwang.smartrefresh.layout.fragment.PullToRefreshRecyclerViewFragment;
+import com.scwang.smartrefresh.layout.fragment.PullToRefreshCoordinatorLayoutFragment;
 
 import cn.appoa.aframework.utils.AsyncRun;
 
-public abstract class BaseRecyclerFragment<T> extends PullToRefreshRecyclerViewFragment<T> {
+public abstract class BaseRecyclerFragment<T> extends PullToRefreshCoordinatorLayoutFragment<T> {
 
     /**
      * 是否开启测试（调接口时候改为false）
@@ -69,7 +69,7 @@ public abstract class BaseRecyclerFragment<T> extends PullToRefreshRecyclerViewF
 //                    public void onLoadMoreRequested() {
 //                        onLoadMore(refreshLayout);
 //                    }
-//                }, refreshView);
+//                }, recyclerView);
 //            }
 //        }
 //    }

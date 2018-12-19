@@ -1,10 +1,13 @@
 package com.scwang.smartrefresh.layout.fragment;
 
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -16,21 +19,61 @@ import java.util.Map;
 import cn.appoa.aframework.utils.AtyUtils;
 
 /**
+ * 推上置顶的RecyclerView下拉刷新
+ *
  * @param <T> 数据源
- *            <p>
- *            RecyclerView下拉刷新
- * @deprecated Use {@link PullToRefreshCoordinatorLayoutFragment} instead.
  */
-public abstract class PullToRefreshRecyclerViewFragment<T> extends PullToRefreshBaseFragment<RecyclerView> {
+public abstract class PullToRefreshCoordinatorLayoutFragment<T> extends PullToRefreshBaseFragment<CoordinatorLayout> {
 
     @Override
     public void initRefreshLayout(Bundle savedInstanceState) {
 
     }
 
+    public AppBarLayout appBarLayout;
+    public FrameLayout scrollLayout;
+    public View scrollView;
+    public FrameLayout fixedLayout;
+    public View fixedView;
+    public View line;
+    public RecyclerView recyclerView;
+
     @Override
-    public RecyclerView onCreateRefreshView() {
-        return new RecyclerView(getActivity());
+    public CoordinatorLayout onCreateRefreshView() {
+        View view = View.inflate(mActivity, R.layout.fragment_pull_to_refresh_coordinator_layout, null);
+        appBarLayout = (AppBarLayout) view.findViewById(R.id.appBarLayout);
+        scrollLayout = (FrameLayout) view.findViewById(R.id.scrollLayout);
+        scrollView = initScrollView();
+        if (scrollView != null) {
+            scrollLayout.addView(scrollView);
+        }
+        fixedLayout = (FrameLayout) view.findViewById(R.id.fixedLayout);
+        fixedView = initFixedView();
+        if (fixedView != null) {
+            fixedLayout.addView(fixedView);
+        }
+        line = (View) view.findViewById(R.id.line);
+        appBarLayout.setVisibility(scrollView == null || fixedView == null ? View.GONE : View.VISIBLE);
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        return (CoordinatorLayout) view;
+    }
+
+    /**
+     * 滚动布局
+     *
+     * @return
+     */
+    public View initScrollView() {
+        return null;
+    }
+
+    /**
+     * 固定布局
+     *
+     * @return
+     */
+    public View initFixedView() {
+        return null;
     }
 
     /**
@@ -74,7 +117,7 @@ public abstract class PullToRefreshRecyclerViewFragment<T> extends PullToRefresh
     public void setLayoutManager(RecyclerView.LayoutManager layoutManager) {
         if (isInit) {
             this.layoutManager = layoutManager;
-            refreshView.setLayoutManager(this.layoutManager);
+            recyclerView.setLayoutManager(this.layoutManager);
         }
     }
 
@@ -100,10 +143,10 @@ public abstract class PullToRefreshRecyclerViewFragment<T> extends PullToRefresh
     public void setItemDecoration(RecyclerView.ItemDecoration decor) {
         if (isInit) {
             if (this.decor != null) {
-                refreshView.removeItemDecoration(this.decor);
+                recyclerView.removeItemDecoration(this.decor);
             }
             this.decor = decor;
-            refreshView.addItemDecoration(this.decor);
+            recyclerView.addItemDecoration(this.decor);
         }
     }
 
@@ -131,13 +174,13 @@ public abstract class PullToRefreshRecyclerViewFragment<T> extends PullToRefresh
         adapter = initAdapter();
         layoutManager = initLayoutManager();
         if (layoutManager != null) {
-            refreshView.setLayoutManager(layoutManager);
+            recyclerView.setLayoutManager(layoutManager);
         }
         decor = initItemDecoration();
         if (decor != null) {
-            refreshView.addItemDecoration(decor);
+            recyclerView.addItemDecoration(decor);
         }
-        refreshView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
         if (adapter != null) {
             setAdapter();
             // 设置头布局和脚布局可以和空布局共存（默认不共存）
@@ -150,7 +193,7 @@ public abstract class PullToRefreshRecyclerViewFragment<T> extends PullToRefresh
             initFooterView(adapter);
             adapter.setNewData(dataList);
             adapter.notifyDataSetChanged();
-            refreshView.setAdapter(adapter);
+            recyclerView.setAdapter(adapter);
         }
     }
 
@@ -194,6 +237,7 @@ public abstract class PullToRefreshRecyclerViewFragment<T> extends PullToRefresh
     public void onLoadMore() {
         initData();
     }
+
 
     @Override
     public void initData() {
@@ -306,9 +350,18 @@ public abstract class PullToRefreshRecyclerViewFragment<T> extends PullToRefresh
 
     @Override
     public void toScrollTop() {
-        if (refreshView != null) {
-            refreshView.smoothScrollToPosition(0);
-        }
+        //recyclerView置顶
+        recyclerView.smoothScrollToPosition(0);
+//        //CoordinatorLayout置顶
+//        CoordinatorLayout.Behavior behavior =
+//                ((CoordinatorLayout.LayoutParams) appBarLayout.getLayoutParams()).getBehavior();
+//        if (behavior instanceof AppBarLayout.Behavior) {
+//            AppBarLayout.Behavior appBarLayoutBehavior = (AppBarLayout.Behavior) behavior;
+//            int topAndBottomOffset = appBarLayoutBehavior.getTopAndBottomOffset();
+//            if (topAndBottomOffset != 0) {
+//                appBarLayoutBehavior.setTopAndBottomOffset(0);
+//            }
+//        }
     }
 
 }

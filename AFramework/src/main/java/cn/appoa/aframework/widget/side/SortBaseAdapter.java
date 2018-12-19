@@ -116,11 +116,11 @@ public abstract class SortBaseAdapter extends BaseAdapter {
             searchList = sortAllList;
         } else {
             searchList.clear();
-            for (int i = 0; i < sortList.size(); i++) {
-                String word = sortList.get(i).name;
+            for (int i = 0; i < sortAllList.size(); i++) {
+                String word = sortAllList.get(i).name;
                 if (word.indexOf(key.toString()) != -1
                         || CharacterParser.getInstance().getSelling(word).startsWith(key.toString())) {
-                    searchList.add(sortList.get(i));
+                    searchList.add(sortAllList.get(i));
                 }
             }
         }
