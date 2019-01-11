@@ -102,6 +102,11 @@ public class RefreshHandLayout extends FrameLayout implements RefreshHeader {
     public void onInitialized(RefreshKernel kernel, int height, int extendHeight) {
     }
 
+    @Override
+    public void onMoving(boolean isDragging, float percent, int offset, int height, int maxDragHeight) {
+
+    }
+
     /**
      * 手指拖动下拉（会连续多次调用，用于实时控制动画关键帧）
      *
@@ -111,9 +116,9 @@ public class RefreshHandLayout extends FrameLayout implements RefreshHeader {
      * @param height       高度 HeaderHeight or FooterHeight
      * @param extendHeight 扩展高度 extendHeaderHeight or extendFooterHeight
      */
-    @Override
-    public void onPulling(float percent, int offset, int height, int extendHeight) {
-    }
+//    @Override
+//    public void onPulling(float percent, int offset, int height, int extendHeight) {
+//    }
 
     /**
      * 手指释放之后的持续动画（会连续多次调用，用于实时控制动画关键帧）
@@ -124,10 +129,10 @@ public class RefreshHandLayout extends FrameLayout implements RefreshHeader {
      * @param height       高度 HeaderHeight or FooterHeight
      * @param extendHeight 扩展高度 extendHeaderHeight or extendFooterHeight
      */
-    @Override
-    public void onReleasing(float percent, int offset, int height, int extendHeight) {
-
-    }
+//    @Override
+//    public void onReleasing(float percent, int offset, int height, int extendHeight) {
+//
+//    }
 
     /**
      * 释放时刻（调用一次，将会触发加载）

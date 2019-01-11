@@ -20,6 +20,6 @@ android {
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     api project(':AFramework')
-    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5'
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-18'
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
 }
