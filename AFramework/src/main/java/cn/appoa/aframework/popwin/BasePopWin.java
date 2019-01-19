@@ -22,6 +22,10 @@ public abstract class BasePopWin implements View.OnClickListener {
      */
     public Context context;
     /**
+     * 弹窗布局
+     */
+    public int layoutId;
+    /**
      * 弹窗
      */
     public PopupWindow pop;
@@ -40,8 +44,13 @@ public abstract class BasePopWin implements View.OnClickListener {
     }
 
     public BasePopWin(Context context, OnCallbackListener onCallbackListener) {
+        this(context, onCallbackListener, 0);
+    }
+
+    public BasePopWin(Context context, OnCallbackListener onCallbackListener, int layoutId) {
         this.context = context;
         this.onCallbackListener = onCallbackListener;
+        this.layoutId = layoutId;
         BusProvider.getInstance().register(this);
         pop = initPop(context);
     }
