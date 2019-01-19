@@ -16,6 +16,7 @@ import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.anthonycr.grant.PermissionsManager;
 import com.anthonycr.grant.PermissionsResultAction;
@@ -55,6 +56,10 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
     protected InputMethodManager mInputMethodManager = null;
     /**
      * 根布局
+     */
+    protected RelativeLayout rootlayout;
+    /**
+     * 内容根布局
      */
     protected LinearLayout layout;
     /**
@@ -103,6 +108,7 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         // 传递数据
         initIntent(getIntent());
         // 加载布局
+        rootlayout = new RelativeLayout(this);
         layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
         titlebar = initTitlebar();
@@ -117,7 +123,8 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         if (bottom != null) {
             layout.addView(bottom, new LinearLayout.LayoutParams(-1, -2));
         }
-        setContentView(layout);
+        rootlayout.addView(layout, new RelativeLayout.LayoutParams(-1, -1));
+        setContentView(rootlayout);
         bindButterKnife();
         Foreground.get(this).addForegroundListener(this);
         initView();
