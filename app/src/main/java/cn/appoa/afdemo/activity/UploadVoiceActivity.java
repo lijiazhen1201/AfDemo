@@ -42,6 +42,7 @@ public class UploadVoiceActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     public void initView() {
+        super.initView();
         voiceRecorderView = (EaseVoiceRecorderView) findViewById(R.id.voiceRecorderView);
         tv_push_to_talk = (TextView) findViewById(R.id.tv_push_to_talk);
         ll_voice = (LinearLayout) findViewById(R.id.ll_voice);

@@ -569,7 +569,7 @@ public class CameraInterface implements Camera.PreviewCallback {
 
         videoFileName = "video_" + FileUtil.formatTime(System.currentTimeMillis()) + ".mp4";
         if (saveVideoPath.equals("")) {
-            saveVideoPath = Environment.getExternalStorageDirectory().getPath();
+            saveVideoPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/DCIM/Camera";
         }
         videoFileAbsPath = saveVideoPath + File.separator + videoFileName;
         mediaRecorder.setOutputFile(videoFileAbsPath);

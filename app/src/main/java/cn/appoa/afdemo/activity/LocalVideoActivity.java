@@ -25,7 +25,7 @@ public class LocalVideoActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
+        super.initView();
     }
 
     private LocalVideoFragment fragment;

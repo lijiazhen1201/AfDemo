@@ -22,6 +22,11 @@ public class JsonUtils {
     public static String RESULT = "result";
 
     /**
+     * 强制下线code
+     */
+    public static int ERROR_CODE = 401;
+
+    /**
      * 初始化
      *
      * @param type
@@ -54,6 +59,35 @@ public class JsonUtils {
         TYPE = 2;
         STATE = state;
         RESULT = result;
+    }
+
+    /**
+     * 是否是下线code
+     *
+     * @param json
+     * @return
+     */
+    public static boolean isErrorCode(String json) {
+        boolean b = false;
+        try {
+            if (!TextUtils.isEmpty(json)) {
+                JSONObject obj = new JSONObject(json);
+                if (TYPE == 1) {
+                    int code = obj.getInt(CODE);
+                    if (code == ERROR_CODE) {
+                        b = true;
+                    }
+                } else if (TYPE == 2) {
+                    String state = obj.getString(STATE);
+                    if (TextUtils.equals(state, String.valueOf(ERROR_CODE))) {
+                        b = true;
+                    }
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return b;
     }
 
     /**
@@ -120,6 +154,19 @@ public class JsonUtils {
      * @param json
      */
     public static void showMsg(Context context, String json) {
+        String message = getMsg(json);
+        if (!TextUtils.isEmpty(message)) {
+            AtyUtils.showShort(context, message, false);
+        }
+    }
+
+    /**
+     * 获取提示信息
+     *
+     * @param json
+     * @return
+     */
+    public static String getMsg(String json) {
         String message = null;
         try {
             if (!TextUtils.isEmpty(json)) {
@@ -132,11 +179,8 @@ public class JsonUtils {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-        } finally {
-            if (!TextUtils.isEmpty(message)) {
-                AtyUtils.showShort(context, message, false);
-            }
         }
+        return message;
     }
 
     /**
@@ -162,4 +206,5 @@ public class JsonUtils {
             showMsg(context, json);
         }
     }
+
 }

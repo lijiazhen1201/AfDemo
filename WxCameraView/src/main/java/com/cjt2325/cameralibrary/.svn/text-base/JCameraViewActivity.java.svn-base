@@ -101,7 +101,8 @@ public class JCameraViewActivity extends AppCompatActivity {
             jCameraView.setDuration(duration);
         }
         // 设置视频保存路径
-        jCameraView.setSaveVideoPath(Environment.getExternalStorageDirectory().getPath() + File.separator + "JCamera");
+        jCameraView.setSaveVideoPath(Environment.getExternalStorageDirectory()
+                .getAbsolutePath() + "/DCIM/Camera");
         // 设置视频质量
         jCameraView.setMediaQuality(JCameraView.MEDIA_QUALITY_HIGH);
         // JCameraView监听
@@ -261,7 +262,7 @@ public class JCameraViewActivity extends AppCompatActivity {
      */
     protected File bitmapToFile(Bitmap bitmap, String file_name) {
         File file = null;
-        file = new File(Environment.getExternalStorageDirectory().getPath() + File.separator + "JCamera", file_name);
+        file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/DCIM/Camera", file_name);
         file.getParentFile().mkdirs();
         BufferedOutputStream bos = null;
         try {

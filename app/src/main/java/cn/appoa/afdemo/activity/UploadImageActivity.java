@@ -34,6 +34,7 @@ public class UploadImageActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        super.initView();
         mPhotoPickerGridView = (PhotoPickerGridView) findViewById(R.id.mPhotoPickerGridView);
         findViewById(R.id.tv_upload).setOnClickListener(new View.OnClickListener() {
             @Override

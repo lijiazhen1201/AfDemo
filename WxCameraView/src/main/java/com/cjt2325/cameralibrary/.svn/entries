@@ -35,14 +35,14 @@ svn:special svn:externals svn:needs-lock
 
 CameraInterface.java
 file
+953
 
 
 
-
-2018-12-06T02:56:11.760000Z
-4036a7216ef4a7a0c93d2d174d677afe
-2018-12-10T02:05:25.154652Z
-862
+2019-01-19T13:14:57.246000Z
+bec76a958f4796a3186ec3303adc134c
+2019-01-19T13:26:09.788768Z
+953
 lijiazhen
 
 
@@ -65,7 +65,7 @@ lijiazhen
 
 
 
-26924
+26949
 
 CaptureButton.java
 file
@@ -205,14 +205,14 @@ lijiazhen
 
 JCameraViewActivity.java
 file
+953
 
 
 
-
-2018-12-06T03:16:50.874000Z
-2a46e2c90ee3f62aa2bb3f4968ce66b9
-2018-12-10T02:05:25.154652Z
-862
+2019-01-19T13:14:57.270000Z
+a3224287be10e042dd0e1b98a0c2b55a
+2019-01-19T13:26:09.788768Z
+953
 lijiazhen
 
 
@@ -235,7 +235,7 @@ lijiazhen
 
 
 
-12818
+12828
 
 ReturnButton.java
 file

@@ -277,6 +277,11 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         return REQUEST_TAG;
     }
 
+    @Override
+    public void onErrorCodeResponse(String message) {
+        //TODO 强制下线
+    }
+
     /**
      * 返回键
      */
@@ -371,4 +376,5 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
     public boolean enableSliding() {
         return false;
     }
+
 }

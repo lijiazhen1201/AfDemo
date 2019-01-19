@@ -16,6 +16,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.anthonycr.grant.PermissionsManager;
 import com.anthonycr.grant.PermissionsResultAction;
 
+import cn.appoa.aframework.activity.AfActivity;
 import cn.appoa.aframework.dialog.DefaultLoadingDialog;
 import cn.appoa.aframework.presenter.BasePresenter;
 import cn.appoa.aframework.view.IBaseView;
@@ -335,6 +336,15 @@ public abstract class AfFragment<P extends BasePresenter> extends Fragment imple
     @Override
     public String getRequestTag() {
         return REQUEST_TAG;
+    }
+
+    @Override
+    public void onErrorCodeResponse(String message) {
+        try {
+            ((AfActivity) getActivity()).onErrorCodeResponse(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @TargetApi(23)

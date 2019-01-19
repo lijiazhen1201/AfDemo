@@ -11,4 +11,6 @@ public interface IBaseView {
     void hideSoftKeyboard();
 
     String getRequestTag();
+
+    void onErrorCodeResponse(String message);
 }

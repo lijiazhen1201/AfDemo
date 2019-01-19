@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <cn.appoa.afdemo.widget.UpgradeLayout02
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/height_normal"
+        android:layout_marginRight="@dimen/height_normal">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/upgrade_bg_02" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_version_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="217"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="193"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fillViewport="true"
+                    android:paddingBottom="@dimen/padding_big"
+                    android:paddingLeft="@dimen/padding_huge"
+                    android:paddingRight="@dimen/padding_huge"
+                    android:paddingTop="@dimen/padding_big">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            style="@style/SimpleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/text_big" />
+
+                        <TextView
+                            android:id="@+id/tv_content"
+                            style="@style/SimpleTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/padding_normal"
+                            android:gravity="start"
+                            android:singleLine="false"
+                            android:textColor="@color/colorTextDarkerGray" />
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+                <ImageView
+                    android:id="@+id/confirm_upgrade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/padding_big"
+                    android:src="@drawable/confirm_upgrade_02" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </cn.appoa.afdemo.widget.UpgradeLayout02>
+
+    <ImageView
+        android:id="@+id/cancel_upgrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_big"
+        android:src="@drawable/cancel_upgrade_02" />
+
+</LinearLayout>

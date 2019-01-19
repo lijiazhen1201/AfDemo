@@ -32,6 +32,7 @@ public class UploadAvatarActivity extends BaseImageActivity {
 
     @Override
     public void initView() {
+        super.initView();
         iv_avatar = (ImageView) findViewById(R.id.iv_avatar);
         iv_avatar.setOnClickListener(new View.OnClickListener() {
             @Override

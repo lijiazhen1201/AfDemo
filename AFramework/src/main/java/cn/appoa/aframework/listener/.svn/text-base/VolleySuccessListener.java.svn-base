@@ -42,6 +42,10 @@ public abstract class VolleySuccessListener implements Response.Listener<String>
             if (!TextUtils.isEmpty(tag)) {
                 AtyUtils.i(tag, response);
             }
+            if (JsonUtils.isErrorCode(response)) {
+                mView.onErrorCodeResponse(JsonUtils.getMsg(response));
+                return;
+            }
             if (messageType == 3) {
                 JsonUtils.showMsg(AfApplication.appContext, response);
             }
@@ -64,4 +68,5 @@ public abstract class VolleySuccessListener implements Response.Listener<String>
      * @param response
      */
     public abstract void onSuccessResponse(String response);
+
 }

@@ -39,6 +39,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        super.initView();
         recyclerView.setLayoutManager(new LinearLayoutManager(mActivity));
         recyclerView.addItemDecoration(new ListItemDecoration(mActivity));
     }

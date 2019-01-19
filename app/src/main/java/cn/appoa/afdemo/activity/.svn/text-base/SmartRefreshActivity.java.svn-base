@@ -56,7 +56,7 @@ public class SmartRefreshActivity extends BaseActivity {
 
     @Override
     public void initView() {
-
+        super.initView();
     }
 
     private Fragment fragment = null;

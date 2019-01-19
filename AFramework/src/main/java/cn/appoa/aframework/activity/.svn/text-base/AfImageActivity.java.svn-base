@@ -86,7 +86,7 @@ public abstract class AfImageActivity<P extends BasePresenter> extends AfActivit
     // 需要的provider(authorities的路径每个app需不同)
     // <provider
     // android:name="android.support.v4.content.FileProvider"
-    // android:authorities="cn.appoa.aframework.fileprovider"
+    // android:authorities="${applicationId}.fileprovider"
     // android:exported="false"
     // android:grantUriPermissions="true">
     // <meta-data
@@ -463,7 +463,8 @@ public abstract class AfImageActivity<P extends BasePresenter> extends AfActivit
      */
     protected File bitmapToFile(Bitmap bitmap) {
         File file = null;
-        file = new File(Environment.getExternalStorageDirectory(), System.currentTimeMillis() + ".jpeg");
+        file = new File(Environment.getExternalStorageDirectory()
+                .getAbsolutePath() + "/DCIM/Camera", System.currentTimeMillis() + ".jpeg");
         file.getParentFile().mkdirs();
         BufferedOutputStream bos = null;
         try {
@@ -793,7 +794,8 @@ public abstract class AfImageActivity<P extends BasePresenter> extends AfActivit
                 if (split.length >= 2) {
                     String type = split[0];
                     if ("primary".equalsIgnoreCase(type)) {
-                        photoPath = Environment.getExternalStorageDirectory() + "/" + split[1];
+                        photoPath = Environment.getExternalStorageDirectory()
+                                .getAbsolutePath() + "/DCIM/Camera"+ "/" + split[1];
                     }
                 }
             } else if ("com.android.providers.downloads.documents".equals(uri.getAuthority())) {
@@ -866,7 +868,8 @@ public abstract class AfImageActivity<P extends BasePresenter> extends AfActivit
     private File getTempFile() {
         File file = null;
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            file = new File(Environment.getExternalStorageDirectory(), System.currentTimeMillis() + ".jpeg");
+            file = new File(Environment.getExternalStorageDirectory()
+                    .getAbsolutePath() + "/DCIM/Camera", System.currentTimeMillis() + ".jpeg");
         }
         return file;
     }

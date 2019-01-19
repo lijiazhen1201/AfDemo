@@ -32,6 +32,7 @@ public class RefreshBeanActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     public void initView() {
+        super.initView();
         btn_refresh_scrollview = (Button) findViewById(R.id.btn_refresh_scrollview);
         btn_refresh_listview = (Button) findViewById(R.id.btn_refresh_listview);
         btn_refresh_gridview = (Button) findViewById(R.id.btn_refresh_gridview);

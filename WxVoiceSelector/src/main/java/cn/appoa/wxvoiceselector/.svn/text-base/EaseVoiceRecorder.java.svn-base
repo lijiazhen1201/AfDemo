@@ -55,7 +55,8 @@ public class EaseVoiceRecorder {
             // file = File.createTempFile(PREFIX + userId, EXTENSION,
             // User.getVoicePath());
             voiceFileName = System.currentTimeMillis() + EXTENSION;
-            voiceFilePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + voiceFileName;
+            voiceFilePath = Environment.getExternalStorageDirectory()
+                    .getAbsolutePath() + "/DCIM/Camera"+ "/" + voiceFileName;
             file = new File(voiceFilePath);
             recorder.setOutputFile(file.getAbsolutePath());
             recorder.prepare();

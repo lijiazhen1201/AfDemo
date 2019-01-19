@@ -678,7 +678,8 @@ public class ImageSelectorActivity extends AppCompatActivity {
     private File getTempFile() {
         File file = null;
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            file = new File(Environment.getExternalStorageDirectory(), System.currentTimeMillis() + ".jpeg");
+            file = new File(Environment.getExternalStorageDirectory()
+                    .getAbsolutePath() + "/DCIM/Camera", System.currentTimeMillis() + ".jpeg");
         }
         return file;
     }

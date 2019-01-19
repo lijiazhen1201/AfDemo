@@ -9,6 +9,12 @@ svn:wc:ra_dav:version-url
 V 172
 /svn/YBD_Developer/!svn/ver/862/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/cn/appoa/aframework/presenter/PullToRefreshVolleyPresenter.java
 END
+VersionPresenter.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/YBD_Developer/!svn/ver/953/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/AFramework/src/main/java/cn/appoa/aframework/presenter/VersionPresenter.java
+END
 PullToRefreshPresenter.java
 K 25
 svn:wc:ra_dav:version-url

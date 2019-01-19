@@ -20,6 +20,11 @@ public abstract class BaseDialog implements View.OnClickListener {
      * 上下文
      */
     public Context context;
+
+    /**
+     * 弹窗布局
+     */
+    public int layoutId;
     /**
      * 弹窗
      */
@@ -39,8 +44,13 @@ public abstract class BaseDialog implements View.OnClickListener {
     }
 
     public BaseDialog(Context context, OnCallbackListener onCallbackListener) {
+        this(context, onCallbackListener, 0);
+    }
+
+    public BaseDialog(Context context, OnCallbackListener onCallbackListener, int layoutId) {
         this.context = context;
         this.onCallbackListener = onCallbackListener;
+        this.layoutId = layoutId;
         BusProvider.getInstance().register(this);
         dialog = initDialog(context);
     }

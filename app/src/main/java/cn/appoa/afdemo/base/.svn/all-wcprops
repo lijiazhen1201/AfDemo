@@ -7,7 +7,7 @@ BaseActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 140
-/svn/YBD_Developer/!svn/ver/895/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/app/src/main/java/cn/appoa/afdemo/base/BaseActivity.java
+/svn/YBD_Developer/!svn/ver/953/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/app/src/main/java/cn/appoa/afdemo/base/BaseActivity.java
 END
 BaseRecyclerFragment.java
 K 25
@@ -19,7 +19,7 @@ BaseImageActivity.java
 K 25
 svn:wc:ra_dav:version-url
 V 145
-/svn/YBD_Developer/!svn/ver/895/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/app/src/main/java/cn/appoa/afdemo/base/BaseImageActivity.java
+/svn/YBD_Developer/!svn/ver/953/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/app/src/main/java/cn/appoa/afdemo/base/BaseImageActivity.java
 END
 BaseFragment.java
 K 25

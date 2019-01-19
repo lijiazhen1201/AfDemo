@@ -55,6 +55,7 @@ public class BannerActivity extends BaseActivity {
 
     @Override
     public void initView() {
+        super.initView();
         mBanner = (com.youth.banner.Banner) findViewById(R.id.mBanner);
         mUltraViewPager = (com.tmall.ultraviewpager.UltraViewPager) findViewById(R.id.mUltraViewPager);
     }

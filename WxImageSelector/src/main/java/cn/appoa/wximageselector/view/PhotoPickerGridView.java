@@ -841,7 +841,8 @@ public class PhotoPickerGridView extends GridView {
      */
     private File bitmapToFile(Bitmap bitmap) {
         File file = null;
-        file = new File(Environment.getExternalStorageDirectory(), System.currentTimeMillis() + ".jpeg");
+        file = new File(Environment.getExternalStorageDirectory()
+                .getAbsolutePath() + "/DCIM/Camera", System.currentTimeMillis() + ".jpeg");
         file.getParentFile().mkdirs();
         BufferedOutputStream bos = null;
         try {

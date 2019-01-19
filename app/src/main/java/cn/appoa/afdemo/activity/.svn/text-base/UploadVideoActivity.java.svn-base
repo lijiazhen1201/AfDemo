@@ -50,6 +50,7 @@ public class UploadVideoActivity extends BaseActivity implements View.OnClickLis
 
     @Override
     public void initView() {
+        super.initView();
         findViewById(R.id.tv_play_video).setOnClickListener(this);
         iv_video_img = (ImageView) findViewById(R.id.iv_picker_add);
         iv_video_img.setOnClickListener(this);
