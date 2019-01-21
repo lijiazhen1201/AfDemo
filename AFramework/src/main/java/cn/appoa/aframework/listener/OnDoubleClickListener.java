@@ -35,9 +35,9 @@ public abstract class OnDoubleClickListener implements View.OnTouchListener {
             } else if (2 == count) {
                 secondClick = System.currentTimeMillis();//记录第二次点击时间
                 if (secondClick - firstClick < totalTime) {//判断二次点击时间间隔是否在设定的间隔时间之内
-                    onDoubleClick(v);
                     count = 0;
                     firstClick = 0;
+                    return onDoubleClick(v);
                 } else {
                     firstClick = secondClick;
                     count = 1;
@@ -45,7 +45,7 @@ public abstract class OnDoubleClickListener implements View.OnTouchListener {
                 secondClick = 0;
             }
         }
-        return true;
+        return false;
     }
 
     /**
@@ -53,5 +53,5 @@ public abstract class OnDoubleClickListener implements View.OnTouchListener {
      *
      * @param v
      */
-    public abstract void onDoubleClick(View v);
+    public abstract boolean onDoubleClick(View v);
 }
