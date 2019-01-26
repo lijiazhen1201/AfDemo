@@ -39,8 +39,8 @@ public abstract class OnDoubleClickListener implements View.OnTouchListener {
                     firstClick = 0;
                     return onDoubleClick(v);
                 } else {
-                    firstClick = secondClick;
                     count = 1;
+                    firstClick = secondClick;
                 }
                 secondClick = 0;
             }

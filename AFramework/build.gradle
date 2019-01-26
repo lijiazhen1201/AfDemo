@@ -32,7 +32,7 @@ dependencies {
     api files('libs/httpmime-4.2.5.jar')
     api files('libs/org.apache.http.legacy.jar')
     api files('libs/zm-bus-event-1.0.jar')
-    api files('libs/zm-http-volley-1.0.jar')
+    api files('libs/zm-http-volley-1.1.jar')
     api files('libs/zm-imageloader-1.0.jar')
 
 }
