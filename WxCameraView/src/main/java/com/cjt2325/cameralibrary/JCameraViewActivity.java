@@ -110,13 +110,17 @@ public class JCameraViewActivity extends AppCompatActivity {
 
             @Override
             public void onError() {
-                Toast.makeText(JCameraViewActivity.this, R.string.open_camera_failed, Toast.LENGTH_SHORT).show();
+                Toast mToast = Toast.makeText(JCameraViewActivity.this, null, Toast.LENGTH_SHORT);
+                mToast.setText(R.string.open_camera_failed);
+                mToast.show();
                 finish();
             }
 
             @Override
             public void AudioPermissionError() {
-                Toast.makeText(JCameraViewActivity.this, R.string.no_recording_permission, Toast.LENGTH_SHORT).show();
+                Toast mToast = Toast.makeText(JCameraViewActivity.this, null, Toast.LENGTH_SHORT);
+                mToast.setText(R.string.no_recording_permission);
+                mToast.show();
                 finish();
             }
         });
@@ -214,7 +218,9 @@ public class JCameraViewActivity extends AppCompatActivity {
                     granted = true;
                     jCameraView.onResume();
                 } else {
-                    Toast.makeText(this, R.string.setting_open_permission, Toast.LENGTH_SHORT).show();
+                    Toast mToast = Toast.makeText(this, null, Toast.LENGTH_SHORT);
+                    mToast.setText(R.string.setting_open_permission);
+                    mToast.show();
                     finish();
                 }
             }

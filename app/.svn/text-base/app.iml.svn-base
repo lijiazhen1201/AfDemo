@@ -119,7 +119,6 @@
     <orderEntry type="library" name="com.android.support:appcompat-v7-26.1.0" level="project" />
     <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AFramework\libs\org.apache.http.legacy.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.github.CymChad:BaseRecyclerViewAdapterHelper-2.9.44" level="project" />
-    <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AFramework\libs\zm-http-volley-1.0.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AndroidImageCropper\libs\exifinterface-25.3.0.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-annotations:26.1.0@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-utils-26.1.0" level="project" />
@@ -141,6 +140,7 @@
     <orderEntry type="library" name="com.android.support:design-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:transition-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:cardview-v7-26.1.0" level="project" />
+    <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AFramework\libs\zm-http-volley-1.1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:multidex-1.0.3" level="project" />
     <orderEntry type="module" module-name="AFramework" />
     <orderEntry type="module" module-name="WxCameraView" />

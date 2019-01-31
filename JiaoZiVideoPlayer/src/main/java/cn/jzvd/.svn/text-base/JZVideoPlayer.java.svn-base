@@ -456,7 +456,9 @@ public abstract class JZVideoPlayer extends FrameLayout
             Log.i(TAG, "onClick start [" + this.hashCode() + "] ");
             if (dataSourceObjects == null
                     || JZUtils.getCurrentFromDataSource(dataSourceObjects, currentUrlMapIndex) == null) {
-                Toast.makeText(getContext(), getResources().getString(R.string.no_url), Toast.LENGTH_SHORT).show();
+                Toast mToast = Toast.makeText(getContext(), null, Toast.LENGTH_SHORT);
+                mToast.setText(R.string.no_url);
+                mToast.show();
                 return;
             }
             if (currentState == CURRENT_STATE_NORMAL) {

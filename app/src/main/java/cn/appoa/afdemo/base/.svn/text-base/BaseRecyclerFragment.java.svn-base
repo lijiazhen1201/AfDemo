@@ -9,7 +9,7 @@ public abstract class BaseRecyclerFragment<T> extends PullToRefreshCoordinatorLa
     /**
      * 是否开启测试（调接口时候改为false）
      */
-    private static boolean isTestData = true;
+    private static boolean isTestData = false;
 
     @Override
     public void initData() {

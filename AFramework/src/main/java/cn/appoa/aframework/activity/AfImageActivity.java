@@ -32,7 +32,6 @@ import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.util.Base64;
-import android.widget.Toast;
 
 import com.anthonycr.grant.PermissionsResultAction;
 
@@ -51,6 +50,7 @@ import cn.appoa.aframework.R;
 import cn.appoa.aframework.app.AfApplication;
 import cn.appoa.aframework.dialog.DefaultUploadImgDialog;
 import cn.appoa.aframework.presenter.BasePresenter;
+import cn.appoa.aframework.utils.AtyUtils;
 
 /**
  * 带上传图片的Activity基类
@@ -130,7 +130,7 @@ public abstract class AfImageActivity<P extends BasePresenter> extends AfActivit
             @Override
             public void onGranted() {
                 if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-                    Toast.makeText(AfImageActivity.this, R.string.not_found_sd_card, Toast.LENGTH_SHORT).show();
+                    AtyUtils.showShort(AfImageActivity.this, R.string.not_found_sd_card,false);
                     return;
                 }
                 if (Build.VERSION.SDK_INT >= 24) {
@@ -143,7 +143,7 @@ public abstract class AfImageActivity<P extends BasePresenter> extends AfActivit
 
             @Override
             public void onDenied(String permission) {
-                Toast.makeText(AfImageActivity.this, R.string.open_camera_permission, Toast.LENGTH_SHORT).show();
+                AtyUtils.showShort(AfImageActivity.this, R.string.open_camera_permission,false);
             }
         });
     }
@@ -207,7 +207,7 @@ public abstract class AfImageActivity<P extends BasePresenter> extends AfActivit
 
             @Override
             public void onDenied(String permission) {
-                Toast.makeText(AfImageActivity.this, R.string.open_album_permission, Toast.LENGTH_SHORT).show();
+                AtyUtils.showShort(AfImageActivity.this, R.string.open_album_permission, false);
             }
         });
     }
@@ -795,7 +795,7 @@ public abstract class AfImageActivity<P extends BasePresenter> extends AfActivit
                     String type = split[0];
                     if ("primary".equalsIgnoreCase(type)) {
                         photoPath = Environment.getExternalStorageDirectory()
-                                .getAbsolutePath() + "/DCIM/Camera"+ "/" + split[1];
+                                .getAbsolutePath() + "/DCIM/Camera" + "/" + split[1];
                     }
                 }
             } else if ("com.android.providers.downloads.documents".equals(uri.getAuthority())) {

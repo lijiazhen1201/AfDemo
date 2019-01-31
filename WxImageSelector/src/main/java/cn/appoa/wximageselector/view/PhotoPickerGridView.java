@@ -683,8 +683,10 @@ public class PhotoPickerGridView extends GridView {
      */
     public void uploadPics() {
         if (isPhotoFulled) {
-            Toast.makeText(context, context.getResources().getString(R.string.most_choose) + max
-                    + context.getResources().getString(R.string.one_piece), Toast.LENGTH_SHORT).show();
+            Toast mToast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
+            mToast.setText(getResources().getString(R.string.most_choose) + max
+                    + context.getResources().getString(R.string.one_piece));
+            mToast.show();
         } else {
             if (activity != null && imageLoader != null)
                 ImageSelectorUtils.openPhoto(activity, imageLoader.getRequestCode(), false,

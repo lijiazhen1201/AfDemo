@@ -121,13 +121,19 @@ public class EaseVoiceRecorderView extends RelativeLayout {
                                 recorderCallback.onVoiceRecordComplete(getVoiceFilePath(), length);
                             }
                         } else if (length == 401) {
-                            Toast.makeText(context, R.string.Recording_without_permission, Toast.LENGTH_SHORT).show();
+                            Toast mToast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
+                            mToast.setText(R.string.Recording_without_permission);
+                            mToast.show();
                         } else {
-                            Toast.makeText(context, R.string.The_recording_time_is_too_short, Toast.LENGTH_SHORT).show();
+                            Toast mToast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
+                            mToast.setText(R.string.The_recording_time_is_too_short);
+                            mToast.show();
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
-                        Toast.makeText(context, R.string.recoding_fail, Toast.LENGTH_SHORT).show();
+                        Toast mToast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
+                        mToast.setText(R.string.recoding_fail);
+                        mToast.show();
                     }
                 }
                 return true;
@@ -149,7 +155,9 @@ public class EaseVoiceRecorderView extends RelativeLayout {
 
     public void startRecording() {
         if (!android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED)) {
-            Toast.makeText(context, R.string.Send_voice_need_sdcard_support, Toast.LENGTH_SHORT).show();
+            Toast mToast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
+            mToast.setText(R.string.Send_voice_need_sdcard_support);
+            mToast.show();
             return;
         }
         try {
@@ -165,7 +173,9 @@ public class EaseVoiceRecorderView extends RelativeLayout {
             if (voiceRecorder != null)
                 voiceRecorder.discardRecording();
             this.setVisibility(View.INVISIBLE);
-            Toast.makeText(context, R.string.recoding_fail, Toast.LENGTH_SHORT).show();
+            Toast mToast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
+            mToast.setText(R.string.recoding_fail);
+            mToast.show();
             return;
         }
     }

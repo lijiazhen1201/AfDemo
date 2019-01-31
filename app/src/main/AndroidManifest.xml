@@ -41,7 +41,7 @@
                 android:resource="@xml/file_provider_paths" />
         </provider>
 
-        <!-- 裁剪 -->
+        <!-- 图片裁剪 -->
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:screenOrientation="portrait"
@@ -49,17 +49,24 @@
 
         <!-- 图片多选 -->
         <activity
-            android:name="cn.appoa.wximageselector.ShowBigImageListActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="cn.appoa.wximageselector.ClipImageActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="cn.appoa.wximageselector.ImageSelectorActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBlackTheme" />
+        <!-- 图片多选预览 -->
         <activity
             android:name="cn.appoa.wximageselector.PreviewActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBlackTheme" />
+        <!-- 图片多选裁剪 -->
+        <activity
+            android:name="cn.appoa.wximageselector.ClipImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppBlackTheme" />
+        <!-- 图片大图预览 -->
+        <activity
+            android:name="cn.appoa.wximageselector.ShowBigImageListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppFullTheme" />
 
         <!-- 视频拍摄 -->
         <activity

@@ -1,7 +1,6 @@
 package com.scwang.smartrefresh.layout.fragment;
 
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.widget.RelativeLayout;
 
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -486,4 +484,10 @@ public abstract class PullToRefreshBaseFragment<V extends View> extends AfFragme
      */
     public abstract void toScrollTop();
 
+    /**
+     * 刷新
+     */
+    public void redresh(){
+        onRefresh(refreshLayout);
+    }
 }

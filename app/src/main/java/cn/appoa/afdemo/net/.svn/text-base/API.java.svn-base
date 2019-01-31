@@ -5,7 +5,7 @@ package cn.appoa.afdemo.net;
  */
 public final class API extends APIUtils {
 
-    public static final String IP = "http://192.168.1.113:8001";
+    public static final String IP = "http://122.114.74.79:8000";
 
     public static final String URL = IP + "/apiservice.asmx/";
 

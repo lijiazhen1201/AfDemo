@@ -181,8 +181,9 @@ public class ImageSelectorActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //拍照
                 if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-                    Toast.makeText(ImageSelectorActivity.this,
-                            R.string.not_found_camera_sd_card, Toast.LENGTH_SHORT).show();
+                    Toast mToast = Toast.makeText(ImageSelectorActivity.this, null, Toast.LENGTH_SHORT);
+                    mToast.setText(R.string.not_found_camera_sd_card);
+                    mToast.show();
                     return;
                 }
                 if (Build.VERSION.SDK_INT >= 24) {
@@ -243,9 +244,9 @@ public class ImageSelectorActivity extends AppCompatActivity {
         // 判断屏幕方向
         Configuration configuration = getResources().getConfiguration();
         if (configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
-            rvImage.setNumColumns(3);
+            rvImage.setNumColumns(4);
         } else {
-            rvImage.setNumColumns(5);
+            rvImage.setNumColumns(6);
         }
         mAdapter = new ImageAdapter(this, mMaxCount, isSingle);
         rvImage.setAdapter(mAdapter);

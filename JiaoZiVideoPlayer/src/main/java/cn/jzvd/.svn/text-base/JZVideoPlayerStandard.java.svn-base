@@ -1,6 +1,5 @@
 package cn.jzvd;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.BroadcastReceiver;
@@ -256,7 +255,9 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
         int i = v.getId();
         if (i == R.id.thumb) {
             if (dataSourceObjects == null || JZUtils.getCurrentFromDataSource(dataSourceObjects, currentUrlMapIndex) == null) {
-                Toast.makeText(getContext(), getResources().getString(R.string.no_url), Toast.LENGTH_SHORT).show();
+                Toast mToast = Toast.makeText(getContext(), null, Toast.LENGTH_SHORT);
+                mToast.setText(R.string.no_url);
+                mToast.show();
                 return;
             }
             if (currentState == CURRENT_STATE_NORMAL) {
@@ -325,7 +326,9 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
             clarityPopWindow.update(clarity, - offsetX, - offsetY, Math.round(layout.getMeasuredWidth() * 2), layout.getMeasuredHeight());
         } else if (i == R.id.retry_btn) {
             if (dataSourceObjects == null || JZUtils.getCurrentFromDataSource(dataSourceObjects, currentUrlMapIndex) == null) {
-                Toast.makeText(getContext(), getResources().getString(R.string.no_url), Toast.LENGTH_SHORT).show();
+                Toast mToast = Toast.makeText(getContext(), null, Toast.LENGTH_SHORT);
+                mToast.setText(R.string.no_url);
+                mToast.show();
                 return;
             }
             if (!JZUtils.getCurrentFromDataSource(dataSourceObjects, currentUrlMapIndex).toString().startsWith("file") && !
