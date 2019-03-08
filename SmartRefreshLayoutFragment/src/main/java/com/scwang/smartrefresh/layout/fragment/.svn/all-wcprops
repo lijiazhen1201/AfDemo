@@ -30,8 +30,8 @@ END
 PullToRefreshBaseFragment.java
 K 25
 svn:wc:ra_dav:version-url
-V 195
-/svn/YBD_Developer/!svn/ver/992/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/SmartRefreshLayoutFragment/src/main/java/com/scwang/smartrefresh/layout/fragment/PullToRefreshBaseFragment.java
+V 196
+/svn/YBD_Developer/!svn/ver/1015/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/SmartRefreshLayoutFragment/src/main/java/com/scwang/smartrefresh/layout/fragment/PullToRefreshBaseFragment.java
 END
 PullToRefreshAdapterViewBaseFragment.java
 K 25

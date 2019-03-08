@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
@@ -14,7 +15,6 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.widget.ImageView;
 
 import cn.appoa.aframework.R;
 
@@ -43,7 +43,11 @@ public class SuperImageView extends AppCompatImageView {
     private int pressColor;
     // radius 矩形圆角半径
     private int radius;
-    // rectangle or round, 1 is circle, 2 is rectangle 图片类型1圆形2矩形
+    private int radiusTopLeft;
+    private int radiusTopRight;
+    private int radiusBottomLeft;
+    private int radiusBottomRight;
+    // rectangle or round, 1 is circle, 2 is rectangle 图片类型1圆形2矩形3椭圆(不同圆角)
     private int shapeType;
     // 宽高比
     private float ratio;
@@ -67,11 +71,13 @@ public class SuperImageView extends AppCompatImageView {
         // init the value 初始化默认值
         borderWidth = 0;
         borderColor = 0xddffffff;
-        pressAlpha = 0x42;
         pressAlpha = 0;
-        pressColor = 0x42000000;
         pressColor = 0x00000000;
         radius = 16;
+        radiusTopLeft = 16;
+        radiusTopRight = 16;
+        radiusBottomLeft = 16;
+        radiusBottomRight = 16;
         shapeType = 0;
         ratio = 0.0f;
 
@@ -83,7 +89,11 @@ public class SuperImageView extends AppCompatImageView {
                     borderWidth);
             pressAlpha = array.getInteger(R.styleable.SuperImageView_super_image_view_press_alpha, pressAlpha);
             pressColor = array.getColor(R.styleable.SuperImageView_super_image_view_press_color, pressColor);
-            radius = array.getDimensionPixelOffset(R.styleable.SuperImageView_super_image_view_radius, radius);
+            radius = array.getDimensionPixelOffset(R.styleable.SuperImageView_super_image_view_radius, 0);
+            radiusTopLeft = array.getDimensionPixelOffset(R.styleable.SuperImageView_super_image_view_radius_top_left, 0);
+            radiusTopRight = array.getDimensionPixelOffset(R.styleable.SuperImageView_super_image_view_radius_top_right, 0);
+            radiusBottomLeft = array.getDimensionPixelOffset(R.styleable.SuperImageView_super_image_view_radius_bottom_left, 0);
+            radiusBottomRight = array.getDimensionPixelOffset(R.styleable.SuperImageView_super_image_view_radius_bottom_right, 0);
             shapeType = array.getInteger(R.styleable.SuperImageView_super_image_view_shape_type, shapeType);
             ratio = array.getFloat(R.styleable.SuperImageView_super_image_view_ratio, 0.0f);
             if (ratio <= 0.0f) {
@@ -138,8 +148,18 @@ public class SuperImageView extends AppCompatImageView {
 
     @Override
     protected void onDraw(Canvas canvas) {
-
         if (shapeType == 0) {
+            super.onDraw(canvas);
+            return;
+        }
+        if (shapeType == 3) {
+            // 创建圆角数组 圆角的半径，依次为左上角xy半径，右上角，右下角，左下角
+            float[] radii = new float[]{radiusTopLeft, radiusTopLeft, radiusTopRight, radiusTopRight,
+                    radiusBottomRight, radiusBottomRight, radiusBottomLeft, radiusBottomLeft};
+            Path path = new Path();
+            RectF rectf = new RectF(1, 1, getWidth() - 1, getHeight() - 1);
+            path.addRoundRect(rectf, radii, Path.Direction.CW);
+            canvas.clipPath(path);
             super.onDraw(canvas);
             return;
         }
@@ -155,7 +175,6 @@ public class SuperImageView extends AppCompatImageView {
         }
         Bitmap bitmap = getBitmapFromDrawable(drawable);
         drawDrawable(canvas, bitmap);
-
         drawPress(canvas);
         drawBorder(canvas);
     }
@@ -179,7 +198,7 @@ public class SuperImageView extends AppCompatImageView {
         // set flags 标志
         int saveFlags = Canvas.MATRIX_SAVE_FLAG | Canvas.CLIP_SAVE_FLAG | Canvas.HAS_ALPHA_LAYER_SAVE_FLAG
                 | Canvas.FULL_COLOR_LAYER_SAVE_FLAG | Canvas.CLIP_TO_LAYER_SAVE_FLAG;
-        canvas.saveLayer(0, 0, width, height, null, saveFlags);
+        canvas.saveLayer(0, 0, width, height, null, Canvas.ALL_SAVE_FLAG);
 
         if (shapeType == 1) {
             // 画遮罩，画出来就是一个和空间大小相匹配的圆（这里在半径上 -1 是为了不让图片超出边框）
@@ -188,6 +207,14 @@ public class SuperImageView extends AppCompatImageView {
             // 当ShapeType == 2 时 图片为圆角矩形 （这里在宽高上 -1 是为了不让图片超出边框）
             RectF rectf = new RectF(1, 1, getWidth() - 1, getHeight() - 1);
             canvas.drawRoundRect(rectf, radius + 1, radius + 1, paint);
+        } else if (shapeType == 3) {
+            // 创建圆角数组 圆角的半径，依次为左上角xy半径，右上角，右下角，左下角
+            float[] radii = new float[]{radiusTopLeft, radiusTopLeft, radiusTopRight, radiusTopRight,
+                    radiusBottomRight, radiusBottomRight, radiusBottomLeft, radiusBottomLeft};
+            Path path = new Path();
+            RectF rectf = new RectF(1, 1, getWidth() - 1, getHeight() - 1);
+            path.addRoundRect(rectf, radii, Path.Direction.CW);
+            canvas.clipPath(path);
         }
 
         paint.setXfermode(xfermode);
@@ -219,6 +246,14 @@ public class SuperImageView extends AppCompatImageView {
             // 当ShapeType == 2 时 图片为圆角矩形 （这里在宽高上 -1 是为了不让图片超出边框）
             RectF rectF = new RectF(1, 1, width - 1, height - 1);
             canvas.drawRoundRect(rectF, radius + 1, radius + 1, pressPaint);
+        } else if (shapeType == 3) {
+            // 创建圆角数组 圆角的半径，依次为左上角xy半径，右上角，右下角，左下角
+            float[] radii = new float[]{radiusTopLeft, radiusTopLeft, radiusTopRight, radiusTopRight,
+                    radiusBottomRight, radiusBottomRight, radiusBottomLeft, radiusBottomLeft};
+            Path path = new Path();
+            RectF rectF = new RectF(1, 1, width - 1, height - 1);
+            path.addRoundRect(rectF, radii, Path.Direction.CW);
+            canvas.clipPath(path);
         }
     }
 
@@ -242,6 +277,15 @@ public class SuperImageView extends AppCompatImageView {
                 RectF rectf = new RectF(borderWidth / 2, borderWidth / 2, getWidth() - borderWidth / 2,
                         getHeight() - borderWidth / 2);
                 canvas.drawRoundRect(rectf, radius, radius, paint);
+            } else if (shapeType == 3) {
+                // 创建圆角数组 圆角的半径，依次为左上角xy半径，右上角，右下角，左下角
+                float[] radii = new float[]{radiusTopLeft, radiusTopLeft, radiusTopRight, radiusTopRight,
+                        radiusBottomRight, radiusBottomRight, radiusBottomLeft, radiusBottomLeft};
+                Path path = new Path();
+                RectF rectf = new RectF(borderWidth / 2, borderWidth / 2, getWidth() - borderWidth / 2,
+                        getHeight() - borderWidth / 2);
+                path.addRoundRect(rectf, radii, Path.Direction.CW);
+                canvas.clipPath(path);
             }
         }
     }
@@ -286,7 +330,9 @@ public class SuperImageView extends AppCompatImageView {
                 invalidate();
                 break;
         }
-        return super.onTouchEvent(event);
+        // 不返回true则监听不到ACTION_UP事件
+        // return super.onTouchEvent(event);
+        return true;
     }
 
     /**
@@ -365,6 +411,63 @@ public class SuperImageView extends AppCompatImageView {
     }
 
     /**
+     * set radius 设置圆角半径
+     *
+     * @param radiusTopLeft
+     * @param radiusTopRight
+     * @param radiusBottomLeft
+     * @param radiusBottomRight
+     */
+    public void setRadius(int radiusTopLeft, int radiusTopRight, int radiusBottomLeft, int radiusBottomRight) {
+        this.radiusTopLeft = radiusTopLeft;
+        this.radiusTopRight = radiusTopRight;
+        this.radiusBottomLeft = radiusBottomLeft;
+        this.radiusBottomRight = radiusBottomRight;
+        invalidate();
+    }
+
+    /**
+     * set radius 设置圆角半径
+     *
+     * @param radius
+     */
+    public void setRadiusTopLeft(int radius) {
+        this.radiusTopLeft = radius;
+        invalidate();
+    }
+
+    /**
+     * set radius 设置圆角半径
+     *
+     * @param radius
+     */
+    public void setRadiusTopRight(int radius) {
+        this.radiusTopRight = radius;
+        invalidate();
+    }
+
+    /**
+     * set radius 设置圆角半径
+     *
+     * @param radius
+     */
+    public void setRadiusBottomLeft(int radius) {
+        this.radiusBottomLeft = radius;
+        invalidate();
+    }
+
+    /**
+     * set radius 设置圆角半径
+     *
+     * @param radius
+     */
+    public void setRadiusBottomRight(int radius) {
+        this.radiusBottomRight = radius;
+        invalidate();
+    }
+
+
+    /**
      * set shape 设置形状类型
      *
      * @param shapeType
@@ -381,6 +484,7 @@ public class SuperImageView extends AppCompatImageView {
      */
     public void setRatio(float ratio) {
         this.ratio = ratio;
+        invalidate();
     }
 
     /**

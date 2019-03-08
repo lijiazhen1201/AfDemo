@@ -487,7 +487,7 @@ public abstract class PullToRefreshBaseFragment<V extends View> extends AfFragme
     /**
      * 刷新
      */
-    public void redresh(){
+    public void refresh(){
         onRefresh(refreshLayout);
     }
 }
