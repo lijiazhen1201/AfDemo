@@ -314,9 +314,9 @@ public class SuperImageView extends AppCompatImageView {
                 invalidate();
                 break;
         }
-        // 不返回true则监听不到ACTION_UP事件
-        // return super.onTouchEvent(event);
-        return true;
+        // 不返回true则监听不到ACTION_UP事件，返回true则点击事件失效，暂时放弃按下变色
+        return super.onTouchEvent(event);
+        // return true;
     }
 
     /**
