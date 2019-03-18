@@ -62,6 +62,20 @@ public class JsonUtils {
     }
 
     /**
+     * 初始化
+     *
+     * @param code
+     * @param message
+     * @param data
+     */
+    public static void init(int type, String code, String message, String data) {
+        TYPE = type;
+        CODE = code;
+        MESSAGE = message;
+        DATA = data;
+    }
+
+    /**
      * 是否是下线code
      *
      * @param json
@@ -78,6 +92,11 @@ public class JsonUtils {
                         b = true;
                     }
                 } else if (TYPE == 2) {
+                    String state = obj.getString(STATE);
+                    if (TextUtils.equals(state, String.valueOf(ERROR_CODE))) {
+                        b = true;
+                    }
+                } else if (TYPE == 3) {
                     String state = obj.getString(STATE);
                     if (TextUtils.equals(state, String.valueOf(ERROR_CODE))) {
                         b = true;
@@ -111,6 +130,8 @@ public class JsonUtils {
                     if (TextUtils.equals(state, "true")) {
                         b = true;
                     }
+                } else if (TYPE == 3) {
+                    return obj.getBoolean(CODE);
                 }
             }
         } catch (JSONException e) {
@@ -136,6 +157,8 @@ public class JsonUtils {
                     array = obj.getJSONArray(DATA);
                 } else if (TYPE == 2) {
                     array = obj.getJSONArray(RESULT);
+                } else if (TYPE == 3) {
+                    array = obj.getJSONArray(DATA);
                 }
                 if (array != null && array.length() > 0) {
                     list = JSON.parseArray(array.toString(), t);
@@ -175,6 +198,8 @@ public class JsonUtils {
                     message = obj.getString(MESSAGE);
                 } else if (TYPE == 2) {
                     message = obj.getString(RESULT);
+                } else if (TYPE == 3) {
+                    message = obj.getString(MESSAGE);
                 }
             }
         } catch (JSONException e) {
