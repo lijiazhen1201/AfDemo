@@ -18,9 +18,9 @@ android {
 }
 
 dependencies {
-    provided fileTree(dir: 'libs', include: ['*.jar'])
-    provided files('libs/glide-3.6.1.jar')
-    provided files('libs/prdownloader-0.4.0.jar')
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly files('libs/glide-3.6.1.jar')
+    compileOnly files('libs/prdownloader-0.4.0.jar')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     api 'com.github.kui92:FFmpegLibrary:3.2'
