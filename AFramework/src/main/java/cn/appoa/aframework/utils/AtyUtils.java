@@ -39,6 +39,7 @@ import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -1024,6 +1025,23 @@ public class AtyUtils {
             params.rightMargin = right;
             child.setLayoutParams(params);
             child.invalidate();
+        }
+    }
+
+    /**
+     * 取消WebView长按事件
+     *
+     * @param webView
+     */
+    public static void cancelLongClick(WebView webView) {
+        if (webView != null) {
+            webView.setLongClickable(true);
+            webView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    return true;
+                }
+            });
         }
     }
 
