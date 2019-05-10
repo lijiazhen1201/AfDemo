@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="PhotoPickerGridView">
+        <attr name="maxCount" format="integer" />
+        <attr name="isUploadByGridView" format="boolean" />
+        <attr name="defaultPhotoRes" format="integer" />
+        <attr name="isToBase64" format="boolean" />
+        <attr name="isCamera" format="boolean" />
+        <attr name="isVideo" format="boolean" />
+        <attr name="videoDuration" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="VideoRangeBar">
+        <attr name="tickCount" format="integer" />
+        <attr name="tickHeight" format="dimension" />
+        <attr name="barWeight" format="dimension" />
+        <attr name="barColor" format="reference|color" />
+        <attr name="connectingLineWeight" format="dimension" />
+        <attr name="connectingLineColor" format="reference|color" />
+        <attr name="thumbRadius" format="dimension" />
+        <attr name="thumbImageNormal" format="reference" />
+        <attr name="thumbImagePressed" format="reference" />
+        <attr name="thumbColorNormal" format="reference|color"/>
+        <attr name="thumbColorPressed" format="reference|color"/>
+    </declare-styleable>
+
+</resources>

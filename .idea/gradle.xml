@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-4.1" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AFramework" />
+            <option value="$PROJECT_DIR$/AndroidImageCropper" />
+            <option value="$PROJECT_DIR$/JiaoZiVideoPlayer" />
+            <option value="$PROJECT_DIR$/SmartRefreshLayoutFragment" />
+            <option value="$PROJECT_DIR$/WxCameraView" />
+            <option value="$PROJECT_DIR$/WxImageSelector" />
+            <option value="$PROJECT_DIR$/WxVoiceSelector" />
+            <option value="$PROJECT_DIR$/app" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

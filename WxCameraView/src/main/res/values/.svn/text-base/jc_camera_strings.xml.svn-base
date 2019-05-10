@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="recording_too_short">录制时间过短</string>
-    <string name="open_camera_failed">打开相机失败</string>
-    <string name="no_recording_permission">没有录取权限</string>
-    <string name="setting_open_permission">请到设置-权限管理中开启</string>
-</resources>

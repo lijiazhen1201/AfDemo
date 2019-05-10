@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/height_normal"
+        android:layout_marginRight="@dimen/height_normal"
+        android:background="@drawable/shape_solid_white_5dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/upload_by_camera"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal">
+
+            <TextView
+                style="@style/SimpleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/padding_big"
+                android:paddingRight="@dimen/padding_big"
+                android:text="拍摄" />
+
+            <TextView
+                style="@style/SimpleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/padding_big"
+                android:paddingRight="@dimen/padding_big"
+                android:text="照片或视频"
+                android:textColor="@color/colorTextLighterGray"
+                android:textSize="@dimen/text_little" />
+
+        </RelativeLayout>
+
+        <View style="@style/HorizontalLine" />
+
+        <RelativeLayout
+            android:id="@+id/upload_by_album"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal">
+
+            <TextView
+                style="@style/SimpleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/padding_big"
+                android:paddingRight="@dimen/padding_big"
+                android:text="从相册选择" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBgLighterGray"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_big"
+            android:singleLine="false"
+            android:text="说明文档：\nhttps://www.showdoc.cc/349304422964577?page_id=2021453226130542" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_big"
+            android:singleLine="false"
+            android:text="默认\n普通的ImageView" />
+
+        <cn.appoa.aframework.widget.image.SuperImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/height_big"
+            android:layout_height="@dimen/height_big"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SimpleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_big"
+                    android:text="圆形" />
+
+                <cn.appoa.aframework.widget.image.SuperImageView
+                    android:layout_width="@dimen/height_big"
+                    android:layout_height="@dimen/height_big"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    app:super_image_view_shape_type="round" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SimpleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_big"
+                    android:text="圆形+边框" />
+
+                <cn.appoa.aframework.widget.image.SuperImageView
+                    android:layout_width="@dimen/height_big"
+                    android:layout_height="@dimen/height_big"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    app:super_image_view_border_color="@color/colorBlack"
+                    app:super_image_view_border_width="2dp"
+                    app:super_image_view_shape_type="round" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SimpleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_big"
+                    android:text="矩形带圆角" />
+
+                <cn.appoa.aframework.widget.image.SuperImageView
+                    android:layout_width="@dimen/height_big"
+                    android:layout_height="@dimen/height_big"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    app:super_image_view_radius="10dp"
+                    app:super_image_view_shape_type="rectangle" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SimpleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_big"
+                    android:text="矩形带圆角+边框" />
+
+                <cn.appoa.aframework.widget.image.SuperImageView
+                    android:layout_width="@dimen/height_big"
+                    android:layout_height="@dimen/height_big"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    app:super_image_view_border_color="@color/colorBlack"
+                    app:super_image_view_border_width="2dp"
+                    app:super_image_view_radius="10dp"
+                    app:super_image_view_shape_type="rectangle" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SimpleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_big"
+                    android:singleLine="false"
+                    android:text="矩形带不同圆角\n" />
+
+                <cn.appoa.aframework.widget.image.SuperImageView
+                    android:layout_width="@dimen/height_big"
+                    android:layout_height="@dimen/height_big"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    app:super_image_view_radius_bottom_left="10dp"
+                    app:super_image_view_radius_bottom_right="20dp"
+                    app:super_image_view_radius_top_left="0dp"
+                    app:super_image_view_radius_top_right="5dp"
+                    app:super_image_view_shape_type="ellipse" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SimpleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_big"
+                    android:singleLine="false"
+                    android:text="矩形带不同圆角\n(此模式下无法加边框)" />
+
+                <cn.appoa.aframework.widget.image.SuperImageView
+                    android:layout_width="@dimen/height_big"
+                    android:layout_height="@dimen/height_big"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    app:super_image_view_border_color="@color/colorBlack"
+                    app:super_image_view_border_width="2dp"
+                    app:super_image_view_radius_bottom_left="10dp"
+                    app:super_image_view_radius_bottom_right="20dp"
+                    app:super_image_view_radius_top_left="0dp"
+                    app:super_image_view_radius_top_right="5dp"
+                    app:super_image_view_shape_type="ellipse" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SimpleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_big"
+                    android:singleLine="false"
+                    android:text="自定义宽高比\n1:2" />
+
+                <cn.appoa.aframework.widget.image.SuperImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_big"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    app:super_image_view_ratio_height="2"
+                    app:super_image_view_ratio_width="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SimpleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_big"
+                    android:singleLine="false"
+                    android:text="自定义宽高比\n2:1" />
+
+                <cn.appoa.aframework.widget.image.SuperImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_big"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher"
+                    app:super_image_view_ratio_height="1"
+                    app:super_image_view_ratio_width="2" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

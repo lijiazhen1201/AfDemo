@@ -1,96 +1,0 @@
-10
-
-dir
-862
-https://192.168.1.200:8443/svn/YBD_Developer/YBDAndroidFramework/AFramework/AndroidStudio/AfDemo/app/src/main/java/cn/appoa/afdemo
-https://192.168.1.200:8443/svn/YBD_Developer
-
-
-
-2018-12-10T02:05:25.154652Z
-862
-lijiazhen
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-1295e4b9-a68d-c440-8850-8f6c68ed46fa
-
-
-
-
-
-
-0
-
-MainActivity.java
-file
-953
-
-
-
-2019-01-19T12:43:37.901000Z
-cdfe67fc3880d32455033c4c9b28d9bb
-2019-01-19T13:26:09.788768Z
-953
-lijiazhen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2840
-
-activity
-dir
-
-adapter
-dir
-
-app
-dir
-
-base
-dir
-
-bean
-dir
-
-dialog
-dir
-
-fragment
-dir
-
-net
-dir
-
-widget
-dir
-
