@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "cn.appoa.afdemo"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation project(':SmartRefreshLayoutFragment')//下拉刷新封装
+    implementation project(':AndroidImageCropper')//图片裁剪
+    implementation project(':JiaoZiVideoPlayer')//视频播放
+    implementation project(':WxCameraView')//拍摄视频，选择本地视频
+    implementation project(':WxImageSelector')//图片多选
+    implementation project(':WxVoiceSelector')//语音录制
+    implementation 'com.youth.banner:banner:1.4.10'//轮播图
+    implementation ('com.alibaba.android:ultraviewpager:1.0.7.7@aar') {
+        transitive = true
+    }//轮播图
+    //implementation 'com.necer.ncalendar:ncalendar:3.4.5'//日历
+    //implementation 'com.github.huangyanbin:SmartTable:2.2.0'//表格
+    //implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'//曲线图
+    //implementation 'com.teaanddogdog:mpandroidchartutil:1.0.3'//饼状图工具
+}

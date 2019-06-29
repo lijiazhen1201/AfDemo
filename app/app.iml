@@ -118,13 +118,16 @@
     <orderEntry type="library" name="com.scwang.smartrefresh:SmartRefreshLayout-1.1.0-alpha-18" level="project" />
     <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AFramework\libs\glide-3.6.1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:appcompat-v7-26.1.0" level="project" />
+    <orderEntry type="library" name="com.squareup.okhttp3:okhttp:3.8.1@jar" level="project" />
     <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AFramework\libs\org.apache.http.legacy.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.github.CymChad:BaseRecyclerViewAdapterHelper-2.9.44" level="project" />
     <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AndroidImageCropper\libs\exifinterface-25.3.0.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-annotations:26.1.0@jar" level="project" />
     <orderEntry type="library" name="com.github.kui92:FFmpegLibrary-3.2" level="project" />
+    <orderEntry type="library" name="com.lzy.net:okgo-3.0.4" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-utils-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-ui-26.1.0" level="project" />
+    <orderEntry type="library" name="com.squareup.okio:okio:1.13.0@jar" level="project" />
     <orderEntry type="library" name="com.alibaba.android:ultraviewpager-1.0.7.7" level="project" />
     <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AFramework\libs\zm-imageloader-1.0.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-compat-26.1.0" level="project" />
@@ -137,6 +140,7 @@
     <orderEntry type="library" name="com.android.support:animated-vector-drawable-26.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support:multidex-instrumentation-1.0.2" level="project" />
     <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AFramework\libs\gson-2.8.5.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AFramework\libs\jsoup-1.12.1.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AFramework\libs\com.mcxiaoke.volley-library-1.0.19.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:design-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:transition-26.1.0" level="project" />
