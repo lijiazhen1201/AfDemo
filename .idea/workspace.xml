@@ -15,6 +15,29 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartRefreshLayoutFragment/SmartRefreshLayoutFragment.iml" afterPath="$PROJECT_DIR$/SmartRefreshLayoutFragment/SmartRefreshLayoutFragment.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
     </list>
+    <ignored path=".gradle/" />
+    <ignored path=".idea/" />
+    <ignored path="build/" />
+    <ignored path="app/build/" />
+    <ignored path="AFramework/build/" />
+    <ignored path="AndroidImageCropper/build/" />
+    <ignored path="JiaoZiVideoPlayer/build/" />
+    <ignored path="SmartRefreshLayoutFragment/build/" />
+    <ignored path="WxCameraView/build/" />
+    <ignored path="WxImageSelector/build/" />
+    <ignored path="WxVoiceSelector/build/" />
+    <ignored path="gradle.properties" />
+    <ignored path="local.properties" />
+    <ignored path="AfDemo.iml" />
+    <ignored path="app/app.iml" />
+    <ignored path="AFramework/AFramework.iml" />
+    <ignored path="AndroidImageCropper/AndroidImageCropper.iml" />
+    <ignored path="JiaoZiVideoPlayer/JiaoZiVideoPlayer.iml" />
+    <ignored path="SmartRefreshLayoutFragment/SmartRefreshLayoutFragment.iml" />
+    <ignored path="WxCameraView/WxCameraView.iml" />
+    <ignored path="WxImageSelector/WxImageSelector.iml" />
+    <ignored path="WxVoiceSelector/WxVoiceSelector.iml" />
+    <ignored mask="*.iml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,8 +63,8 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AFramework/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="35" column="48" lean-forward="true" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+            <state relative-caret-position="486">
+              <caret line="29" column="60" lean-forward="false" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -52,8 +75,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile_vertical" />
         <option value="Class" />
+        <option value="layoutResourceFile_vertical" />
       </list>
     </option>
   </component>
@@ -76,12 +99,19 @@
       <find>tableHeight</find>
       <find>isNotifying</find>
       <find>parser</find>
+      <find>initAttributeSet</find>
+      <find>initTitle</find>
+      <find>shapeType</find>
+      <find>findViewById</find>
     </findStrings>
+    <replaceStrings>
+      <replace>view.findViewById</replace>
+    </replaceStrings>
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="D:\FreeOfInstallation\android-studio-3.0.1\gradle\gradle-4.1" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\Administrator\.gradle\wrapper\dists\gradle-4.1-all\bzyivzo6n839fup2jbap0tjew\gradle-4.1" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -7154,9 +7184,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/activity/UploadVideoActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_upload_video.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/activity/SuperImageViewActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_super_image_view.xml" />
         <option value="$PROJECT_DIR$/JiaoZiVideoPlayer/build.gradle" />
@@ -7172,13 +7199,25 @@
         <option value="$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/widget/MySmartTable.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_refresh_scrollview.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/fragment/SmartRefreshScrollViewFragment.java" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/utils/AtyUtils.java" />
-        <option value="$PROJECT_DIR$/AFramework/build.gradle" />
         <option value="$PROJECT_DIR$/AFramework/src/main/res/values/af_ids.xml" />
-        <option value="$PROJECT_DIR$/AFramework/src/main/res/values/default_title_bar_attrs.xml" />
-        <option value="$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/titlebar/DefaultTitlebar.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/activity/CustomWidgetActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/AFramework/src/main/res/values/default_title_bar_attrs.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_upload_video.xml" />
+        <option value="$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/titlebar/DefaultTitlebar.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/MainActivity.java" />
+        <option value="$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/bean/AppVersion.java" />
+        <option value="$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/DefaultUploadImgDialog.java" />
+        <option value="$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/DefaultUploadVideoDialog.java" />
+        <option value="$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/UpgradeAppDialog.java" />
+        <option value="$PROJECT_DIR$/AFramework/build.gradle" />
+        <option value="$PROJECT_DIR$/AFramework/src/main/res/values/af_strings.xml" />
+        <option value="$PROJECT_DIR$/AFramework/src/main/res/layout/dialog_map_navigation.xml" />
+        <option value="$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/MapNavigationDialog.java" />
+        <option value="$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/utils/MapUtils.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/activity/UploadAvatarActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
       </list>
     </option>
   </component>
@@ -7206,7 +7245,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -7221,8 +7260,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -7245,6 +7284,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AfDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AfDemo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="AFramework" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -7254,14 +7307,17 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
     <property name="android.sdk.path" value="D:/MyDocuments/AndroidSDK/studio/android-sdk-windows" />
     <property name="android.project.structure.last.selected" value="SDK Location" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/WxVoiceSelector/WxVoiceSelector.iml" />
     <property name="device.picker.selection" value="cc6ec214" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.appoa.aframework.utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\MyAndroidSpace\studio\AfDemo\AFramework\libs" />
     </key>
@@ -7349,7 +7405,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1561776711418" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1562753599670" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -7397,7 +7453,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1561776711418" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1562753599670" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -7580,7 +7636,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1561776711419" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1562753599672" />
       </method>
     </configuration>
     <list size="1">
@@ -7726,12 +7782,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561775488344</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009">
+      <created>1562744549378</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1562744549378</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -7741,6 +7803,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2889957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -7749,7 +7812,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.50427353" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2761752" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2761752" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -7762,7 +7825,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2889957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -7787,255 +7849,171 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WxImageSelector/src/main/java/cn/appoa/wximageselector/view/PhotoPickerGridView.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/constant/AfConstant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-651">
-          <caret line="253" column="13" lean-forward="true" selection-start-line="246" selection-start-column="11" selection-end-line="253" selection-end-column="13" />
+        <state relative-caret-position="225">
+          <caret line="19" column="63" lean-forward="true" selection-start-line="19" selection-start-column="63" selection-end-line="19" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SmartRefreshLayoutFragment/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="12" lean-forward="true" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmartRefreshLayoutFragment/src/main/res/layout/fragment_pull_to_refresh_coordinator_layout.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="43" column="38" lean-forward="true" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmartRefreshLayoutFragment/src/main/java/com/scwang/smartrefresh/layout/utils/SnackbarUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="122" column="13" lean-forward="false" selection-start-line="122" selection-start-column="13" selection-end-line="122" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmartRefreshLayoutFragment/src/main/java/com/scwang/smartrefresh/layout/utils/SmartRefreshHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/MyDocuments/AndroidSDK/studio/android-sdk-windows/sources/android-26/android/app/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="5794" column="19" lean-forward="false" selection-start-line="5794" selection-start-column="19" selection-end-line="5794" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/activity/AfActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5732">
-          <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/activity/AfImageActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="65" column="56" lean-forward="true" selection-start-line="65" selection-start-column="56" selection-end-line="65" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/adapter/ZmHolder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5271">
-          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/bean/AppVersion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/MyDocuments/AndroidSDK/studio/android-sdk-windows/sources/android-26/java/text/SimpleDateFormat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="595" column="42" lean-forward="false" selection-start-line="595" selection-start-column="35" selection-end-line="595" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/utils/SpannableStringUtils.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/view/IBaseView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="48" column="26" lean-forward="true" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/app/AfApplication.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/view/ILoginView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="63" column="26" lean-forward="true" selection-start-line="63" selection-start-column="26" selection-end-line="63" selection-end-column="26" />
+        <state relative-caret-position="252">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/base/BaseRecyclerFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/fragment/SmartRefreshRecyclerViewFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/fragment/PullToRefreshSmartTableFragment.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/fragment/SmartRefreshListViewFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="25" column="70" lean-forward="false" selection-start-line="25" selection-start-column="70" selection-end-line="25" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmartRefreshLayoutFragment/src/main/java/com/scwang/smartrefresh/layout/fragment/PullToRefreshListViewFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="12" column="83" lean-forward="false" selection-start-line="12" selection-start-column="83" selection-end-line="12" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmartRefreshLayoutFragment/src/main/java/com/scwang/smartrefresh/layout/fragment/PullToRefreshAdapterViewBaseFragment.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/view/IPullToRefreshView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/main_data.json" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/bean/MainData.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/format/grid/IGridFormat.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/view/IVerifyCodeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/view/IVersionView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="28" />
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/style/LineStyle.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/presenter/BasePresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="23" column="11" lean-forward="false" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        <state relative-caret-position="84">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/format/grid/BaseAbstractGridFormat.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/presenter/PullToRefreshVolleyPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+        <state relative-caret-position="693">
+          <caret line="52" column="1" lean-forward="true" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/core/TableConfig.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/presenter/VersionPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="376" column="31" lean-forward="false" selection-start-line="376" selection-start-column="23" selection-end-line="376" selection-end-column="31" />
+        <state relative-caret-position="414">
+          <caret line="36" column="33" lean-forward="true" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/column/ColumnInfo.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/presenter/PullToRefreshPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="24" />
+        <state relative-caret-position="84">
+          <caret line="7" column="22" lean-forward="false" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/format/title/TitleDrawFormat.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/AfDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-440">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="84">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/format/title/ITitleDrawFormat.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/DatePickerDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        <state relative-caret-position="273">
+          <caret line="31" column="57" lean-forward="false" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/table/TableData.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/DefaultHintDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="73" column="40" lean-forward="false" selection-start-line="73" selection-start-column="40" selection-end-line="73" selection-end-column="40" />
+        <state relative-caret-position="294">
+          <caret line="23" column="35" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/format/title/ImageResTitleDrawFormat.java">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/DefaultLoadingDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="20" column="66" lean-forward="false" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="66" />
+        <state relative-caret-position="-195">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/matrix/MatrixHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3654">
-          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/column/Column.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/data/TableInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/widget/MySmartTable.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.huangyanbin/SmartTable/2.2.0/e90cca16b97ab4712043e951f13aef06d2407881/SmartTable-2.2.0-sources.jar!/com/bin/david/form/core/SmartTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="47" column="34" lean-forward="true" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_refresh_scrollview.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_upgrade_01.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        <state relative-caret-position="246">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/fragment/SmartRefreshScrollViewFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/dialog/UpgradeDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="125" column="45" lean-forward="true" selection-start-line="125" selection-start-column="45" selection-end-line="125" selection-end-column="45" />
-          <folding>
-            <element signature="e#1410#1411#0" expanded="true" />
-            <element signature="e#1436#1437#0" expanded="true" />
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#1511#1512#0" expanded="true" />
-            <element signature="e#3657#3658#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.iml">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/BaseDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/res/layout/dialog_upgrade_app.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/update-app-3.5.2.aar/fe15d9c177d6cf66025cf3a27717bf4b/res/drawable/lib_update_app_info_bg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/update-app-3.5.2.aar/fe15d9c177d6cf66025cf3a27717bf4b/res/mipmap-xhdpi-v4/lib_update_app_update_icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/update-app-3.5.2.aar/fe15d9c177d6cf66025cf3a27717bf4b/res/mipmap-xhdpi-v4/lib_update_app_close.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/update-app-3.5.2.aar/fe15d9c177d6cf66025cf3a27717bf4b/res/mipmap-hdpi-v4/lib_update_app_top_bg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/update-app-3.5.2.aar/fe15d9c177d6cf66025cf3a27717bf4b/res/values/values.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -8043,108 +8021,253 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/view/IVersionView.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.qianwen/update-app/3.5.2/177ef36b46ef2185a5b03ef9dbc9b7580cba256b/update-app-3.5.2-sources.jar!/com/vector/update_app/utils/AppUpdateUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="-1134">
+          <caret line="36" column="13" lean-forward="false" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/view/IVerifyCodeView.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.qianwen/update-app/3.5.2/177ef36b46ef2185a5b03ef9dbc9b7580cba256b/update-app-3.5.2-sources.jar!/com/vector/update_app/HttpManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="-1007">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/view/IPullToRefreshView.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.qianwen/update-app/3.5.2/177ef36b46ef2185a5b03ef9dbc9b7580cba256b/update-app-3.5.2-sources.jar!/com/vector/update_app/UpdateCallback.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="147">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/view/ILoginView.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.qianwen/update-app/3.5.2/177ef36b46ef2185a5b03ef9dbc9b7580cba256b/update-app-3.5.2-sources.jar!/com/vector/update_app/utils/Md5Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.qianwen/update-app/3.5.2/177ef36b46ef2185a5b03ef9dbc9b7580cba256b/update-app-3.5.2-sources.jar!/com/vector/update_app/service/DownloadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.qianwen/update-app/3.5.2/177ef36b46ef2185a5b03ef9dbc9b7580cba256b/update-app-3.5.2-sources.jar!/com/vector/update_app/UpdateAppBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1428">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/utils/JsonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/view/IBaseView.java">
+    <entry file="file://D:/MyDocuments/AndroidSDK/studio/android-sdk-windows/sources/android-26/java/lang/StringBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        <state relative-caret-position="288">
+          <caret line="225" column="25" lean-forward="false" selection-start-line="225" selection-start-column="25" selection-end-line="225" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/utils/AtyUtils.java">
+    <entry file="file://D:/MyDocuments/AndroidSDK/studio/android-sdk-windows/sources/android-26/android/content/Intent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="658" column="31" lean-forward="false" selection-start-line="658" selection-start-column="31" selection-end-line="658" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/res/values/af_strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/res/layout/dialog_default_upload_img.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/res/layout/dialog_map_navigation.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding>
+            <element signature="e#297#317#0" expanded="true" />
+            <element signature="e#714#736#0" expanded="true" />
+            <element signature="e#769#789#0" expanded="true" />
+            <element signature="e#823#843#0" expanded="true" />
+            <element signature="e#869#888#0" expanded="true" />
+            <element signature="e#1126#1148#0" expanded="true" />
+            <element signature="e#1181#1201#0" expanded="true" />
+            <element signature="e#1235#1255#0" expanded="true" />
+            <element signature="e#1281#1300#0" expanded="true" />
+            <element signature="e#1535#1557#0" expanded="true" />
+            <element signature="e#1590#1610#0" expanded="true" />
+            <element signature="e#1644#1664#0" expanded="true" />
+            <element signature="e#1690#1706#0" expanded="true" />
+            <element signature="e#1901#1923#0" expanded="true" />
+            <element signature="e#1957#1977#0" expanded="true" />
+            <element signature="e#2067#2087#0" expanded="true" />
+            <element signature="e#2117#2137#0" expanded="true" />
+            <element signature="e#2159#2182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/utils/MapUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7392">
+          <caret line="367" column="5" lean-forward="true" selection-start-line="367" selection-start-column="5" selection-end-line="367" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/activity/UploadAvatarActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="91" column="43" lean-forward="true" selection-start-line="91" selection-start-column="43" selection-end-line="91" selection-end-column="43" />
+          <folding>
+            <element signature="e#2973#3233#0" expanded="false" />
+            <element signature="e#3232#3233#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/UpgradeAppDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/bean/AppVersion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/DefaultUploadImgDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="69" column="35" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/DefaultUploadVideoDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/StringWheelDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69">
+          <caret line="50" column="49" lean-forward="true" selection-start-line="50" selection-start-column="49" selection-end-line="50" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/fragment/AfFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/fragment/TabLayoutFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/res/drawable/shape_gradient_theme_darker_lighter_0dp.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="1032" column="18" lean-forward="true" selection-start-line="1032" selection-start-column="18" selection-end-line="1032" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="34" column="56" lean-forward="true" selection-start-line="34" selection-start-column="56" selection-end-line="34" selection-end-column="56" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/res/values/af_ids.xml">
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/dialog/MapNavigationDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+        <state relative-caret-position="435">
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AFramework/src/main/res/layout/dialog_date_picker.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/res/values/default_title_bar_attrs.xml">
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="53" lean-forward="false" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/activity/CustomWidgetActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/cn/appoa/afdemo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        <state relative-caret-position="525">
+          <caret line="65" column="6" lean-forward="false" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AFramework/src/main/java/cn/appoa/aframework/titlebar/DefaultTitlebar.java">
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="583" column="9" lean-forward="true" selection-start-line="583" selection-start-column="9" selection-end-line="583" selection-end-column="9" />
-          <folding>
-            <element signature="e#17679#17711#0" expanded="true" />
-            <element signature="e#18015#18047#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="477">
+          <caret line="32" column="52" lean-forward="true" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AFramework/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="35" column="48" lean-forward="true" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+        <state relative-caret-position="486">
+          <caret line="29" column="60" lean-forward="false" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
           <folding />
         </state>
       </provider>

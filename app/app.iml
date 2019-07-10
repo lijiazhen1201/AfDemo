@@ -117,6 +117,7 @@
     <orderEntry type="library" name="android.arch.lifecycle:runtime-1.0.0" level="project" />
     <orderEntry type="library" name="com.scwang.smartrefresh:SmartRefreshLayout-1.1.0-alpha-18" level="project" />
     <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AFramework\libs\glide-3.6.1.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="com.qianwen:update-app-3.5.2" level="project" />
     <orderEntry type="library" name="com.android.support:appcompat-v7-26.1.0" level="project" />
     <orderEntry type="library" name="com.squareup.okhttp3:okhttp:3.8.1@jar" level="project" />
     <orderEntry type="library" name="__local_aars__:D.\MyAndroidSpace\studio\AfDemo\AFramework\libs\org.apache.http.legacy.jar:unspecified@jar" level="project" />
