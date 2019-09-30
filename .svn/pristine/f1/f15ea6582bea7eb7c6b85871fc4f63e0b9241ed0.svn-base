@@ -1,0 +1,77 @@
+package cn.appoa.afdemo.activity;
+
+import android.os.Bundle;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+
+import cn.appoa.afdemo.R;
+import cn.appoa.afdemo.base.BaseActivity;
+import cn.appoa.afdemo.net.API;
+import cn.appoa.aframework.app.AfApplication;
+import cn.appoa.aframework.titlebar.BaseTitlebar;
+import cn.appoa.aframework.titlebar.DefaultTitlebar;
+
+
+public class CenterSquareImageViewActivity extends BaseActivity
+        implements CompoundButton.OnCheckedChangeListener {
+
+    @Override
+    public BaseTitlebar initTitlebar() {
+        return new DefaultTitlebar.Builder(this).setTitle("CenterSquareImageView")
+                .setBackImage(R.drawable.back_white).create();
+    }
+
+    @Override
+    public void initContent(Bundle savedInstanceState) {
+        setContent(R.layout.activity_center_square_image_view);
+    }
+
+    private ImageView iv_image_normal;
+    private cn.appoa.aframework.widget.image.CenterSquareImageView iv_image_center;
+    private RadioButton btn_horizontal;
+    private RadioButton btn_vertical;
+
+    @Override
+    public void initView() {
+        super.initView();
+        iv_image_normal = (ImageView) findViewById(R.id.iv_image_normal);
+        iv_image_center = (cn.appoa.aframework.widget.image.CenterSquareImageView) findViewById(R.id.iv_image_center);
+        btn_horizontal = (RadioButton) findViewById(R.id.btn_horizontal);
+        btn_vertical = (RadioButton) findViewById(R.id.btn_vertical);
+        //事件监听
+        btn_horizontal.setOnCheckedChangeListener(this);
+        btn_vertical.setOnCheckedChangeListener(this);
+    }
+
+    @Override
+    public void initData() {
+        btn_horizontal.setChecked(true);
+    }
+
+    private String url1 = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568974352405&di=01f553ef38c57f695d5e7ff22a3467b1&imgtype=0&src=http%3A%2F%2Fn1-q.mafengwo.net%2Fs9%2FM00%2FFF%2FA5%2FwKgBs1cLAHOANGbTAAUTwSqz_WU30.jpeg";
+    private String url2 = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568974288983&di=96561f2ce662dc2c9169983e72b6b0e0&imgtype=0&src=http%3A%2F%2Fimg1.ph.126.net%2FADJutIB-o6Iqp6F0ej2g-w%3D%3D%2F6597561248355445372.jpg";
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if (isChecked) {
+            int type = 0;
+            switch (buttonView.getId()) {
+                case R.id.btn_horizontal:
+                    type = 1;
+                    break;
+                case R.id.btn_vertical:
+                    type = 2;
+                    break;
+            }
+            if (type == 1) {
+                AfApplication.imageLoader.loadImage(API.IMAGE_URL + url1, iv_image_normal);
+                AfApplication.imageLoader.loadImage(API.IMAGE_URL + url1, iv_image_center);
+            } else if (type == 2) {
+                AfApplication.imageLoader.loadImage(API.IMAGE_URL + url2, iv_image_normal);
+                AfApplication.imageLoader.loadImage(API.IMAGE_URL + url2, iv_image_center);
+            }
+        }
+    }
+
+}

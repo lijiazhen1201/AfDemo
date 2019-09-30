@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_big"
+            android:singleLine="false"
+            android:text="框架：\nhttps://github.com/Jungerr/GridPasswordView" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/padding_big"
+            android:layout_marginTop="@dimen/height_large"
+            android:text="设置支付密码" />
+
+        <cn.appoa.aframework.widget.gridpassword.GridPasswordLayout6
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_normal"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/padding_big">
+
+            <cn.appoa.aframework.widget.gridpassword.GridPasswordView
+                android:id="@+id/mGridPasswordView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </cn.appoa.aframework.widget.gridpassword.GridPasswordLayout6>
+
+    </LinearLayout>
+
+</ScrollView>

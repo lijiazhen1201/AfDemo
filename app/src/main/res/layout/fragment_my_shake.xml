@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorShakeBg">
+
+    <ImageView
+        android:id="@+id/shakeBg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/shakehideimg_man"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:id="@+id/shake_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/shakeImgUp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_huge"
+            android:background="@color/colorShakeBg"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/shake_logo_up" />
+
+            <View
+                android:id="@+id/shakeLineUp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_small"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorShakeLineBg"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/shakeImgDown"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_huge"
+            android:background="@color/colorShakeBg"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/shake_logo_down" />
+
+            <View
+                android:id="@+id/shakeLineDown"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/padding_small"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorShakeLineBg"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/shake_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/shake_content"
+        android:layout_marginBottom="@dimen/padding_huge"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="@dimen/padding_large"
+            android:layout_height="@dimen/padding_large"
+            android:layout_margin="@dimen/padding_normal" />
+
+        <TextView
+            android:id="@+id/shakeText"
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="正在搜寻同一时刻摇晃手机的人"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+
+</RelativeLayout>

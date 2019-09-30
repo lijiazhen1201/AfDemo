@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/SimpleTextView"
+    android:layout_margin="@dimen/padding_small"
+    android:background="@drawable/selector_goods_spec_bg"
+    android:minHeight="@dimen/height_little"
+    android:minWidth="@dimen/height_big"
+    android:paddingBottom="@dimen/padding_small"
+    android:paddingLeft="@dimen/padding_big"
+    android:paddingRight="@dimen/padding_big"
+    android:paddingTop="@dimen/padding_small"
+    android:text="规格"
+    android:textColor="@drawable/selector_goods_spec_text_color" />

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/SimpleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_big"
+        android:singleLine="false"
+        android:text="NoScrollListView" />
+
+    <cn.appoa.aframework.widget.noscroll.NoScrollListView
+        android:id="@+id/mListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/colorDivider"
+        android:dividerHeight="@dimen/height_divider"
+        android:listSelector="@android:color/transparent" />
+
+    <TextView
+        style="@style/SimpleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_big"
+        android:singleLine="false"
+        android:text="NoScrollGridView" />
+
+    <cn.appoa.aframework.widget.noscroll.NoScrollGridView
+        android:id="@+id/mGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="@dimen/padding_small"
+        android:listSelector="@color/colorTransparent"
+        android:numColumns="3"
+        android:verticalSpacing="@dimen/padding_small" />
+
+    <TextView
+        style="@style/SimpleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_big"
+        android:singleLine="false"
+        android:text="NoScrollImageGridView" />
+
+    <cn.appoa.aframework.widget.noscroll.NoScrollImageGridView
+        android:id="@+id/mImageGridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="@dimen/padding_small"
+        android:listSelector="@color/colorTransparent"
+        android:numColumns="3"
+        android:verticalSpacing="@dimen/padding_small" />
+
+    <TextView
+        style="@style/SimpleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_big"
+        android:singleLine="false"
+        android:text="NoScrollRecyclerView" />
+
+    <cn.appoa.aframework.widget.noscroll.NoScrollRecyclerView
+        android:id="@+id/mRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

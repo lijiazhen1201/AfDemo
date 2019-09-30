@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBgLighterGray"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_big"
+            android:singleLine="false"
+            android:text="框架：\nhttps://github.com/Bakumon/NumberAnimTextView" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_big"
+            android:text="1、设置前缀" />
+
+        <cn.appoa.aframework.widget.text.NumberAnimTextView
+            android:id="@+id/tv_number_anim1"
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_big" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_big"
+            android:text="2、设置后缀" />
+
+        <cn.appoa.aframework.widget.text.NumberAnimTextView
+            android:id="@+id/tv_number_anim2"
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_big" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_big"
+            android:text="3、设置数字增加范围" />
+
+        <cn.appoa.aframework.widget.text.NumberAnimTextView
+            android:id="@+id/tv_number_anim3"
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_big" />
+
+    </LinearLayout>
+
+</ScrollView>

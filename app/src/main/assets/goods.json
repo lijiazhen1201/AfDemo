@@ -1,0 +1,223 @@
+{
+  "ID": 5,
+  "Pic": "",
+  "Name": "阿迪达斯（Adidas）男士沐浴露男士活力香氛沐浴露250ml（多款香型选择） 激情250ml(薄荷味)",
+  "Price": 1.00,
+  "SpecItemList": [{
+    "ID": 7,
+    "Name": "尺码",
+    "ChildList": [{
+      "ID": 8,
+      "Name": "L"
+    }, {
+      "ID": 9,
+      "Name": "XL"
+    }, {
+      "ID": 10,
+      "Name": "XXL"
+    }, {
+      "ID": 11,
+      "Name": "XXXL"
+    }]
+  }, {
+    "ID": 1,
+    "Name": "颜色",
+    "ChildList": [{
+      "ID": 2,
+      "Name": "皓月银"
+    }, {
+      "ID": 3,
+      "Name": "白色"
+    }, {
+      "ID": 4,
+      "Name": "玫瑰金"
+    }, {
+      "ID": 5,
+      "Name": "红色"
+    }, {
+      "ID": 6,
+      "Name": "蓝色"
+    }]
+  }],
+  "SpecTypeList": [{
+    "ID": 1,
+    "GoodsID": 5,
+    "SpecOne": 8,
+    "SpecTwo": 2,
+    "PropertiesName": "L 皓月银",
+    "Pic": "",
+    "Price": 1.00,
+    "Stock": 100
+  }, {
+    "ID": 2,
+    "GoodsID": 5,
+    "SpecOne": 8,
+    "SpecTwo": 3,
+    "PropertiesName": "L 白色",
+    "Pic": "",
+    "Price": 2.00,
+    "Stock": 100
+  }, {
+    "ID": 3,
+    "GoodsID": 5,
+    "SpecOne": 8,
+    "SpecTwo": 4,
+    "PropertiesName": "L 玫瑰金",
+    "Pic": "",
+    "Price": 3.00,
+    "Stock": 100
+  }, {
+    "ID": 4,
+    "GoodsID": 5,
+    "SpecOne": 8,
+    "SpecTwo": 5,
+    "PropertiesName": "L 红色",
+    "Pic": "",
+    "Price": 4.00,
+    "Stock": 100
+  }, {
+    "ID": 5,
+    "GoodsID": 5,
+    "SpecOne": 8,
+    "SpecTwo": 6,
+    "PropertiesName": "L 蓝色",
+    "Pic": "",
+    "Price": 5.00,
+    "Stock": 100
+  }, {
+    "ID": 6,
+    "GoodsID": 5,
+    "SpecOne": 9,
+    "SpecTwo": 2,
+    "PropertiesName": "XL 皓月银",
+    "Pic": "",
+    "Price": 6.00,
+    "Stock": 100
+  }, {
+    "ID": 7,
+    "GoodsID": 5,
+    "SpecOne": 9,
+    "SpecTwo": 3,
+    "PropertiesName": "XL 白色",
+    "Pic": "",
+    "Price": 7.00,
+    "Stock": 100
+  }, {
+    "ID": 8,
+    "GoodsID": 5,
+    "SpecOne": 9,
+    "SpecTwo": 4,
+    "PropertiesName": "XL 玫瑰金",
+    "Pic": "",
+    "Price": 8.00,
+    "Stock": 100
+  }, {
+    "ID": 9,
+    "GoodsID": 5,
+    "SpecOne": 9,
+    "SpecTwo": 5,
+    "PropertiesName": "XL 红色",
+    "Pic": "",
+    "Price": 9.00,
+    "Stock": 100
+  }, {
+    "ID": 10,
+    "GoodsID": 5,
+    "SpecOne": 9,
+    "SpecTwo": 6,
+    "PropertiesName": "XL 蓝色",
+    "Pic": "",
+    "Price": 10.00,
+    "Stock": 100
+  }, {
+    "ID": 11,
+    "GoodsID": 5,
+    "SpecOne": 10,
+    "SpecTwo": 2,
+    "PropertiesName": "XXL 皓月银",
+    "Pic": "",
+    "Price": 11.00,
+    "Stock": 100
+  }, {
+    "ID": 12,
+    "GoodsID": 5,
+    "SpecOne": 10,
+    "SpecTwo": 3,
+    "PropertiesName": "XXL 白色",
+    "Pic": "",
+    "Price": 12.00,
+    "Stock": 100
+  }, {
+    "ID": 13,
+    "GoodsID": 5,
+    "SpecOne": 10,
+    "SpecTwo": 4,
+    "PropertiesName": "XXL 玫瑰金",
+    "Pic": "",
+    "Price": 13.00,
+    "Stock": 100
+  }, {
+    "ID": 14,
+    "GoodsID": 5,
+    "SpecOne": 10,
+    "SpecTwo": 5,
+    "PropertiesName": "XXL 红色",
+    "Pic": "",
+    "Price": 14.00,
+    "Stock": 100
+  }, {
+    "ID": 15,
+    "GoodsID": 5,
+    "SpecOne": 10,
+    "SpecTwo": 6,
+    "PropertiesName": "XXL 蓝色",
+    "Pic": "",
+    "Price": 15.00,
+    "Stock": 100
+  }, {
+    "ID": 16,
+    "GoodsID": 5,
+    "SpecOne": 11,
+    "SpecTwo": 2,
+    "PropertiesName": "XXXL 皓月银",
+    "Pic": "",
+    "Price": 16.00,
+    "Stock": 100
+  }, {
+    "ID": 17,
+    "GoodsID": 5,
+    "SpecOne": 11,
+    "SpecTwo": 3,
+    "PropertiesName": "XXXL 白色",
+    "Pic": "",
+    "Price": 17.00,
+    "Stock": 100
+  }, {
+    "ID": 18,
+    "GoodsID": 5,
+    "SpecOne": 11,
+    "SpecTwo": 4,
+    "PropertiesName": "XXXL 玫瑰金",
+    "Pic": "",
+    "Price": 18.00,
+    "Stock": 100
+  }, {
+    "ID": 19,
+    "GoodsID": 5,
+    "SpecOne": 11,
+    "SpecTwo": 5,
+    "PropertiesName": "XXXL 红色",
+    "Pic": "",
+    "Price": 19.00,
+    "Stock": 100
+  }, {
+    "ID": 20,
+    "GoodsID": 5,
+    "SpecOne": 11,
+    "SpecTwo": 6,
+    "PropertiesName": "XXXL 蓝色",
+    "Pic": "",
+    "Price": 20.00,
+    "Stock": 100
+  }]
+}

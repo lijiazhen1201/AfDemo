@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBgLighterGray"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <cn.appoa.aframework.widget.pager.HeightWrapViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tv_page"
+            style="@style/SimpleTextView"
+            android:layout_width="@dimen/height_small"
+            android:layout_height="@dimen/height_small"
+            android:layout_gravity="right|bottom"
+            android:layout_margin="8dp"
+            android:background="@drawable/black_background"
+            android:gravity="center"
+            android:textColor="@color/colorWhite" />
+
+    </FrameLayout>
+
+</LinearLayout>

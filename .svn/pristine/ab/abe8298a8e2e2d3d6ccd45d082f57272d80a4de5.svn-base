@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBgLighterGray"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_big">
+
+        <EditText
+            android:id="@+id/et_login_phone"
+            style="@style/SimpleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layer_list_edittext_bg_divider"
+            android:gravity="center_vertical"
+            android:hint="请输入手机号"
+            android:inputType="numberSigned"
+            android:maxLength="11"
+            android:padding="@dimen/padding_big" />
+
+        <EditText
+            android:id="@+id/et_login_pwd"
+            style="@style/SimpleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layer_list_edittext_bg_divider"
+            android:gravity="center_vertical"
+            android:hint="请输入密码"
+            android:padding="@dimen/padding_big"
+            android:password="true" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/padding_big"
+            android:layout_marginTop="@dimen/padding_big"
+            android:text="登录" />
+
+    </LinearLayout>
+
+</ScrollView>

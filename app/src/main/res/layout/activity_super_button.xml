@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_big"
+            android:singleLine="false"
+            android:text="框架：\nhttps://github.com/ansnail/SuperButton" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_big"
+            android:text="按钮阴影" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_big"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorAccent"
+            app:color_shadow_end="@color/colorDivider"
+            app:color_shadow_start="@color/colorDivider"
+            app:corner="@dimen/padding_normal"
+            app:shadow_size="@dimen/padding_small"
+            app:text="Shadow"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_big"
+            android:text="基本使用" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorAccent"
+            app:corner="@dimen/padding_normal"
+            app:text="床前明月光"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorTheme"
+            app:corner="@dimen/padding_small"
+            app:text="疑是地上霜"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorAccent"
+            app:corner="@dimen/height_normal"
+            app:text="举头望明月"
+            app:textColor="@color/colorTheme"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorTheme"
+            app:corner="@dimen/height_big"
+            app:text="低头思故乡"
+            app:textColor="@color/colorAccent"
+            app:textSize="@dimen/text_big" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_big"
+            android:text="单独设置每个圆角" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorAccent"
+            app:corner="@dimen/height_normal"
+            app:corner_left_bottom="0dp"
+            app:text="单独设置左下角为0dp"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorTheme"
+            app:corner="@dimen/height_normal"
+            app:corner_left_bottom="0dp"
+            app:corner_right_top="0dp"
+            app:text="单独设置左下角和右上角为0dp"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_big"
+            android:text="Selector" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorAccent"
+            app:color_pressed="@color/colorTheme"
+            app:corner="@dimen/padding_big"
+            app:text="点击会变色哦"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_big"
+            android:text="圆形按钮" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="@dimen/height_huge"
+            android:layout_height="@dimen/height_huge"
+            android:layout_margin="@dimen/padding_big"
+            android:onClick="test"
+            app:color_normal="@color/colorTheme"
+            app:drawable_middle="@drawable/icon_like"
+            app:drawable_middle_height="@dimen/height_normal"
+            app:drawable_middle_width="@dimen/height_normal"
+            app:shape="CIRCLE" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_big"
+            android:layout_margin="@dimen/padding_big"
+            android:onClick="test"
+            app:color_normal="@color/colorTheme"
+            app:corner="@dimen/padding_big"
+            app:drawable_middle="@drawable/icon_like"
+            app:drawable_middle_height="@dimen/height_normal"
+            app:drawable_middle_width="@dimen/height_normal" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_big"
+            android:text="渐变背景的按钮" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_end="@color/colorTheme"
+            app:color_start="@color/colorAccent"
+            app:corner="@dimen/padding_big"
+            app:text="从左到右渐变"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:border_color="@color/colorPrimaryDark"
+            app:border_width="@dimen/padding_small"
+            app:color_direction="RIGHT_LEFT"
+            app:color_end="@color/colorTheme"
+            app:color_start="@color/colorAccent"
+            app:corner="@dimen/padding_big"
+            app:text="从右到左渐变"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_direction="TOP_BOTTOM"
+            app:color_end="@color/colorTheme"
+            app:color_start="@color/colorAccent"
+            app:corner="@dimen/height_little"
+            app:text="从上到下渐变"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_direction="BOTTOM_TOP"
+            app:color_end="@color/colorTheme"
+            app:color_start="@color/colorAccent"
+            app:corner="@dimen/height_small"
+            app:text="从下到上渐变"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_big"
+            android:text="有边框按钮" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:border_color="@color/colorTheme"
+            app:border_width="@dimen/padding_small"
+            app:color_normal="@color/colorAccent"
+            app:corner="@dimen/padding_big"
+            app:text="床前明月光"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:border_color="@color/colorAccent"
+            app:border_width="@dimen/padding_small"
+            app:color_normal="@color/colorWhite"
+            app:corner="@dimen/padding_big"
+            app:text="疑是地上霜"
+            app:textColor="@color/colorAccent"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:border_color="@color/colorAccent"
+            app:border_width="2dp"
+            app:color_normal="@color/colorWhite"
+            app:corner="@dimen/padding_big"
+            app:corner_left_bottom="0dp"
+            app:corner_right_top="0dp"
+            app:text="举头望明月"
+            app:textColor="@color/colorPrimaryDark"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:border_color="@color/colorAccent"
+            app:border_width="2dp"
+            app:color_normal="@color/colorWhite"
+            app:text="低头思故乡"
+            app:textColor="@color/colorAccent"
+            app:textSize="@dimen/text_big" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_big"
+            android:text="按钮不可点击" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            android:onClick="test"
+            app:button_click_able="false"
+            app:color_normal="@color/colorAccent"
+            app:corner="@dimen/padding_big"
+            app:drawable_padding="@dimen/padding_big"
+            app:singleLine="false"
+            app:text="app:button_click_able=false\n也可以代码设置"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_big"
+            android:text="带图标的按钮" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorAccent"
+            app:corner="@dimen/padding_big"
+            app:drawable_left="@drawable/icon_like"
+            app:drawable_padding="@dimen/padding_big"
+            app:text="图标在左边"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorAccent"
+            app:corner="@dimen/padding_big"
+            app:drawable_padding="@dimen/padding_big"
+            app:drawable_right="@drawable/icon_like"
+            app:text="图标在右边"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorTheme"
+            app:corner="30dp"
+            app:drawable_padding="5dp"
+            app:drawable_top="@drawable/icon_like"
+            app:text="图标在上边"
+            app:textColor="@color/colorAccent"
+            app:textSize="@dimen/text_big" />
+
+        <cn.appoa.aframework.widget.button.SuperButton
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="@dimen/padding_big"
+            app:color_normal="@color/colorTheme"
+            app:corner="40dp"
+            app:drawable_bottom="@drawable/icon_like"
+            app:drawable_padding="5dp"
+            app:text="图标在下边"
+            app:textColor="@color/colorWhite"
+            app:textSize="@dimen/text_big" />
+
+    </LinearLayout>
+
+</ScrollView>

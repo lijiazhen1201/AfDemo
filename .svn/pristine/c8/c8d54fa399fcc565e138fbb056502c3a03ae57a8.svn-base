@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scan_text_bottom">对准二维码自动扫描</string>
+</resources>

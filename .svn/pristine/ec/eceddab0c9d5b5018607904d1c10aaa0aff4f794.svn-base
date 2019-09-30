@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <RelativeLayout
+        android:id="@+id/rl_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/mView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black">
+
+        <ImageView
+            android:layout_width="@dimen/height_default_titlebar"
+            android:layout_height="@dimen/height_default_titlebar"
+            android:clickable="true"
+            android:onClick="back"
+            android:scaleType="centerInside"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            style="@style/SimpleTextView"
+            android:layout_height="@dimen/height_default_titlebar"
+            android:layout_centerHorizontal="true"
+            android:text="扫一扫"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_large" />
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="@dimen/height_default_titlebar"
+            android:layout_height="@dimen/height_default_titlebar"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:onClick="back"
+            android:scaleType="centerInside"
+            android:src="@drawable/image_qrcode_img" />
+
+    </RelativeLayout>
+
+    <CheckBox
+        android:id="@+id/cb_qrcode_flash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/padding_large"
+        android:button="@drawable/selector_flash" />
+
+</RelativeLayout>

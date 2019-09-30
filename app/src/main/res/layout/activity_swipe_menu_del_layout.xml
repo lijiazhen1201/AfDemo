@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBgLighterGray"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/SimpleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_big"
+        android:singleLine="false"
+        android:text="框架：\nhttps://github.com/mcxtzhang/SwipeDelMenuLayout" />
+
+    <ListView
+        android:id="@+id/mListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/colorDivider"
+        android:dividerHeight="@dimen/height_divider"
+        android:listSelector="@android:color/transparent" />
+
+</LinearLayout>
