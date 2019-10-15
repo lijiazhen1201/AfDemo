@@ -39,7 +39,9 @@ import cn.appoa.wximageselector.ShowBigImageListActivity;
 import zm.http.volley.ZmVolley;
 import zm.http.volley.request.ZmStringRequest;
 
-
+/**
+ * 轮播图
+ */
 public class BannerActivity extends BaseActivity {
 
     @Override
@@ -260,7 +262,7 @@ public class BannerActivity extends BaseActivity {
                 public Object instantiateItem(ViewGroup container, final int position) {
                     // 当要显示的图片可以进行缓存的时候，会调用这个方法进行显示图片的初始化，我们将要显示的ImageView加入到ViewGroup中，然后作为返回值返回即可
                     LinearLayout linearLayout = (LinearLayout) LayoutInflater.from(container.getContext())
-                            .inflate(R.layout.item_banner, null);
+                            .inflate(R.layout.item_banner, container, false);
                     ImageView imageView = (ImageView) linearLayout.findViewById(R.id.iv_banner);
                     final BannerBean banner = banners.get(position);
                     MyApplication.imageLoader.loadImage(API.IMAGE_URL + banner.Pic, imageView);

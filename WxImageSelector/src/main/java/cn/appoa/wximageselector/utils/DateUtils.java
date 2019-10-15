@@ -21,7 +21,7 @@ public class DateUtils {
             return bool ? "本月" : "this month";
         } else {
             Date date = new Date(time);
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM",Locale.getDefault());
             return sdf.format(date);
         }
     }

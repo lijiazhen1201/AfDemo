@@ -12,6 +12,7 @@
 
 package com.theartofdev.edmodo.cropper;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -32,6 +33,7 @@ final class BitmapLoadingWorkerTask extends AsyncTask<Void, Void, BitmapLoadingW
   private final Uri mUri;
 
   /** The context of the crop image view widget used for loading of bitmap by Android URI */
+  @SuppressLint("StaticFieldLeak")
   private final Context mContext;
 
   /** required width of the cropping image after density adjustment */

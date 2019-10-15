@@ -19,6 +19,8 @@
             android:layout_width="@dimen/height_default_titlebar"
             android:layout_height="@dimen/height_default_titlebar"
             android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/content_description_image_view"
             android:onClick="back"
             android:scaleType="centerInside"
             android:src="@drawable/back_white" />
@@ -37,6 +39,8 @@
             android:layout_height="@dimen/height_default_titlebar"
             android:layout_alignParentRight="true"
             android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="@string/content_description_image_view"
             android:onClick="back"
             android:scaleType="centerInside"
             android:src="@drawable/image_qrcode_img" />

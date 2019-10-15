@@ -36,7 +36,15 @@ public class PhotoViewPager extends ViewPager {
     }
 
     @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         return !isLocked && super.onTouchEvent(event);
     }
 

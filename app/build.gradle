@@ -1,31 +1,106 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    signingConfigs {
+        debug {
+            keyAlias dugs.keyAlias
+            keyPassword dugs.keyPassword
+            storeFile file(dugs.storeFile)
+            storePassword dugs.storePassword
+        }
+    }
+    compileSdkVersion cfgs.compileSdkVersion
     defaultConfig {
-        applicationId "cn.appoa.afdemo"
-        minSdkVersion 16
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0.1"
+        applicationId cfgs.applicationId
+        minSdkVersion cfgs.minSdkVersion
+        targetSdkVersion cfgs.targetSdkVersion
+        versionCode cfgs.versionCode
+        versionName cfgs.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
+        multiDexEnabled cfgs.multiDexEnabled
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled cfgs.minifyEnabled
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            def date = new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+08"))
+            if (variant.buildType.name.equals('debug')) {
+                outputFileName = cfgs.appName + "_${date}_${versionName}_${versionCode}_debug.apk"
+            }
+            if (variant.buildType.name.equals('release')) {
+                outputFileName = cfgs.appName + "_${date}_${versionName}_${versionCode}.apk"
+            }
+        }
+    }
+    lintOptions {
+        // true--关闭lint报告的分析进度
+        quiet true
+        // true--错误发生后停止gradle构建
+        abortOnError false
+        // true--只报告error
+        ignoreWarnings true
+        // true--忽略有错误的文件的全/绝对路径(默认是true)
+        //absolutePaths true
+        // true--检查所有问题点，包含其他默认关闭项
+        checkAllWarnings true
+        // true--所有warning当做error
+        warningsAsErrors true
+        // 关闭指定问题检查
+        disable 'TypographyFractions', 'TypographyQuotes'
+        // 打开指定问题检查
+        enable 'RtlHardcoded', 'RtlCompat', 'RtlEnabled'
+        // 仅检查指定问题
+        check 'NewApi', 'InlinedApi'
+        // true--error输出文件不包含源码行号
+        noLines true
+        // true--显示错误的所有发生位置，不截取
+        showAll true
+        // 回退lint设置(默认规则)
+        lintConfig file("default-lint.xml")
+        // true--生成txt格式报告(默认false)
+        textReport true
+        // 重定向输出；可以是文件或'stdout'
+        textOutput 'stdout'
+        // true--生成XML格式报告
+        xmlReport false
+        // 指定xml报告文档(默认lint-results.xml)
+        xmlOutput file("lint-report.xml")
+        // true--生成HTML报告(带问题解释，源码位置，等)
+        htmlReport true
+        // html报告可选路径(构建器默认是lint-results.html )
+        htmlOutput file("lint-report.html")
+        //  true--所有正式版构建执行规则生成崩溃的lint检查，如果有崩溃问题将停止构建
+        checkReleaseBuilds true
+        // 在发布版本编译时检查(即使不包含lint目标)，指定问题的规则生成崩溃
+        fatal 'NewApi', 'InlineApi'
+        // 指定问题的规则生成错误
+        error 'Wakelock', 'TextViewEdits'
+        // 指定问题的规则生成警告
+        warning 'ResourceAsColor'
+        // 忽略指定问题的规则(同关闭检查)
+        ignore 'TypographyQuotes'
+    }
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support:design:26.1.0'
-    implementation 'com.android.support:cardview-v7:26.1.0'
-    implementation 'com.android.support:recyclerview-v7:26.1.0'
-    implementation 'com.android.support:multidex:1.0.3'
+    implementation dpes["junit"]
+    implementation dpes["runner"]
+    implementation dpes["espresso"]
+    implementation dpes["appcompat"]
+    implementation dpes["design"]
+    implementation dpes["cardview"]
+    implementation dpes["recyclerview"]
+    implementation dpes["multidex"]
+    implementation dpes["banner"]
+    implementation(dpes["ultraviewpager"]) {
+        transitive = true
+    }
     implementation project(':SmartRefreshLayoutFragment')//下拉刷新封装
     implementation project(':AndroidImageCropper')//图片裁剪
     implementation project(':QrCodeScan')//二维码扫描
@@ -33,17 +108,6 @@ dependencies {
     implementation project(':WxCameraView')//拍摄视频，选择本地视频
     implementation project(':WxImageSelector')//图片多选
     implementation project(':WxVoiceSelector')//语音录制
-    implementation 'com.youth.banner:banner:1.4.10'//轮播图
-    implementation ('com.alibaba.android:ultraviewpager:1.0.7.7@aar') {
-        transitive = true
-    }//轮播图
-    //implementation 'com.necer.ncalendar:ncalendar:3.4.5'//日历
-    //implementation 'com.github.huangyanbin:SmartTable:2.2.0'//表格
-    //implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'//曲线图
-    //implementation 'com.teaanddogdog:mpandroidchartutil:1.0.3'//饼状图工具
-    //implementation 'com.blankj:utilcode:1.25.9'//常用工具类
-    //implementation 'com.blankj:utilcodex:1.25.9'
-    //implementation 'com.qmuiteam:qmui:1.4.0'
-    //implementation 'top.androidman:superbutton:1.1.1'
-    //implementation 'com.github.chenBingX:SuperTextView:3.2.3'
+    debugImplementation dpes["leakcanary1"]
+    releaseImplementation dpes["leakcanary2"]
 }

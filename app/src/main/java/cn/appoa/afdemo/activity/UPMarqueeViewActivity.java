@@ -19,7 +19,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import zm.http.volley.ZmVolley;
 import zm.http.volley.request.ZmStringRequest;
 
-
+/**
+ * 仿淘宝头条，向上翻页
+ */
 public class UPMarqueeViewActivity extends BaseActivity {
 
     @Override

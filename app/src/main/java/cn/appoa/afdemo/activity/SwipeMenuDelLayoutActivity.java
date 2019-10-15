@@ -17,7 +17,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
 import cn.appoa.aframework.widget.layout.SwipeMenuDelLayout;
 
-
+/**
+ * Item侧滑删除菜单Layout
+ */
 public class SwipeMenuDelLayoutActivity extends BaseActivity {
 
     @Override

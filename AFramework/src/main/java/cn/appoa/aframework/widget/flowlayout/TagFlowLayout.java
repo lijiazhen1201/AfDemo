@@ -146,6 +146,9 @@ public class TagFlowLayout extends FlowLayout implements TagAdapter.OnDataChange
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         if (event.getAction() == MotionEvent.ACTION_UP) {
             mMotionEvent = MotionEvent.obtain(event);
         }

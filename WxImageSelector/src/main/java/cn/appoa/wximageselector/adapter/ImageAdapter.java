@@ -61,7 +61,7 @@ public class ImageAdapter extends BaseAdapter {
         ViewHolder holder = null;
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = mInflater.inflate(R.layout.adapter_images_item, null);
+            convertView = mInflater.inflate(R.layout.adapter_images_item, parent, false);
             holder.itemView = convertView;
             holder.ivImage = (ImageView) convertView.findViewById(R.id.iv_image);
             holder.ivSelectIcon = (ImageView) convertView.findViewById(R.id.iv_select);

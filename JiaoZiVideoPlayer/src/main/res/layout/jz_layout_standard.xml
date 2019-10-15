@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
@@ -8,8 +9,7 @@
     <FrameLayout
         android:id="@+id/surface_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </FrameLayout>
+        android:layout_height="match_parent"></FrameLayout>
 
     <ImageView
         android:id="@+id/thumb"
@@ -19,6 +19,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#000000"
+        android:contentDescription="@string/content_description_image_view"
         android:scaleType="fitCenter" />
 
     <LinearLayout
@@ -68,6 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
+            android:focusable="true"
             android:paddingLeft="20dp"
             android:text="clarity"
             android:textAlignment="center"
@@ -77,6 +79,7 @@
             android:id="@+id/fullscreen"
             android:layout_width="52.5dp"
             android:layout_height="fill_parent"
+            android:contentDescription="@string/content_description_image_view"
             android:paddingLeft="14dp"
             android:paddingRight="14dp"
             android:scaleType="centerInside"
@@ -99,6 +102,7 @@
         android:layout_marginLeft="6dp"
         android:layout_marginTop="6dp"
         android:background="@drawable/jz_click_back_tiny_selector"
+        android:contentDescription="@string/content_description_image_view"
         android:visibility="gone" />
 
     <RelativeLayout
@@ -118,6 +122,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:contentDescription="@string/content_description_image_view"
             android:paddingLeft="12dp"
             android:paddingStart="12dp"
             android:scaleType="centerInside"
@@ -150,14 +155,16 @@
             android:layout_marginEnd="14dp"
             android:layout_marginRight="14dp"
             android:gravity="center_vertical"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
 
             <ImageView
                 android:id="@+id/battery_level"
                 android:layout_width="23dp"
                 android:layout_height="10dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/jz_battery_level_10" />
+                android:background="@drawable/jz_battery_level_10"
+                android:contentDescription="@string/content_description_image_view" />
 
             <TextView
                 android:id="@+id/video_current_time"
@@ -192,6 +199,7 @@
             android:id="@+id/start"
             android:layout_width="@dimen/jz_start_button_w_h_normal"
             android:layout_height="@dimen/jz_start_button_w_h_normal"
+            android:contentDescription="@string/content_description_image_view"
             android:src="@drawable/jz_click_play_selector" />
     </LinearLayout>
 

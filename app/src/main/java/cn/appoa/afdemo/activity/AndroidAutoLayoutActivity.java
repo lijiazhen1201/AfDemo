@@ -7,7 +7,9 @@ import cn.appoa.afdemo.base.BaseActivity;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
-
+/**
+ * Android屏幕适配方案
+ */
 public class AndroidAutoLayoutActivity extends BaseActivity {
 
     @Override

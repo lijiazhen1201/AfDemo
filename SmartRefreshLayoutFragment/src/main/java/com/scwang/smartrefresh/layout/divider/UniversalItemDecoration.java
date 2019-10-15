@@ -6,10 +6,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
+import android.util.SparseArray;
 import android.view.View;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by yu on 2017/3/19.
@@ -21,7 +19,7 @@ import java.util.Map;
  */
 public abstract class UniversalItemDecoration extends RecyclerView.ItemDecoration {
 
-    private Map<Integer, Decoration> decorations = new HashMap<Integer, Decoration>();
+    private SparseArray<Decoration> decorations = new SparseArray<Decoration>();
 
     @SuppressWarnings("unused")
 	private static final String TAG = "UniversalItemDecoration";

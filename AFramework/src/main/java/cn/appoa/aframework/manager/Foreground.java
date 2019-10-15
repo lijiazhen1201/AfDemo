@@ -3,6 +3,7 @@ package cn.appoa.aframework.manager;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -43,6 +44,7 @@ public class Foreground implements Application.ActivityLifecycleCallbacks {
     private Handler handler = new Handler();
     private List<ForegroundListener> listeners = new CopyOnWriteArrayList<ForegroundListener>();
     private Runnable check;
+    private Class<Activity> clazz;//SplashActivity(启动页)
 
     /**
      * Its not strictly necessary to use this method - _usually_ invoking get with a
@@ -86,6 +88,14 @@ public class Foreground implements Application.ActivityLifecycleCallbacks {
                     "Foreground is not initialised - invoke " + "at least once with parameterised init/get");
         }
         return instance;
+    }
+
+    public Class<Activity> getSplashClazz() {
+        return clazz;
+    }
+
+    public void setSplashClazz(Class<Activity> clazz) {
+        this.clazz = clazz;
     }
 
     public boolean isForeground() {
@@ -158,8 +168,18 @@ public class Foreground implements Application.ActivityLifecycleCallbacks {
     }
 
     @Override
-    public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-        AtyManager.getInstance().addActivity(activity);
+    public void onActivityCreated(Activity activity, Bundle bundle) {
+        // 若bundle不为空则程序异常结束
+        if (bundle != null) {
+            // 重启整个程序
+            if (clazz != null) {
+                Intent intent = new Intent(activity, clazz);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                activity.startActivity(intent);
+            }
+        } else {
+            AtyManager.getInstance().addActivity(activity);
+        }
     }
 
     @Override
@@ -172,14 +192,48 @@ public class Foreground implements Application.ActivityLifecycleCallbacks {
 
     }
 
+    private int foregroundActivities = 0;
+    private boolean isChangingConfiguration;
+
     @Override
     public void onActivityStarted(Activity activity) {
-
+        foregroundActivities++;
+        if (foregroundActivities == 1 && !isChangingConfiguration) {
+            // 应用切到前台
+            if (listener != null) {
+                listener.onStarted(activity);
+            }
+        }
+        isChangingConfiguration = false;
     }
 
     @Override
     public void onActivityStopped(Activity activity) {
-
+        foregroundActivities--;
+        if (foregroundActivities == 0) {
+            // 应用切到后台
+            if (listener != null) {
+                listener.onStopped(activity);
+            }
+        }
+        isChangingConfiguration = activity.isChangingConfigurations();
     }
 
+    private ConfigurationsListener listener;
+
+    public ConfigurationsListener getConfigurationsListener() {
+        return listener;
+    }
+
+    public void setConfigurationsListener(ConfigurationsListener listener) {
+        this.listener = listener;
+    }
+
+    public interface ConfigurationsListener {
+
+        void onStarted(Activity activity);
+
+        void onStopped(Activity activity);
+
+    }
 }

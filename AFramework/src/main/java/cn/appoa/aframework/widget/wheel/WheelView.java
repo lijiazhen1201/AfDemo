@@ -1,8 +1,5 @@
 package cn.appoa.aframework.widget.wheel;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -23,6 +20,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
+
+import java.lang.ref.WeakReference;
+import java.util.LinkedList;
+import java.util.List;
 
 import cn.appoa.aframework.R;
 import cn.appoa.aframework.widget.wheel.adapter.WheelAdapter;
@@ -136,6 +137,7 @@ public class WheelView extends View {
         gestureDetector.setIsLongpressEnabled(false);
         ITEM_OFFSET = -textSize(16) / 4;
         scroller = new Scroller(context);
+        this.animationHandler = new MyHandler(this);
     }
 
     /**
@@ -875,30 +877,43 @@ public class WheelView extends View {
     }
 
     // animation handler
-    private Handler animationHandler = new Handler() {
-        public void handleMessage(Message msg) {
-            scroller.computeScrollOffset();
-            int currY = scroller.getCurrY();
-            int delta = lastScrollY - currY;
-            lastScrollY = currY;
-            if (delta != 0) {
-                doScroll(delta);
-            }
+    private Handler animationHandler;
 
-            // 滚动时，没有最后的Y值，通过计算获得
-            if (Math.abs(currY - scroller.getFinalY()) < MIN_DELTA_FOR_SCROLLING) {
-                currY = scroller.getFinalY();
-                scroller.forceFinished(true);
-            }
-            if (!scroller.isFinished()) {
-                animationHandler.sendEmptyMessage(msg.what);
-            } else if (msg.what == MESSAGE_SCROLL) {
-                justify();
-            } else {
-                finishScrolling();
+    static class MyHandler extends Handler {
+
+        private WeakReference<WheelView> mOuter;
+
+        public MyHandler(WheelView activity) {
+            mOuter = new WeakReference<WheelView>(activity);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            WheelView outer = mOuter.get();
+            if (outer != null) {// Do something with outer as your wish.
+                outer.scroller.computeScrollOffset();
+                int currY = outer.scroller.getCurrY();
+                int delta = outer.lastScrollY - currY;
+                outer.lastScrollY = currY;
+                if (delta != 0) {
+                    outer.doScroll(delta);
+                }
+
+                // 滚动时，没有最后的Y值，通过计算获得
+                if (Math.abs(currY - outer.scroller.getFinalY()) < MIN_DELTA_FOR_SCROLLING) {
+                    currY = outer.scroller.getFinalY();
+                    outer.scroller.forceFinished(true);
+                }
+                if (!outer.scroller.isFinished()) {
+                    outer.animationHandler.sendEmptyMessage(msg.what);
+                } else if (msg.what == outer.MESSAGE_SCROLL) {
+                    outer.justify();
+                } else {
+                    outer.finishScrolling();
+                }
             }
         }
-    };
+    }
 
     private void justify() {
         if (adapter == null) {

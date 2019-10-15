@@ -11,7 +11,9 @@ import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
 
-
+/**
+ * 下拉刷新
+ */
 public class RefreshBeanActivity extends BaseActivity implements View.OnClickListener{
 
     @Override

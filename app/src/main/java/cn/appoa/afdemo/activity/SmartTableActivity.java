@@ -7,7 +7,9 @@ import cn.appoa.afdemo.base.BaseActivity;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
-
+/**
+ * android自动生成表格框架
+ */
 public class SmartTableActivity extends BaseActivity {
 
     @Override

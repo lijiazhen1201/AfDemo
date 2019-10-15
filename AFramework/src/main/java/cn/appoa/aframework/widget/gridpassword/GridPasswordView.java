@@ -77,30 +77,30 @@ public class GridPasswordView extends LinearLayout implements PasswordView {
 
     @SuppressWarnings("deprecation")
     private void initAttrs(Context context, AttributeSet attrs, int defStyleAttr) {
-        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.gridPasswordView, defStyleAttr, 0);
+        TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.GridPasswordView, defStyleAttr, 0);
 
-        mTextColor = ta.getColorStateList(R.styleable.gridPasswordView_gpvTextColor);
+        mTextColor = ta.getColorStateList(R.styleable.GridPasswordView_gpvTextColor);
         if (mTextColor == null)
             mTextColor = ColorStateList.valueOf(getResources().getColor(android.R.color.primary_text_light));
-        int textSize = ta.getDimensionPixelSize(R.styleable.gridPasswordView_gpvTextSize, -1);
+        int textSize = ta.getDimensionPixelSize(R.styleable.GridPasswordView_gpvTextSize, -1);
         if (textSize != -1) {
             this.mTextSize = Util.px2sp(context, textSize);
         }
 
-        mLineWidth = (int) ta.getDimension(R.styleable.gridPasswordView_gpvLineWidth, Util.dp2px(getContext(), 1));
-        mLineColor = ta.getColor(R.styleable.gridPasswordView_gpvLineColor, DEFAULT_LINECOLOR);
-        mGridColor = ta.getColor(R.styleable.gridPasswordView_gpvGridColor, DEFAULT_GRIDCOLOR);
-        mLineDrawable = ta.getDrawable(R.styleable.gridPasswordView_gpvLineColor);
+        mLineWidth = (int) ta.getDimension(R.styleable.GridPasswordView_gpvLineWidth, Util.dp2px(getContext(), 1));
+        mLineColor = ta.getColor(R.styleable.GridPasswordView_gpvLineColor, DEFAULT_LINECOLOR);
+        mGridColor = ta.getColor(R.styleable.GridPasswordView_gpvGridColor, DEFAULT_GRIDCOLOR);
+        mLineDrawable = ta.getDrawable(R.styleable.GridPasswordView_gpvLineColor);
         if (mLineDrawable == null)
             mLineDrawable = new ColorDrawable(mLineColor);
         mOuterLineDrawable = generateBackgroundDrawable();
 
-        mPasswordLength = ta.getInt(R.styleable.gridPasswordView_gpvPasswordLength, DEFAULT_PASSWORDLENGTH);
-        mPasswordTransformation = ta.getString(R.styleable.gridPasswordView_gpvPasswordTransformation);
+        mPasswordLength = ta.getInt(R.styleable.GridPasswordView_gpvPasswordLength, DEFAULT_PASSWORDLENGTH);
+        mPasswordTransformation = ta.getString(R.styleable.GridPasswordView_gpvPasswordTransformation);
         if (TextUtils.isEmpty(mPasswordTransformation))
             mPasswordTransformation = DEFAULT_TRANSFORMATION;
 
-        mPasswordType = ta.getInt(R.styleable.gridPasswordView_gpvPasswordType, 0);
+        mPasswordType = ta.getInt(R.styleable.GridPasswordView_gpvPasswordType, 0);
 
         ta.recycle();
 

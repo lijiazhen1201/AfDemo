@@ -2,7 +2,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBgLighterGray"
     android:fillViewport="true">
 
     <LinearLayout
@@ -22,6 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
+                android:focusable="true"
                 android:padding="@dimen/padding_big"
                 android:text="横向图片" />
 
@@ -31,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
+                android:focusable="true"
                 android:padding="@dimen/padding_big"
                 android:text="纵向图片" />
 
@@ -52,6 +53,7 @@
             android:layout_height="162dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="@dimen/padding_big"
+            android:contentDescription="@string/content_description_image_view"
             android:scaleType="fitXY" />
 
         <TextView
@@ -70,6 +72,7 @@
             android:layout_height="162dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="@dimen/padding_big"
+            android:contentDescription="@string/content_description_image_view"
             android:scaleType="fitXY" />
 
         <ImageView
@@ -78,6 +81,7 @@
             android:layout_height="288dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="@dimen/padding_big"
+            android:contentDescription="@string/content_description_image_view"
             android:scaleType="fitXY" />
 
         <TextView

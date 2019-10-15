@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="content_description_image_view">ImageView</string>
     <string name="recording_too_short">录制时间过短</string>
     <string name="open_camera_failed">打开相机失败</string>
     <string name="no_recording_permission">没有录取权限</string>

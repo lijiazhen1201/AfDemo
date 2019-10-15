@@ -26,7 +26,6 @@ import com.megabox.android.slide.SlideBackActivity;
 
 import cn.appoa.aframework.R;
 import cn.appoa.aframework.dialog.DefaultLoadingDialog;
-import cn.appoa.aframework.manager.Foreground;
 import cn.appoa.aframework.presenter.BasePresenter;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
@@ -38,7 +37,9 @@ import zm.http.volley.ZmVolley;
  * Activity基类
  */
 public abstract class AfActivity<P extends BasePresenter> extends SlideBackActivity
-        implements IBaseView, Foreground.ForegroundListener {
+        implements IBaseView
+//        , Foreground.ForegroundListener
+{
 
     /**
      * Tag
@@ -129,7 +130,7 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         rootlayout.addView(layout, new RelativeLayout.LayoutParams(-1, -1));
         setContentView(rootlayout);
         bindButterKnife();
-        Foreground.get(this).addForegroundListener(this);
+//        Foreground.get(this).addForegroundListener(this);
         initView();
         mPresenter = initPresenter();
         if (mPresenter != null) {
@@ -160,7 +161,7 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         ZmVolley.cancelRequest(REQUEST_TAG);
         //取消全局默认的OKHttpClient中标识为tag的请求
         OkGo.getInstance().cancelTag(this);
-        Foreground.get(this).removeForegroundListener(this);
+//        Foreground.get(this).removeForegroundListener(this);
     }
 
     /**
@@ -360,17 +361,17 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
     }
 
-    @Override
-    public void onBecameForeground() {
-        // 切换为前台
-
-    }
-
-    @Override
-    public void onBecameBackground() {
-        // 切换为后台
-
-    }
+//    @Override
+//    public void onBecameForeground() {
+//        // 切换为前台
+//
+//    }
+//
+//    @Override
+//    public void onBecameBackground() {
+//        // 切换为后台
+//
+//    }
 
     public void bindButterKnife() {
         // 绑定注解

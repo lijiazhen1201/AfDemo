@@ -19,7 +19,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
 import cn.appoa.wximageselector.view.PhotoPickerGridView;
 
-
+/**
+ * 上传图片
+ */
 public class UploadImageActivity extends BaseActivity
         implements UploadImgVideoDialog.OnUploadImgVideoListener {
 

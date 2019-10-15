@@ -1,5 +1,6 @@
 package com.scwang.smartrefresh.layout.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -249,6 +250,7 @@ public abstract class PullToRefreshBaseFragment<V extends View> extends AfFragme
         refreshLayout.setRefreshFooter(footer);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         hideSoftKeyboard();

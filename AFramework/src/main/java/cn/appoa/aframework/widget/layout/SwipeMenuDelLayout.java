@@ -3,6 +3,7 @@ package cn.appoa.aframework.widget.layout;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.PointF;
@@ -68,6 +69,7 @@ public class SwipeMenuDelLayout extends ViewGroup {
     private boolean isUserSwiped;
 
     // 存储的是当前正在展开的View
+    @SuppressLint("StaticFieldLeak")
     private static SwipeMenuDelLayout mViewCache;
 
     // 防止多只手指一起滑我的flag 在每次down里判断， touch事件结束清空

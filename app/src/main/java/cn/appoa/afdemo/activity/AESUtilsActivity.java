@@ -22,7 +22,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AESUtils;
 import cn.appoa.aframework.utils.AtyUtils;
 
-
+/**
+ * AES加密工具类
+ */
 public class AESUtilsActivity extends BaseActivity
         implements View.OnClickListener {
 

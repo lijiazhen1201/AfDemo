@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/height_little"
+        android:layout_marginRight="@dimen/height_little"
+        android:background="@drawable/shape_solid_white_5dp"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_huge">
+
+        <TextView
+            android:id="@+id/tv_permission_title"
+            style="@style/SimpleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_big"
+            android:text="权限申请"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_permission_msg"
+            style="@style/SimpleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_huge"
+            android:gravity="start"
+            android:lineSpacingExtra="@dimen/padding_small"
+            android:singleLine="false"
+            android:text="使用之前，需开启“存储权限”、“拍照权限”、“录音权限”以确保账号登录安全及信息安全"
+            android:textColor="@color/colorTextDarkerGray" />
+
+        <TextView
+            android:id="@+id/tv_permission_tip"
+            style="@style/SimpleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_huge"
+            android:gravity="start"
+            android:singleLine="false"
+            android:text="请在设置-应用-权限中开启相关权限。"
+            android:textColor="@color/colorTextDarkerGray"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_permission_open"
+            style="@style/SimpleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_normal"
+            android:layout_marginTop="@dimen/height_little"
+            android:background="@color/colorTheme"
+            android:text="一键开启"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/text_big" />
+
+    </LinearLayout>
+
+</FrameLayout>

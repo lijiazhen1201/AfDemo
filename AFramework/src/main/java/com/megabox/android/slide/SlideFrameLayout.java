@@ -727,7 +727,15 @@ public class SlideFrameLayout extends ViewGroup {
     }
 
     @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         if (mEdgeSize > 0) {
             if (ev.getAction() == MotionEvent.ACTION_DOWN && ev.getX() > mEdgeSize) {
                 return false;

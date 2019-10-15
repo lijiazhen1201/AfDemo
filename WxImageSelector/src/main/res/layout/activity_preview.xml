@@ -15,6 +15,7 @@
         android:layout_height="@dimen/height_bar_top"
         android:background="@color/color_black_bg_bar"
         android:clickable="true"
+        android:focusable="true"
         android:orientation="vertical" >
 
         <FrameLayout
@@ -24,6 +25,7 @@
             android:foreground="@drawable/btn_back_selector" >
 
             <ImageView
+                android:contentDescription="@string/content_description_image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingLeft="10dp"
@@ -82,7 +84,8 @@
         android:layout_height="@dimen/height_bar_bottom"
         android:layout_alignParentBottom="true"
         android:background="@color/color_black_bg_bar"
-        android:clickable="true" >
+        android:clickable="true"
+        android:focusable="true">
 
         <TextView
             android:id="@+id/tv_select"

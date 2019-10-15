@@ -7,7 +7,9 @@ import cn.appoa.afdemo.base.BaseActivity;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
-
+/**
+ * Android版本更新
+ */
 public class AppUpdateActivity extends BaseActivity {
 
     @Override

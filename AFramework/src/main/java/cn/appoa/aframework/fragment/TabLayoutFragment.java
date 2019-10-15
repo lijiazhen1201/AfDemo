@@ -19,7 +19,7 @@ public abstract class TabLayoutFragment<P extends BasePresenter> extends AfFragm
 
     @Override
     public View initFragment(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_tab_layout, null);
+        return inflater.inflate(R.layout.fragment_tab_layout, container,false);
     }
 
     protected TabLayout tabLayout;

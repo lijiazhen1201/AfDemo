@@ -12,6 +12,7 @@
 
 package com.theartofdev.edmodo.cropper;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -35,6 +36,7 @@ final class BitmapCroppingWorkerTask
   private final Uri mUri;
 
   /** The context of the crop image view widget used for loading of bitmap by Android URI */
+  @SuppressLint("StaticFieldLeak")
   private final Context mContext;
 
   /** Required cropping 4 points (x0,y0,x1,y1,x2,y2,x3,y3) */

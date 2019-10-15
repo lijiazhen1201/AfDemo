@@ -24,7 +24,7 @@ public class MyShakeFragment extends ZmShakeFragment {
 
     @Override
     public View initFragment(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_my_shake, null);
+        return inflater.inflate(R.layout.fragment_my_shake, container,false);
     }
 
     private ImageView shakeBg;

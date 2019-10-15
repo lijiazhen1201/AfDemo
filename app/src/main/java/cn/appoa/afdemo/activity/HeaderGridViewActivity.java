@@ -16,7 +16,9 @@ import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
 
-
+/**
+ * 可添加头布局和脚布局的GridView
+ */
 public class HeaderGridViewActivity extends BaseActivity {
 
     @Override

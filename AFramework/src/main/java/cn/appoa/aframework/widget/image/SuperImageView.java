@@ -130,6 +130,10 @@ public class SuperImageView extends AppCompatImageView {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
+    protected float[] radii;
+    protected Path path;
+    protected RectF rectf;
+
     @Override
     protected void onDraw(Canvas canvas) {
         if (shapeType == 0) {
@@ -138,10 +142,16 @@ public class SuperImageView extends AppCompatImageView {
         }
         if (shapeType == 3) {
             // 创建圆角数组 圆角的半径，依次为左上角xy半径，右上角，右下角，左下角
-            float[] radii = new float[]{radiusTopLeft, radiusTopLeft, radiusTopRight, radiusTopRight,
-                    radiusBottomRight, radiusBottomRight, radiusBottomLeft, radiusBottomLeft};
-            Path path = new Path();
-            RectF rectf = new RectF(1, 1, getWidth() - 1, getHeight() - 1);
+            if (radii == null) {
+                radii = new float[]{radiusTopLeft, radiusTopLeft, radiusTopRight, radiusTopRight,
+                        radiusBottomRight, radiusBottomRight, radiusBottomLeft, radiusBottomLeft};
+            }
+            if (path == null) {
+                path = new Path();
+            }
+            if (rectf == null) {
+                rectf = new RectF(1, 1, getWidth() - 1, getHeight() - 1);
+            }
             path.addRoundRect(rectf, radii, Path.Direction.CW);
             canvas.clipPath(path);
             super.onDraw(canvas);
@@ -289,6 +299,11 @@ public class SuperImageView extends AppCompatImageView {
         height = h;
     }
 
+    @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
     /**
      * monitor if touched 重写 onTouchEvent 监听方法，用来监听自定义控件是否被触摸
      *
@@ -297,6 +312,9 @@ public class SuperImageView extends AppCompatImageView {
      */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 pressPaint.setAlpha(pressAlpha);

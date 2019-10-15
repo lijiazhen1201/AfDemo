@@ -170,8 +170,15 @@ public class ClipImageView extends AppCompatImageView {
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
+    public boolean performClick() {
+        return super.performClick();
+    }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         if (mMatrix == null) {
             return super.onTouchEvent(event);
         }

@@ -18,10 +18,12 @@
             android:gravity="center_vertical">
 
             <ImageView
+                android:contentDescription="@string/content_description_image_view"
                 android:layout_width="@dimen/height_default_titlebar"
                 android:layout_height="@dimen/height_default_titlebar"
                 android:layout_centerVertical="true"
                 android:clickable="true"
+                android:focusable="true"
                 android:onClick="back"
                 android:scaleType="centerInside"
                 android:src="@drawable/back_black" />

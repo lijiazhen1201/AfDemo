@@ -6,7 +6,9 @@ import cn.appoa.afdemo.R;
 import cn.appoa.afdemo.base.BaseActivity;
 import cn.appoa.afdemo.fragment.MyShakeFragment;
 
-
+/**
+ * 微信摇一摇
+ */
 public class ZmShakeActivity extends BaseActivity {
 
     @Override

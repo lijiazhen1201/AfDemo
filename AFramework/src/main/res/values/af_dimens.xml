@@ -32,6 +32,12 @@
     <!-- 间距(小) -->
     <dimen name="padding_small">4dp</dimen>
     <!-- 字体大小(极大) -->
+    <dimen name="text_h4">34sp</dimen>
+    <!-- 字体大小(极大) -->
+    <dimen name="text_h5">24sp</dimen>
+    <!-- 字体大小(极大) -->
+    <dimen name="text_h6">20sp</dimen>
+    <!-- 字体大小(极大) -->
     <dimen name="text_large">18sp</dimen>
     <!-- 字体大小(大) -->
     <dimen name="text_big">16sp</dimen>

@@ -30,7 +30,15 @@ public class NoScrollViewPager extends ViewPager {
     }
 
     @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         if (noScroll)
             return false;
         else

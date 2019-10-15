@@ -7,7 +7,9 @@ import cn.appoa.afdemo.base.BaseActivity;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
-
+/**
+ * Activity常用方法封装
+ */
 public class AtyUtilsActivity extends BaseActivity {
 
     @Override

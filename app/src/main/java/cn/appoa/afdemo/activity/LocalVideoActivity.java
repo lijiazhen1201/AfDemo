@@ -9,7 +9,9 @@ import cn.appoa.afdemo.base.BaseActivity;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
-
+/**
+ * 本地视频
+ */
 public class LocalVideoActivity extends BaseActivity {
 
     @Override

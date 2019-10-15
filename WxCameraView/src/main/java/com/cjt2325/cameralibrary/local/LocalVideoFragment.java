@@ -26,6 +26,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * 本地视频
@@ -151,7 +152,7 @@ public class LocalVideoFragment extends Fragment {
 
     // 将长整型转换成时间格式
     private String LongToHms(long duration) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss", Locale.getDefault());
         return dateFormat.format(duration);
     }
 

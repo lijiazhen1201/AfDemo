@@ -47,6 +47,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:src">@drawable/default_img</item>
         <item name="android:adjustViewBounds">true</item>
+        <item name="android:contentDescription">@string/content_description_image_view</item>
     </style>
 
     <!-- pop上进 -->

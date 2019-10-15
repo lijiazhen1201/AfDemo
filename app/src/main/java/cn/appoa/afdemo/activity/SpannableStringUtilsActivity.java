@@ -17,7 +17,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
 import cn.appoa.aframework.utils.SpannableStringUtils;
 
-
+/**
+ * SpannableString工具类
+ */
 public class SpannableStringUtilsActivity extends BaseActivity {
 
     @Override

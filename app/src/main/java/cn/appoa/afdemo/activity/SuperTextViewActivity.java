@@ -7,7 +7,9 @@ import cn.appoa.afdemo.base.BaseActivity;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
-
+/**
+ * 强大的TextView
+ */
 public class SuperTextViewActivity extends BaseActivity {
 
     @Override

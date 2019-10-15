@@ -159,11 +159,19 @@ public class CaptureButton extends View {
         }
     }
 
+    @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
     //Touch_Event_Down时候记录的Y值
     float event_Y;
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         switch (event.getAction()) {
             //
             case MotionEvent.ACTION_DOWN:
@@ -399,7 +407,7 @@ public class CaptureButton extends View {
 
     @SuppressWarnings("unused")
     private int getColor(int colorRes) {
-        return ContextCompat.getColor(getContext(),colorRes);
+        return ContextCompat.getColor(getContext(), colorRes);
         //return getContext().getResources().getColor(colorRes);
     }
 }

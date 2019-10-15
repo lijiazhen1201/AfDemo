@@ -13,7 +13,9 @@ import cn.appoa.aframework.app.AfApplication;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
-
+/**
+ * 图片截取正中间的正方形部分的ImageView
+ */
 public class CenterSquareImageViewActivity extends BaseActivity
         implements CompoundButton.OnCheckedChangeListener {
 

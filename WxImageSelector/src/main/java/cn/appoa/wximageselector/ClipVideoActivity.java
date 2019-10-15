@@ -24,6 +24,7 @@ import android.widget.VideoView;
 import com.esay.ffmtool.FfmpegTool;
 
 import java.io.File;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -44,6 +45,11 @@ public class ClipVideoActivity extends AppCompatActivity
      */
     private FfmpegTool ffmpegTool;
 
+    /**
+     * 监听播放进度
+     */
+    private Handler handler;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +57,7 @@ public class ClipVideoActivity extends AppCompatActivity
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         initIntent();
+        handler = new MyHandler(this);
         setContentView(R.layout.activity_clip_video);
         ffmpegTool = FfmpegTool.getInstance(this);
         ffmpegTool.setImageDecodeing(new FfmpegTool.ImageDecodeing() {
@@ -286,23 +293,30 @@ public class ClipVideoActivity extends AppCompatActivity
         calStartEndTime();
     }
 
-    /**
-     * 监听播放进度
-     */
-    private Handler handler = new Handler() {
+    static class MyHandler extends Handler {
+
+        private WeakReference<ClipVideoActivity> mOuter;
+
+        public MyHandler(ClipVideoActivity activity) {
+            mOuter = new WeakReference<ClipVideoActivity>(activity);
+        }
+
         @Override
         public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            if (msg.what == 0) {
-                int current = uVideoView.getCurrentPosition() / 1000;
-                if (current == endTime) {
-                    //已经播放到选择的结尾位置
-                    restartVideo();
+            ClipVideoActivity outer = mOuter.get();
+            if (outer != null) {// Do something with outer as your wish.
+                if (msg.what == 0) {
+                    int current = outer.uVideoView.getCurrentPosition() / 1000;
+                    if (current == outer.endTime) {
+                        //已经播放到选择的结尾位置
+                        outer.restartVideo();
+                    }
+                    outer.handler.sendEmptyMessageDelayed(0, 1000);
                 }
-                handler.sendEmptyMessageDelayed(0, 1000);
             }
         }
-    };
+    }
+
 
     /**
      * 滑动条的左端

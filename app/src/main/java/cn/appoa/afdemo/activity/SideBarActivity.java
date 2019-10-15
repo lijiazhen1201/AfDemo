@@ -1,5 +1,6 @@
 package cn.appoa.afdemo.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -30,7 +31,9 @@ import cn.appoa.aframework.widget.side.Sort;
 import cn.appoa.aframework.widget.side.SortAdapter;
 import cn.appoa.aframework.widget.side.SortBaseAdapter;
 
-
+/**
+ * 字母表导航，城市选择
+ */
 public class SideBarActivity extends BaseActivity
         implements SideBar.OnPressDownLetterListener, TextView.OnEditorActionListener,
         View.OnClickListener, SortBaseAdapter.OnSortClickListener {
@@ -79,6 +82,8 @@ public class SideBarActivity extends BaseActivity
         et_search.setOnEditorActionListener(this);
         tv_search.setOnClickListener(this);
         mListView.setOnTouchListener(new View.OnTouchListener() {
+
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 hideSoftKeyboard();

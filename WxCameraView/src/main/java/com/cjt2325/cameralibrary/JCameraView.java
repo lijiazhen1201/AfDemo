@@ -476,11 +476,19 @@ public class JCameraView extends FrameLayout implements CameraInterface.CamOpenO
     private float firstTouchLength = 0;
     private int zoomScale = 0;
 
+    @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
     /**
      * handler touch focus
      */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 if (event.getPointerCount() == 1) {

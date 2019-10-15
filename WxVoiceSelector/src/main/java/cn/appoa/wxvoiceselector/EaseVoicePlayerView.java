@@ -18,6 +18,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
@@ -175,14 +176,25 @@ public class EaseVoicePlayerView extends RelativeLayout {
      * 异步下载文件
      */
     private void asyncDownloadVoice() {
-        new AsyncTask<Void, Void, String>() {
+        new MyAsyncTask(this).execute();
+    }
 
-            @Override
-            protected String doInBackground(Void... params) {
-                String filename = getLocalFileName(voiceFilePath);
-                File file = new File(getVoiceCacheDir(), filename);
+    static class MyAsyncTask extends AsyncTask<Void, Void, String> {
+
+        private WeakReference<EaseVoicePlayerView> mOuter;
+
+        public MyAsyncTask(EaseVoicePlayerView activity) {
+            mOuter = new WeakReference<EaseVoicePlayerView>(activity);
+        }
+
+        @Override
+        protected String doInBackground(Void... params) {
+            EaseVoicePlayerView outer = mOuter.get();
+            if (outer != null) {// Do something with outer as your wish.
+                String filename = outer.getLocalFileName(outer.voiceFilePath);
+                File file = new File(outer.getVoiceCacheDir(), filename);
                 try {
-                    URL mURL = new URL(voiceFilePath);
+                    URL mURL = new URL(outer.voiceFilePath);
                     // 打开连接
                     HttpURLConnection conn = (HttpURLConnection) mURL.openConnection();
                     conn.connect();
@@ -205,20 +217,20 @@ public class EaseVoicePlayerView extends RelativeLayout {
                     conn.disconnect();
                 } catch (Exception e) {
                     e.printStackTrace();
-                } finally {
-
                 }
-                return file == null ? null : file.exists() ? file.getAbsolutePath() : null;
+                return file.exists() ? file.getAbsolutePath() : null;
             }
+            return null;
+        }
 
-            ;
+        protected void onPostExecute(String result) {
+//            EaseVoicePlayerView outer = mOuter.get();
+//            if (outer != null) {
+//                outer.voiceFilePath = result;
+//                outer.play();
+//            }
+        }
 
-            protected void onPostExecute(String result) {
-                //voiceFilePath = result;
-                //play();
-            }
-
-        }.execute();
     }
 
     /**
@@ -230,7 +242,7 @@ public class EaseVoicePlayerView extends RelativeLayout {
      * 播放动画
      */
     private void startVoicePlayAnimation() {
-        voiceImageView.setImageResource(R.anim.voice_playing);
+        voiceImageView.setImageResource(R.drawable.voice_playing);
         voiceAnimation = (AnimationDrawable) voiceImageView.getDrawable();
         voiceAnimation.start();
     }

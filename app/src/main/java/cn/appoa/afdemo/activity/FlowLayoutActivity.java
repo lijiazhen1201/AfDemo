@@ -22,7 +22,9 @@ import cn.appoa.aframework.utils.AtyUtils;
 import cn.appoa.aframework.widget.flowlayout.FlowLayout;
 import cn.appoa.aframework.widget.flowlayout.TagAdapter;
 
-
+/**
+ * 自动换行布局，流式布局
+ */
 public class FlowLayoutActivity extends BaseActivity {
 
     @Override

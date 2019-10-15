@@ -1,0 +1,68 @@
+ext {
+    dugs = [
+            keyAlias     : "afdemo",
+            keyPassword  : "123456",
+            storeFile    : "D:/MyAndroidSpace/studio/AfDemo/keystore/afdemo.jks",
+            storePassword: "123456",
+    ]
+    cfgs = [
+            appName          : "AfDemo",
+            applicationId    : "cn.appoa.afdemo",
+            compileSdkVersion: 26,
+            buildToolsVersion: "26.0.2",
+            minSdkVersion    : 16,
+            targetSdkVersion : 26,
+            versionCode      : 22,
+            versionName      : "1.2.2",
+            multiDexEnabled  : true,
+            minifyEnabled    : false,
+    ]
+    dpes = [
+            "junit"          : "junit:junit:4.12",
+            "runner"         : "com.android.support.test:runner:1.0.2",
+            "espresso"       : "com.android.support.test.espresso:espresso-core:3.0.2",
+            "appcompat"      : "com.android.support:appcompat-v7:26.1.0",
+            "design"         : "com.android.support:design:26.1.0",
+            "cardview"       : "com.android.support:cardview-v7:26.1.0",
+            "recyclerview"   : "com.android.support:recyclerview-v7:26.1.0",
+            "multidex"       : "com.android.support:multidex:1.0.3",//分包
+            "statusbar"      : "com.wangzhen:dark-status-bar:1.0.0",//状态栏
+            "banner"         : "com.youth.banner:banner:1.4.10",//轮播图
+            "ultraviewpager" : "com.alibaba.android:ultraviewpager:1.0.7.7@aar",//轮播图
+            "prdownloader"   : "com.mindorks.android:prdownloader:0.6.0",//文件下载
+            "blurry"         : "jp.wasabeef:blurry:3.0.0",//高斯模糊
+            "richeditor"     : "jp.wasabeef:richeditor-android:1.2.2",//富文本编辑器
+            "gifdrawable"    : "pl.droidsonroids.gif:android-gif-drawable:1.2.3",//一个开源gif控件
+            "ncalendar"      : "com.necer.ncalendar:ncalendar:3.4.5",//日历
+            "smarttable"     : "com.github.huangyanbin:SmartTable:2.2.0",//表格
+            "mpchart"        : "com.github.PhilJay:MPAndroidChart:v3.0.3",//曲线图
+            "mpchartutil"    : "com.teaanddogdog:mpandroidchartutil:1.0.3",//饼状图工具
+            "fastblelib"     : "com.clj.fastble:FastBleLib:2.3.4",//蓝牙
+            "utilcode"       : "com.blankj:utilcode:1.25.9",//常用工具类
+            "utilcodex"      : "com.blankj:utilcodex:1.25.9",//常用工具类
+            "qmui"           : "com.qmuiteam:qmui:1.4.0",//腾讯UI框架
+            "superbutton"    : "top.androidman:superbutton:1.1.1",//超级Button
+            "supertextview"  : "com.github.chenBingX:SuperTextView:3.2.3",//超级TextView
+            "permissionutils": "com.github.ly-android:PermissionUtils:1.0.3",//权限申请
+            "autolayout"     : "com.zhy:autolayout:1.4.5",//屏幕适配
+            "okgo"           : "com.lzy.net:okgo:3.0.4",//okgo网络访问
+            "updateapp"      : "com.qianwen:update-app:3.5.2",//版本更新
+            "refreshlayout"  : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-18",//下拉刷新
+            "adapterhelper"  : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44",//RecyclerView的Adapter
+            "ffmpeglibrary"  : "com.github.kui92:FFmpegLibrary:3.2",//视频框架
+            "jpush"          : "cn.jiguang.sdk:jpush:3.3.6",//极光推送
+            "jcore"          : "cn.jiguang.sdk:jcore:2.1.6",//极光推送
+            "leakcanary1"    : "com.squareup.leakcanary:leakcanary-android:1.6.3",//内存泄漏
+            "leakcanary2"    : "com.squareup.leakcanary:leakcanary-android-no-op:1.6.3",//内存泄漏
+            "afdemo"         : "com.github.lijiazhen1201:AfDemo:1.2.1",//全部框架
+            "aframework"     : "com.github.lijiazhen1201.AfDemo:AFramework:1.2.1",//基本框架
+            "cropper"        : "com.github.lijiazhen1201.AfDemo:AndroidImageCropper:1.2.1",//图片裁剪
+            "videoplayer"    : "com.github.lijiazhen1201.AfDemo:JiaoZiVideoPlayer:1.2.1",//视频播放
+            "qrcodescan"     : "com.github.lijiazhen1201.AfDemo:QrCodeScan:1.2.1",//二维码扫描
+            "refresh"        : "com.github.lijiazhen1201.AfDemo:SmartRefreshLayoutFragment:1.2.1",//下拉刷新
+            "camera"         : "com.github.lijiazhen1201.AfDemo:WxCameraView:1.2.1",//视频拍摄
+            "selector"       : "com.github.lijiazhen1201.AfDemo:WxImageSelector:1.2.1",//图片选择
+            "voice"          : "com.github.lijiazhen1201.AfDemo:WxVoiceSelector:1.2.1",//录音
+
+    ]
+}

@@ -34,6 +34,7 @@ import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
 
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 import java.util.Hashtable;
 import java.util.Vector;
 
@@ -52,7 +53,7 @@ public class ZmQRCodeFragment extends Fragment implements SurfaceHolder.Callback
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_zm_qr_code, null);
+        View view = inflater.inflate(R.layout.fragment_zm_qr_code, container, false);
         initView(view);
         return view;
     }
@@ -94,6 +95,7 @@ public class ZmQRCodeFragment extends Fragment implements SurfaceHolder.Callback
      * @param view
      */
     private void initView(View view) {
+        scanHandler = new MyHandler(this);
         captureContainer = (RelativeLayout) view.findViewById(R.id.capture_container);
         surfaceView = (SurfaceView) view.findViewById(R.id.capture_preview);
         viewfinderView = (ViewfinderView) view.findViewById(R.id.view_finder_view);
@@ -408,19 +410,28 @@ public class ZmQRCodeFragment extends Fragment implements SurfaceHolder.Callback
 
     }
 
-    private Handler scanHandler = new Handler() {
+    private Handler scanHandler;
+
+    static class MyHandler extends Handler {
+
+        private WeakReference<ZmQRCodeFragment> mOuter;
+
+        public MyHandler(ZmQRCodeFragment activity) {
+            mOuter = new WeakReference<ZmQRCodeFragment>(activity);
+        }
 
         @Override
         public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            if (msg.what == 0) {
-                // 扫描成功获取信息
-                if (onQRCodeResultListener != null) {
-                    onQRCodeResultListener.onQRCodeResult((String) msg.obj, imageBitmap);
+            ZmQRCodeFragment outer = mOuter.get();
+            if (outer != null) {// Do something with outer as your wish.
+                if (msg.what == 0) {
+                    // 扫描成功获取信息
+                    if (outer.onQRCodeResultListener != null) {
+                        outer.onQRCodeResultListener.onQRCodeResult((String) msg.obj, outer.imageBitmap);
+                    }
                 }
             }
         }
-
-    };
+    }
 
 }

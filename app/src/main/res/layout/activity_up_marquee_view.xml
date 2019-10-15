@@ -2,7 +2,6 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBgLighterGray"
     android:fillViewport="true">
 
     <LinearLayout
@@ -38,6 +37,7 @@
             android:padding="@dimen/padding_big">
 
             <ImageView
+                android:contentDescription="@string/content_description_image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_marquee_logo_1" />
@@ -72,6 +72,7 @@
             android:padding="@dimen/padding_big">
 
             <ImageView
+                android:contentDescription="@string/content_description_image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_marquee_logo_2" />

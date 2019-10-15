@@ -15,7 +15,9 @@ import cn.appoa.aframework.adapter.ZmHolder;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
-
+/**
+ * 可设置最大高度的FrameLayout
+ */
 public class MaxHeightLayoutActivity extends BaseActivity
         implements CompoundButton.OnCheckedChangeListener {
 

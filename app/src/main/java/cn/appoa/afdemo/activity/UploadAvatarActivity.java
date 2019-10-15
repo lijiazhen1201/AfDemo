@@ -23,7 +23,9 @@ import cn.appoa.aframework.listener.OnCallbackListener;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
-
+/**
+ * 头像上传
+ */
 public class UploadAvatarActivity extends BaseImageActivity
         implements View.OnClickListener, OnCallbackListener {
 

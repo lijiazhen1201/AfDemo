@@ -18,6 +18,9 @@ import cn.appoa.afdemo.activity.ZmShakeActivity;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
+/**
+ * 主页
+ */
 public class MainActivity extends AbsListActivity {
 
     @Override
@@ -68,7 +71,7 @@ public class MainActivity extends AbsListActivity {
 
     @Override
     public void initData() {
-        requestAllPermissions();
+        //requestAllPermissions();
         super.initData();
     }
 

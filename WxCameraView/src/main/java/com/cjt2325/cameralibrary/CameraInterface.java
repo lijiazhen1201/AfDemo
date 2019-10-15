@@ -1,6 +1,7 @@
 package com.cjt2325.cameralibrary;
 
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -53,6 +54,7 @@ public class CameraInterface implements Camera.PreviewCallback {
         return isPreviewing;
     }
 
+    @SuppressLint("StaticFieldLeak")
     private static CameraInterface mCameraInterface;
 
     public static void destroyCameraInterface() {

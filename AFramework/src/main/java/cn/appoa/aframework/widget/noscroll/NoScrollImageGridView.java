@@ -59,7 +59,15 @@ public class NoScrollImageGridView extends GridView {
     }
 
     @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         if (mTouchInvalidPosListener == null) {
             return super.onTouchEvent(event);
         }

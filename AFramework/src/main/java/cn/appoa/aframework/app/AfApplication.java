@@ -1,5 +1,6 @@
 package cn.appoa.aframework.app;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 
@@ -9,12 +10,13 @@ import com.lzy.okgo.OkGo;
 
 import cn.appoa.aframework.R;
 import cn.appoa.aframework.crash.ZmCrashHandler;
-import cn.appoa.aframework.manager.Foreground;
 import zm.http.volley.ZmVolley;
 import zm.imageloader.ZmImageLoader;
 import zm.imageloader.impl.ImageLoaderGlide;
 
-public abstract class AfApplication extends Application {
+public abstract class AfApplication extends Application
+        //implements Foreground.ConfigurationsListener
+{
 
     /**
      * add
@@ -34,11 +36,13 @@ public abstract class AfApplication extends Application {
     /**
      * Application
      */
+    @SuppressLint("StaticFieldLeak")
     public static Application app;
 
     /**
      * ImageLoader
      */
+    @SuppressLint("StaticFieldLeak")
     public static ZmImageLoader imageLoader;
 
     @Override
@@ -47,7 +51,8 @@ public abstract class AfApplication extends Application {
         FILE_PROVIDER = getPackageName() + ".fileprovider";
         appContext = getApplicationContext();
         app = this;
-        Foreground.init(this);
+        //Foreground.init(this);
+        //Foreground.get().setConfigurationsListener(this);
         ZmCrashHandler.getInstance().init(this);
         try {
             imageLoader = initImageLoader();
@@ -90,6 +95,16 @@ public abstract class AfApplication extends Application {
      */
     public void initOkGo(OkGo mOkGo) {
     }
+
+//    @Override
+//    public void onStarted(Activity activity) {
+//
+//    }
+//
+//    @Override
+//    public void onStopped(Activity activity) {
+//
+//    }
 
     /**
      * 初始化App

@@ -24,6 +24,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.jzvd.JZVideoPlayerActivity;
 import zm.imageloader.LoadingBitmapListener;
 
+/**
+ * 视频上传
+ */
 public class UploadVideoActivity extends BaseActivity implements View.OnClickListener, DefaultUploadVideoDialog.OnUploadVideoListener {
 
     private String video_path;// 视频地址
@@ -45,7 +48,7 @@ public class UploadVideoActivity extends BaseActivity implements View.OnClickLis
 
     private ImageView iv_video_img;
     private ImageView iv_video_img_del;
-    private ImageView iv_video_logo;
+    private ImageView iv_video_logos;
 
     @Override
     public void initView() {
@@ -55,7 +58,7 @@ public class UploadVideoActivity extends BaseActivity implements View.OnClickLis
         iv_video_img.setOnClickListener(this);
         iv_video_img_del = (ImageView) findViewById(R.id.iv_picker_del);
         iv_video_img_del.setOnClickListener(this);
-        iv_video_logo = (ImageView) findViewById(R.id.iv_video_logo);
+        iv_video_logos = (ImageView) findViewById(R.id.iv_video_logos);
     }
 
     @Override
@@ -121,7 +124,7 @@ public class UploadVideoActivity extends BaseActivity implements View.OnClickLis
         video_path = null;
         iv_video_img.setImageResource(R.drawable.btn_addpic_yes);
         iv_video_img_del.setVisibility(View.INVISIBLE);
-        iv_video_logo.setVisibility(View.INVISIBLE);
+        iv_video_logos.setVisibility(View.INVISIBLE);
     }
 
     private static final int REQUEST_CODE_VIDEO_RECORDER = 1;
@@ -132,8 +135,8 @@ public class UploadVideoActivity extends BaseActivity implements View.OnClickLis
         switch (type) {
             case 1://拍摄
                 Intent intent = new Intent(mActivity, JCameraViewActivity.class);
-                //duration拍摄时长（默认10秒），从按下到拍摄可能需要准备时间，最好+1秒，这里传16表示拍摄15秒
-                intent.putExtra("duration", 16);
+                //duration拍摄时长（单位毫秒）（默认10秒），从按下到拍摄可能需要准备时间，最好+1秒，这里传16表示拍摄15秒
+                intent.putExtra("duration", 16 * 1000);
                 //state拍摄类型（默认点击拍照，长按摄像）
                 //待选值：
                 //JCameraView.BUTTON_STATE_BOTH（两种都行）
@@ -182,7 +185,7 @@ public class UploadVideoActivity extends BaseActivity implements View.OnClickLis
      */
     private void setVideo() {
         iv_video_img_del.setVisibility(View.VISIBLE);
-        iv_video_logo.setVisibility(View.VISIBLE);
+        iv_video_logos.setVisibility(View.VISIBLE);
         AfApplication.imageLoader.loadImage(video_path_img, iv_video_img, R.drawable.btn_addpic_yes,
                 new LoadingBitmapListener() {
 

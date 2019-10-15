@@ -30,6 +30,10 @@ public class ChildViewPager extends ViewPager {
         super(context, attrs);
     }
 
+    @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
@@ -40,6 +44,9 @@ public class ChildViewPager extends ViewPager {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         // 每次进行onTouch事件都记录当前的按下的坐标
         curP.x = event.getX();
         curP.y = event.getY();

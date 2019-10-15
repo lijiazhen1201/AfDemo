@@ -9,6 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * ===================================== 作 者: 陈嘉桐 版 本：1.1.4 创建日期：2017/4/25 描 述：
@@ -58,6 +59,6 @@ public class FileUtil {
 	}
 
 	public static String formatTime(long milliseconds) {
-		return new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date(milliseconds));
+		return new SimpleDateFormat("yyyyMMddHHmmssSSS", Locale.getDefault()).format(new Date(milliseconds));
 	}
 }

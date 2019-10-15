@@ -40,6 +40,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.lang.ref.WeakReference;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -199,30 +200,41 @@ public class PhotoPickerGridView extends GridView {
     /**
      * Handler
      */
-    private Handler handler = new Handler() {
+    private Handler handler;
+
+    static class MyHandler extends Handler {
+
+        private WeakReference<PhotoPickerGridView> mOuter;
+
+        public MyHandler(PhotoPickerGridView activity) {
+            mOuter = new WeakReference<PhotoPickerGridView>(activity);
+        }
 
         @Override
         public void handleMessage(Message msg) {
-            if (msg.what == 9999) {
-                // 发生异常
-                dismissLoading();
-            } else {
-                if (TextUtils.equals(defaultPhotoPath, photoPaths.get(photoPaths.size() - 1))) {
-                    // 最后一张是默认图
-                    if (photoPaths.size() - 2 == msg.what) {
-                        dismissLoading();
-                    }
+            PhotoPickerGridView outer = mOuter.get();
+            if (outer != null) {// Do something with outer as your wish.
+                if (msg.what == 9999) {
+                    // 发生异常
+                    outer.dismissLoading();
                 } else {
-                    if (photoPaths.size() - 1 == msg.what) {
-                        dismissLoading();
+                    if (TextUtils.equals(outer.defaultPhotoPath, outer.photoPaths.get(outer.photoPaths.size() - 1))) {
+                        // 最后一张是默认图
+                        if (outer.photoPaths.size() - 2 == msg.what) {
+                            outer.dismissLoading();
+                        }
+                    } else {
+                        if (outer.photoPaths.size() - 1 == msg.what) {
+                            outer.dismissLoading();
+                        }
                     }
-                }
-                if (photoBase64s != null) {
-                    photoBase64s[msg.what] = (String) msg.obj;
+                    if (outer.photoBase64s != null) {
+                        outer.photoBase64s[msg.what] = (String) msg.obj;
+                    }
                 }
             }
         }
-    };
+    }
 
     /**
      * 是否转base64
@@ -779,6 +791,7 @@ public class PhotoPickerGridView extends GridView {
      */
     private void init(Context context, AttributeSet attrs) {
         this.context = context;
+        this.handler = new MyHandler(this);
         PRDownloaderConfig config = PRDownloaderConfig.newBuilder()
                 .setReadTimeout(30_000)
                 .setConnectTimeout(30_000)
@@ -1021,9 +1034,9 @@ public class PhotoPickerGridView extends GridView {
             ViewHolder holder = null;
             if (convertView == null) {
                 if (imageLoader != null && imageLoader.getLayoutId() != 0) {
-                    convertView = LayoutInflater.from(context).inflate(imageLoader.getLayoutId(), null);
+                    convertView = LayoutInflater.from(context).inflate(imageLoader.getLayoutId(), parent, false);
                 } else {
-                    convertView = LayoutInflater.from(context).inflate(R.layout.item_photo_picker_grid_view, null);
+                    convertView = LayoutInflater.from(context).inflate(R.layout.item_photo_picker_grid_view, parent, false);
                 }
                 holder = new ViewHolder();
                 holder.iv_picker_add = (ImageView) convertView.findViewById(R.id.iv_picker_add);

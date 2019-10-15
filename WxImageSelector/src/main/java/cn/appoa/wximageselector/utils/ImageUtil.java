@@ -166,7 +166,7 @@ public class ImageUtil {
     }
     
     public static String formatTime(long milliseconds) {
-		return new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date(milliseconds));
+		return new SimpleDateFormat("yyyyMMddHHmmssSSS",Locale.getDefault()).format(new Date(milliseconds));
 	}
 
 }

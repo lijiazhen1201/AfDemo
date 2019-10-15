@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
+import android.os.Message;
 import android.os.PowerManager;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
@@ -14,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.lang.ref.WeakReference;
 
 
 /**
@@ -29,13 +32,25 @@ public class EaseVoiceRecorderView extends RelativeLayout {
     protected ImageView micImage;
     protected TextView recordingHint;
 
-    protected Handler micImageHandler = new Handler() {
-        @Override
-        public void handleMessage(android.os.Message msg) {
-            // change image
-            micImage.setImageDrawable(micImages[msg.what]);
+    protected Handler micImageHandler;
+
+    static class MyHandler extends Handler {
+
+        private WeakReference<EaseVoiceRecorderView> mOuter;
+
+        public MyHandler(EaseVoiceRecorderView activity) {
+            mOuter = new WeakReference<EaseVoiceRecorderView>(activity);
         }
-    };
+
+        @Override
+        public void handleMessage(Message msg) {
+            EaseVoiceRecorderView outer = mOuter.get();
+            if (outer != null) {// Do something with outer as your wish.
+                // change image
+                outer.micImage.setImageDrawable(outer.micImages[msg.what]);
+            }
+        }
+    }
 
     public EaseVoiceRecorderView(Context context) {
         super(context);
@@ -54,6 +69,7 @@ public class EaseVoiceRecorderView extends RelativeLayout {
 
     private void init(Context context) {
         this.context = context;
+
         LayoutInflater.from(context).inflate(R.layout.ease_widget_voice_recorder, this);
 
         micImage = (ImageView) findViewById(R.id.mic_image);
@@ -79,6 +95,8 @@ public class EaseVoiceRecorderView extends RelativeLayout {
 
         wakeLock = ((PowerManager) context.getSystemService(Context.POWER_SERVICE)).newWakeLock(
                 PowerManager.SCREEN_DIM_WAKE_LOCK, "demo");
+
+        micImageHandler = new MyHandler(this);
     }
 
     /**
@@ -161,7 +179,7 @@ public class EaseVoiceRecorderView extends RelativeLayout {
             return;
         }
         try {
-            wakeLock.acquire();
+            wakeLock.acquire(10 * 60 * 1000L /*10 minutes*/);
             this.setVisibility(View.VISIBLE);
             recordingHint.setText(context.getString(R.string.move_up_to_cancel));
             recordingHint.setBackgroundColor(Color.TRANSPARENT);

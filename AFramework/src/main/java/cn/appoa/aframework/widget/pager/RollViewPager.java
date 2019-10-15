@@ -10,6 +10,7 @@ import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -206,26 +207,36 @@ public class RollViewPager extends ViewPager {
             AsyncRun.runInMain(new Runnable() {
                 @Override
                 public void run() {
-                    handler = new Handler() {
-                        @Override
-                        public void handleMessage(Message msg) {
-                            switch (msg.what) {
-                                case WHAT_GO:
-                                    if (totalSize == 0) {
-                                        return;
-                                    }
-                                    if (RollViewPager.this != null) {
-                                        currentPosition++;
-                                        RollViewPager.this.setCurrentItem(currentPosition % totalSize);
-                                    }
-                                    sendEmptyMessageDelayed(WHAT_GO, byTime * 1000);
-                                    break;
-                            }
-                        }
-                    };
+                    handler = new MyHandler(RollViewPager.this);
                     go();
                 }
             });
+        }
+    }
+
+    static class MyHandler extends Handler {
+
+        private WeakReference<RollViewPager> mOuter;
+
+        public MyHandler(RollViewPager activity) {
+            mOuter = new WeakReference<RollViewPager>(activity);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            RollViewPager outer = mOuter.get();
+            if (outer != null) {// Do something with outer as your wish.
+                if (msg.what == outer.WHAT_GO) {
+                    if (outer.totalSize == 0) {
+                        return;
+                    }
+                    if (outer != null) {
+                        outer.currentPosition++;
+                        outer.setCurrentItem(outer.currentPosition % outer.totalSize);
+                    }
+                    sendEmptyMessageDelayed(outer.WHAT_GO, outer.byTime * 1000);
+                }
+            }
         }
     }
 

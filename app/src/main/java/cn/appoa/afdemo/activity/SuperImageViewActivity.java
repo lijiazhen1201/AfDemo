@@ -10,7 +10,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
 import cn.appoa.aframework.widget.image.SuperImageView;
 
-
+/**
+ * 圆形，圆角，带边框的ImageView
+ */
 public class SuperImageViewActivity extends BaseActivity {
 
     @Override

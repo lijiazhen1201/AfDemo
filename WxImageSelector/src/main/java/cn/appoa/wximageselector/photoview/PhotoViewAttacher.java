@@ -15,6 +15,7 @@
  *******************************************************************************/
 package cn.appoa.wximageselector.photoview;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.graphics.Matrix.ScaleToFit;
@@ -340,6 +341,7 @@ public class PhotoViewAttacher implements View.OnTouchListener,
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouch(View v, MotionEvent ev) {
         boolean handled = false;
@@ -400,7 +402,6 @@ public class PhotoViewAttacher implements View.OnTouchListener,
             }
 
         }
-
         return handled;
     }
 

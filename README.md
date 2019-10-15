@@ -30,7 +30,7 @@
             implementation 'com.github.lijiazhen1201.AfDemo:AFramework:VERSION_CODE'
             implementation 'com.github.lijiazhen1201.AfDemo:AndroidImageCropper:VERSION_CODE'
             implementation 'com.github.lijiazhen1201.AfDemo:JiaoZiVideoPlayer:VERSION_CODE'
-			implementation 'com.github.lijiazhen1201.AfDemo:QrCodeScan:VERSION_CODE'
+            implementation 'com.github.lijiazhen1201.AfDemo:QrCodeScan:VERSION_CODE'
             implementation 'com.github.lijiazhen1201.AfDemo:SmartRefreshLayoutFragment:VERSION_CODE'
             implementation 'com.github.lijiazhen1201.AfDemo:WxCameraView:VERSION_CODE'
             implementation 'com.github.lijiazhen1201.AfDemo:WxImageSelector:VERSION_CODE'
@@ -62,7 +62,7 @@ public class MyApplication extends AfApplication {
 <application
         android:name=".app.MyApplication" >
 
-		...
+        ...
 
 </application>
 ```
@@ -70,13 +70,13 @@ public class MyApplication extends AfApplication {
 - 在AndroidManifest的application节点中添加设计稿的尺寸
 
 ```java
-		<!-- 设计稿的尺寸 -->
-		<meta-data
-			android:name="design_width"
-			android:value="1080" />
-		<meta-data
-			android:name="design_height"
-			android:value="1920" />
+        <!-- 设计稿的尺寸 -->
+        <meta-data
+            android:name="design_width"
+            android:value="1080" />
+        <meta-data
+            android:name="design_height"
+            android:value="1920" />
 ```
 
 **注意：**宽高的值取自UI设计图的宽高，单位像素
@@ -231,6 +231,15 @@ public class MyApplication extends AfApplication {
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    
+    <style name="AppThemeSplash" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
 
     <style name="AppThemeFullscreen" parent="AppTheme">
         <item name="windowNoTitle">true</item>
@@ -242,6 +251,12 @@ public class MyApplication extends AfApplication {
     <style name="AppThemeBlack" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorBlack</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    
+    <style name="AppThemeWhite" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorWhite</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 ```

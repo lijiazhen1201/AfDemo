@@ -12,7 +12,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AsyncRun;
 import cn.appoa.aframework.utils.AtyUtils;
 
-
+/**
+ * 主线程和子线程切换
+ */
 public class AsyncRunActivity extends BaseActivity {
 
     @Override

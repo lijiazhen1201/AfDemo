@@ -22,7 +22,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import zm.http.volley.ZmVolley;
 import zm.http.volley.request.ZmStringRequest;
 
-
+/**
+ * 滚轮控件
+ */
 public class WheelViewActivity extends BaseActivity
         implements View.OnClickListener, OnCallbackListener {
 

@@ -1,5 +1,6 @@
 package cn.appoa.afdemo.activity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.MotionEvent;
@@ -18,6 +19,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.wxvoiceselector.EaseVoicePlayerView;
 import cn.appoa.wxvoiceselector.EaseVoiceRecorderView;
 
+/**
+ * 语音上传
+ */
 public class UploadVoiceActivity extends BaseActivity implements View.OnClickListener,
         EaseVoiceRecorderView.EaseVoiceRecorderCallback {
 
@@ -55,6 +59,7 @@ public class UploadVoiceActivity extends BaseActivity implements View.OnClickLis
     public void initData() {
         tv_push_to_talk.setOnTouchListener(new View.OnTouchListener() {
 
+            @SuppressLint("ClickableViewAccessibility")
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (voiceRecorderView != null) {

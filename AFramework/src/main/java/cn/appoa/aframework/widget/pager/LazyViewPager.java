@@ -1190,9 +1190,17 @@ public class LazyViewPager extends ViewGroup {
         return mIsBeingDragged;
     }
 
+    @Override
+    public boolean performClick() {
+        return super.performClick();
+    }
+
     @SuppressWarnings("deprecation")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
+        if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+            performClick();
+        }
         if (mFakeDragging) {
             // A fake drag is in progress already, ignore this real one
             // but still eat the touch events.

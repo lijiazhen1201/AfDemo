@@ -15,6 +15,7 @@
         android:layout_width="@dimen/video_logo_width"
         android:layout_height="@dimen/video_logo_height"
         android:layout_centerInParent="true"
+        android:contentDescription="@string/content_description_image_view"
         android:scaleType="centerInside"
         android:src="@drawable/icon_video_big"
         android:visibility="invisible" />
@@ -24,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:contentDescription="@string/content_description_image_view"
         android:minHeight="16dp"
         android:minWidth="16dp"
         android:scaleType="centerInside"

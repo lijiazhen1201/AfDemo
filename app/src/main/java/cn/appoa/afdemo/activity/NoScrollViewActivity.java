@@ -17,7 +17,9 @@ import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
 
-
+/**
+ * ScrollView嵌套滑动布局
+ */
 public class NoScrollViewActivity extends BaseActivity
         implements CompoundButton.OnCheckedChangeListener {
 

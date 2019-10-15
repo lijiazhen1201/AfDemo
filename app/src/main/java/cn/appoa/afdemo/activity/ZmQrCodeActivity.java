@@ -21,7 +21,9 @@ import cn.appoa.aframework.utils.AtyUtils;
 import cn.appoa.qrcodescan.camera.CameraManager;
 import cn.appoa.qrcodescan.ui.ZmQRCodeFragment;
 
-
+/**
+ * 微信扫一扫
+ */
 public class ZmQrCodeActivity extends BaseImageActivity
         implements CompoundButton.OnCheckedChangeListener, ZmQRCodeFragment.OnQRCodeResultListener {
 

@@ -5,6 +5,7 @@ import android.os.Parcelable;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 /**
  * 图片实体类
@@ -51,7 +52,7 @@ public class Image implements Parcelable {
      * @return
      */
     private String LongToHms(long duration) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("mm:ss", Locale.getDefault());
         return dateFormat.format(duration);
     }
 

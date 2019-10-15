@@ -1,5 +1,6 @@
 package cn.appoa.aframework.crash;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -25,6 +26,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import cn.appoa.aframework.R;
@@ -42,6 +44,7 @@ public class ZmCrashHandler implements UncaughtExceptionHandler {
     // 系统默认的UncaughtException处理类
     private UncaughtExceptionHandler mDefaultHandler;
     // CrashHandler实例
+    @SuppressLint("StaticFieldLeak")
     private static ZmCrashHandler instance;
     // 程序的Context对象
     private Context mContext;
@@ -49,7 +52,7 @@ public class ZmCrashHandler implements UncaughtExceptionHandler {
     private Map<String, String> infos = new HashMap<String, String>();
 
     // 用于格式化日期,作为日志文件名的一部分
-    private DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+    private DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss", Locale.getDefault());
 
     /**
      * 保证只有一个CrashHandler实例

@@ -1,5 +1,8 @@
 package cn.appoa.afdemo.activity;
 
+/**
+ * 常用工具类
+ */
 public class CommonUtilsActivity extends AbsListActivity {
 
     @Override

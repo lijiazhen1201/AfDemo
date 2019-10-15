@@ -4,6 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Md5加密工具类
@@ -79,7 +80,7 @@ public class Md5Utils {
     public static String getSmsToken(String phone) {
         String token = phone;
         // 获取当前时间
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
         String d = phone + sdf.format(new Date());
         // 32位md5加密（小写）
         String d32 = GetMD5Code32(d);

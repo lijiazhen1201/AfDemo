@@ -20,7 +20,9 @@ import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
 
-
+/**
+ * Json解析工具类
+ */
 public class JsonUtilsActivity extends BaseActivity
         implements View.OnClickListener {
 

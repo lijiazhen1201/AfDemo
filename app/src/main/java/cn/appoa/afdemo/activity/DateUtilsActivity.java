@@ -12,7 +12,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.DateUtils;
 import cn.appoa.aframework.utils.MyDateUtils;
 
-
+/**
+ * 时间格式化
+ */
 public class DateUtilsActivity extends BaseActivity {
 
     @Override

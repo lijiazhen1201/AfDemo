@@ -13,7 +13,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
 import cn.appoa.aframework.utils.Md5Utils;
 
-
+/**
+ * Md5加密工具类
+ */
 public class Md5UtilsActivity extends BaseActivity
         implements View.OnClickListener {
 

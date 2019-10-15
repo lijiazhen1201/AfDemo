@@ -1,5 +1,8 @@
 package cn.appoa.afdemo.activity;
 
+/**
+ * 自定义控件
+ */
 public class CustomWidgetActivity extends AbsListActivity {
 
     @Override

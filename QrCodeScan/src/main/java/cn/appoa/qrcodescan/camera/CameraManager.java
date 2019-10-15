@@ -16,6 +16,7 @@
 
 package cn.appoa.qrcodescan.camera;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
@@ -43,6 +44,7 @@ public final class CameraManager {
     private static final int MAX_FRAME_WIDTH = 720;
     private static final int MAX_FRAME_HEIGHT = 720;
 
+    @SuppressLint("StaticFieldLeak")
     private static CameraManager cameraManager;
 
     static final int SDK_INT; // Later we can use Build.VERSION.SDK_INT

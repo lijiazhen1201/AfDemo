@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="content_description_image_view">ImageView</string>
     <string name="image">图片</string>
     <string name="image_and_video">图片和视频</string>
     <string name="confirm">确定</string>

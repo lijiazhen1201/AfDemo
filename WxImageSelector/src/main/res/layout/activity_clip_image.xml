@@ -3,24 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_black_bg_image"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/rl_top_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_bar_top"
         android:background="@color/color_black_bg_bar"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <FrameLayout
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:foreground="@drawable/btn_back_selector" >
+            android:foreground="@drawable/btn_back_selector">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/content_description_image_view"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:scaleType="centerInside"
@@ -52,7 +53,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="16dp"
-            android:foreground="@drawable/btn_foreground_selector" >
+            android:foreground="@drawable/btn_foreground_selector">
 
             <TextView
                 android:id="@+id/tv_confirm"

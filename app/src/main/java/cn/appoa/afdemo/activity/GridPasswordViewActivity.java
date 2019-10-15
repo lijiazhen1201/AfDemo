@@ -9,7 +9,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
 import cn.appoa.aframework.widget.gridpassword.GridPasswordView;
 
-
+/**
+ * 支付密码输入框
+ */
 public class GridPasswordViewActivity extends BaseActivity {
 
     @Override

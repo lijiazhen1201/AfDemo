@@ -8,7 +8,9 @@ import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.widget.text.NumberAnimTextView;
 
-
+/**
+ * 数字增加和减小动画TextView
+ */
 public class NumberAnimTextViewActivity extends BaseActivity {
 
     @Override

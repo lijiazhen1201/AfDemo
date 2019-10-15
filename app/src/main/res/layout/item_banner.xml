@@ -8,6 +8,7 @@
         android:id="@+id/iv_banner"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:contentDescription="@string/content_description_image_view"
         android:scaleType="fitXY"
         android:src="@drawable/default_img" />
 

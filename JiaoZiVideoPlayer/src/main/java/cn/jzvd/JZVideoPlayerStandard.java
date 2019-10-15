@@ -27,6 +27,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -285,7 +286,7 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
         } else if (i == R.id.clarity) {
             LayoutInflater inflater = (LayoutInflater) getContext()
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            final LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.jz_layout_clarity, null);
+            final LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.jz_layout_clarity, this,false);
 
             OnClickListener mQualityListener = new OnClickListener() {
                 public void onClick(View v) {
@@ -419,7 +420,7 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
     }
 
     public void setSystemTimeAndBattery() {
-        SimpleDateFormat dateFormater = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat dateFormater = new SimpleDateFormat("HH:mm", Locale.getDefault());
         Date date = new Date();
         videoCurrentTime.setText(dateFormater.format(date));
         if ((System.currentTimeMillis() - LAST_GET_BATTERYLEVEL_TIME) > 30000) {
@@ -672,7 +673,7 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
     public void showProgressDialog(float deltaX, String seekTime, long seekTimePosition, String totalTime, long totalTimeDuration) {
         super.showProgressDialog(deltaX, seekTime, seekTimePosition, totalTime, totalTimeDuration);
         if (mProgressDialog == null) {
-            View localView = LayoutInflater.from(getContext()).inflate(R.layout.jz_dialog_progress, null);
+            View localView = LayoutInflater.from(getContext()).inflate(R.layout.jz_dialog_progress, this,false);
             mDialogProgressBar = (ProgressBar) localView.findViewById(R.id.duration_progressbar);
             mDialogSeekTime = (TextView) localView.findViewById(R.id.tv_current);
             mDialogTotalTime = (TextView) localView.findViewById(R.id.tv_duration);
@@ -706,7 +707,7 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
     public void showVolumeDialog(float deltaY, int volumePercent) {
         super.showVolumeDialog(deltaY, volumePercent);
         if (mVolumeDialog == null) {
-            View localView = LayoutInflater.from(getContext()).inflate(R.layout.jz_dialog_volume, null);
+            View localView = LayoutInflater.from(getContext()).inflate(R.layout.jz_dialog_volume, this,false);
             mDialogVolumeImageView = (ImageView) localView.findViewById(R.id.volume_image_tip);
             mDialogVolumeTextView = (TextView) localView.findViewById(R.id.tv_volume);
             mDialogVolumeProgressBar = (ProgressBar) localView.findViewById(R.id.volume_progressbar);
@@ -742,7 +743,7 @@ public class JZVideoPlayerStandard extends JZVideoPlayer {
     public void showBrightnessDialog(int brightnessPercent) {
         super.showBrightnessDialog(brightnessPercent);
         if (mBrightnessDialog == null) {
-            View localView = LayoutInflater.from(getContext()).inflate(R.layout.jz_dialog_brightness, null);
+            View localView = LayoutInflater.from(getContext()).inflate(R.layout.jz_dialog_brightness, this,false);
             mDialogBrightnessTextView = (TextView) localView.findViewById(R.id.tv_brightness);
             mDialogBrightnessProgressBar = (ProgressBar) localView.findViewById(R.id.brightness_progressbar);
             mBrightnessDialog = createDialogWithView(localView);

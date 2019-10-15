@@ -16,7 +16,9 @@ import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.widget.pager.HeightWrapViewPager;
 import cn.appoa.wximageselector.ShowBigImageListActivity;
 
-
+/**
+ * 自动适应图片高度的ViewPager
+ */
 public class HeightWrapViewPagerActivity extends BaseActivity {
 
     @Override

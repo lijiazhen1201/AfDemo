@@ -5,9 +5,9 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.SparseIntArray;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 import cn.appoa.afdemo.base.BaseFragment;
 import cn.appoa.afdemo.listener.ZmShakeListener;
@@ -30,7 +30,7 @@ public abstract class ZmShakeFragment extends BaseFragment
     }
 
     protected SoundPool sndPool = null;
-    protected HashMap<Integer, Integer> soundPoolMap = null;
+    protected SparseIntArray soundPoolMap = null;
 
     /**
      * 初始化声音
@@ -39,7 +39,7 @@ public abstract class ZmShakeFragment extends BaseFragment
      */
     protected void loadSound(final Context context) {
         sndPool = new SoundPool(2, AudioManager.STREAM_SYSTEM, 5);
-        soundPoolMap = new HashMap<Integer, Integer>();
+        soundPoolMap = new SparseIntArray();
         sndPool.setOnLoadCompleteListener(new SoundPool.OnLoadCompleteListener() {
 
             @Override

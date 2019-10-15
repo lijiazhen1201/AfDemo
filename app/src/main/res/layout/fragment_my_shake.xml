@@ -8,6 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:contentDescription="@string/content_description_image_view"
         android:src="@drawable/shakehideimg_man"
         android:visibility="visible" />
 
@@ -32,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
+                android:contentDescription="@string/content_description_image_view"
                 android:src="@drawable/shake_logo_up" />
 
             <View
@@ -55,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:contentDescription="@string/content_description_image_view"
                 android:src="@drawable/shake_logo_down" />
 
             <View

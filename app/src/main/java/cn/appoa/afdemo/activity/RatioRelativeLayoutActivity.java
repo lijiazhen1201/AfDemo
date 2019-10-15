@@ -11,7 +11,9 @@ import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
 
-
+/**
+ * 可设置宽高比的RelativeLayout
+ */
 public class RatioRelativeLayoutActivity extends BaseActivity {
 
     @Override

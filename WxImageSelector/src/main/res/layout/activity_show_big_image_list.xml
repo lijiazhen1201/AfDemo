@@ -21,10 +21,12 @@
         android:textSize="14sp" />
 
     <ImageView
+        android:contentDescription="@string/content_description_image_view"
         android:id="@+id/iv_back"
         android:layout_width="@dimen/height_bar_top"
         android:layout_height="@dimen/height_bar_top"
         android:clickable="true"
+        android:focusable="true"
         android:scaleType="centerInside"
         android:src="@drawable/icon_back"
         android:visibility="invisible" />

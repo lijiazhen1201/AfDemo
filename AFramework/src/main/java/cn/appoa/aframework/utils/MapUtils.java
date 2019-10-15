@@ -6,7 +6,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 
-import java.io.File;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,20 +26,21 @@ public final class MapUtils {
      *
      * @return
      */
-    public static boolean isGdMapInstalled() {
-        return isInstallPackage(PN_GAODE_MAP);
+    public static boolean isGdMapInstalled(Context context) {
+        return isInstallPackage(context, PN_GAODE_MAP);
     }
 
-    public static boolean isBaiduMapInstalled() {
-        return isInstallPackage(PN_BAIDU_MAP);
+    public static boolean isBaiduMapInstalled(Context context) {
+        return isInstallPackage(context, PN_BAIDU_MAP);
     }
 
-    public static boolean isTencentMapInstalled() {
-        return isInstallPackage(PN_TENCENT_MAP);
+    public static boolean isTencentMapInstalled(Context context) {
+        return isInstallPackage(context, PN_TENCENT_MAP);
     }
 
-    public static boolean isInstallPackage(String packageName) {
-        return new File("/data/data/" + packageName).exists();
+    public static boolean isInstallPackage(Context context, String packageName) {
+        //return new File("/data/data/" + packageName).exists();
+        return AtyUtils.checkApkExist(context, packageName);
     }
 
     /**
@@ -202,7 +202,7 @@ public final class MapUtils {
         if (context == null || dname == null || dlat == 0 || dlon == 0) {
             return;
         }
-        if (isGdMapInstalled()) {
+        if (isGdMapInstalled(context)) {
             String uriString = null;
             StringBuilder builder = new StringBuilder("amapuri://route/plan?sourceApplication=maxuslife");
             if (sname != null && slat != 0 && slon != 0) {
@@ -262,7 +262,7 @@ public final class MapUtils {
         if (context == null || dname == null || dlat == 0 || dlon == 0) {
             return;
         }
-        if (isTencentMapInstalled()) {
+        if (isTencentMapInstalled(context)) {
             String uriString = null;
             StringBuilder builder = new StringBuilder("qqmap://map/routeplan?type=drive&policy=0&referer=zhongshuo");
             if (sname != null && slat != 0 && slon != 0) {
@@ -319,7 +319,7 @@ public final class MapUtils {
         if (context == null || dname == null || dlat == 0 || dlon == 0) {
             return;
         }
-        if (isBaiduMapInstalled()) {
+        if (isBaiduMapInstalled(context)) {
             String uriString = null;
             StringBuilder builder = new StringBuilder("baidumap://map/direction?mode=driving");
             if (sname != null && slat != 0 && slon != 0) {

@@ -12,7 +12,9 @@ import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
 
-
+/**
+ * 地图导航工具类
+ */
 public class MapUtilsActivity extends BaseActivity {
 
     @Override

@@ -14,7 +14,9 @@ import cn.appoa.afdemo.fragment.SmartRefreshScrollViewFragment;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.titlebar.DefaultTitlebar;
 
-
+/**
+ * 下拉刷新列表
+ */
 public class SmartRefreshActivity extends BaseActivity {
 
     private int type;

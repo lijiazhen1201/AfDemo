@@ -40,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
+        android:contentDescription="@string/content_description_image_view"
         android:padding="8dp"
         android:src="@drawable/icon_image_un_select" />
 

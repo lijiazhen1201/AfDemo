@@ -65,6 +65,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -1001,7 +1002,7 @@ public class AtyUtils {
     public static String formatInt(int value) {
         String result = value + "";
         if (value < 100) {
-            result = String.format("%02d", value);
+            result = String.format(Locale.getDefault(), "%02d", value);
         }
         return result;
     }
@@ -1038,8 +1039,8 @@ public class AtyUtils {
     public static String getFormatData(String time, String patternTo, String patternFrom) {
         String formatData = "";
         try {
-            SimpleDateFormat formatFrom = new SimpleDateFormat(patternFrom);
-            SimpleDateFormat formatTo = new SimpleDateFormat(patternTo);
+            SimpleDateFormat formatFrom = new SimpleDateFormat(patternFrom, Locale.getDefault());
+            SimpleDateFormat formatTo = new SimpleDateFormat(patternTo, Locale.getDefault());
             Date endDate = formatFrom.parse(time);
             formatData = formatTo.format(endDate);
             return formatData;

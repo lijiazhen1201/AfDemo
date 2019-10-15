@@ -17,6 +17,7 @@
             android:foreground="@drawable/btn_back_selector">
 
             <ImageView
+                android:contentDescription="@string/content_description_image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:paddingLeft="10dp"
@@ -153,6 +154,7 @@
                     android:textSize="16sp" />
 
                 <ImageView
+                    android:contentDescription="@string/content_description_image_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/tv_folder_name"

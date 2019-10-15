@@ -801,7 +801,15 @@ public class CropOverlayView extends View {
   }
 
   @Override
+  public boolean performClick() {
+    return super.performClick();
+  }
+
+  @Override
   public boolean onTouchEvent(MotionEvent event) {
+    if (event.getAction() == MotionEvent.ACTION_DOWN) {
+      performClick();
+    }
     // If this View is not enabled, don't allow for touch interactions.
     if (isEnabled()) {
       if (mMultiTouchEnabled) {

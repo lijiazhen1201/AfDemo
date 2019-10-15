@@ -1,5 +1,8 @@
 package cn.appoa.afdemo.activity;
 
+/**
+ * Github优秀开源库
+ */
 public class GithubProjectActivity extends AbsListActivity {
 
     @Override
