@@ -1,23 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        debug {
-            keyAlias dugs.keyAlias
-            keyPassword dugs.keyPassword
-            storeFile file(dugs.storeFile)
-            storePassword dugs.storePassword
-        }
-    }
-    compileSdkVersion cfgs.compileSdkVersion
+    compileSdkVersion 26
     defaultConfig {
-        applicationId cfgs.applicationId
-        minSdkVersion cfgs.minSdkVersion
-        targetSdkVersion cfgs.targetSdkVersion
-        versionCode cfgs.versionCode
-        versionName cfgs.versionName
+        applicationId cn.appoa.afdemo
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 27
+        versionName "1.2.7"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled cfgs.multiDexEnabled
+        multiDexEnabled true
     }
     buildTypes {
         release {
