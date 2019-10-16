@@ -54,15 +54,15 @@ ext {
             "jcore"          : "cn.jiguang.sdk:jcore:2.1.6",//极光推送
             "leakcanary1"    : "com.squareup.leakcanary:leakcanary-android:1.6.3",//内存泄漏
             "leakcanary2"    : "com.squareup.leakcanary:leakcanary-android-no-op:1.6.3",//内存泄漏
-            "afdemo"         : "com.github.lijiazhen1201:AfDemo:1.2.1",//全部框架
-            "aframework"     : "com.github.lijiazhen1201.AfDemo:AFramework:1.2.1",//基本框架
-            "cropper"        : "com.github.lijiazhen1201.AfDemo:AndroidImageCropper:1.2.1",//图片裁剪
-            "videoplayer"    : "com.github.lijiazhen1201.AfDemo:JiaoZiVideoPlayer:1.2.1",//视频播放
-            "qrcodescan"     : "com.github.lijiazhen1201.AfDemo:QrCodeScan:1.2.1",//二维码扫描
-            "refresh"        : "com.github.lijiazhen1201.AfDemo:SmartRefreshLayoutFragment:1.2.1",//下拉刷新
-            "camera"         : "com.github.lijiazhen1201.AfDemo:WxCameraView:1.2.1",//视频拍摄
-            "selector"       : "com.github.lijiazhen1201.AfDemo:WxImageSelector:1.2.1",//图片选择
-            "voice"          : "com.github.lijiazhen1201.AfDemo:WxVoiceSelector:1.2.1",//录音
+            "afdemo"         : "com.github.lijiazhen1201:AfDemo:1.2.8",//全部框架
+            "aframework"     : "com.github.lijiazhen1201.AfDemo:AFramework:1.2.8",//基本框架
+            "cropper"        : "com.github.lijiazhen1201.AfDemo:AndroidImageCropper:1.2.8",//图片裁剪
+            "videoplayer"    : "com.github.lijiazhen1201.AfDemo:JiaoZiVideoPlayer:1.2.8",//视频播放
+            "qrcodescan"     : "com.github.lijiazhen1201.AfDemo:QrCodeScan:1.2.8",//二维码扫描
+            "refresh"        : "com.github.lijiazhen1201.AfDemo:SmartRefreshLayoutFragment:1.2.8",//下拉刷新
+            "camera"         : "com.github.lijiazhen1201.AfDemo:WxCameraView:1.2.8",//视频拍摄
+            "selector"       : "com.github.lijiazhen1201.AfDemo:WxImageSelector:1.2.8",//图片选择
+            "voice"          : "com.github.lijiazhen1201.AfDemo:WxVoiceSelector:1.2.8",//录音
 
     ]
 }
