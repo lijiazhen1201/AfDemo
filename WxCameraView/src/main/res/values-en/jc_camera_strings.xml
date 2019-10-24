@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_description_image_view">ImageView</string>
+    <string name="recording_too_short">recording too short</string>
+    <string name="open_camera_failed">open camera failed</string>
+    <string name="no_recording_permission">no permission</string>
+    <string name="setting_open_permission">please open permission</string>
+    <string name="state_only_capture">click to take photo</string>
+    <string name="state_only_recorder">long press to record video</string>
+    <string name="state_both">click to take photo and long press to record video</string>
+</resources>

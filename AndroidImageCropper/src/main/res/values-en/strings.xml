@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_description_image_view">ImageView</string>
+    <string name="pick_image_intent_chooser_title">Select</string>
+    <string name="crop_image_activity_no_permissions">no permission</string>
+    <string name="crop_image_menu_flip_horizontally">flip horizontally</string>
+    <string name="crop_image_menu_flip_vertically">flip vertically</string>
+    <string name="crop_image_menu_rotate_left">rotate left</string>
+    <string name="crop_image_menu_rotate_right">rotate right</string>
+    <string name="crop_image_cancel">Cancel</string>
+    <string name="crop_image_confirm">Confirm</string>
+
+</resources>

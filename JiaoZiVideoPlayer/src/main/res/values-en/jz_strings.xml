@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_description_image_view">ImageView</string>
+    <string name="tips_not_wifi">not wifi</string>
+    <string name="tips_not_wifi_confirm">Continue</string>
+    <string name="tips_not_wifi_cancel">Stop</string>
+    <string name="no_url">video path invalid</string>
+    <string name="replay">Replay</string>
+    <string name="click_to_restart">Restart</string>
+    <string name="video_loading_faild">video loading failed</string>
+</resources>

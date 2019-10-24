@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="content_description_image_view">ImageView</string>
+    <string name="image">Image</string>
+    <string name="image_and_video">Image And Video</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="preview">Preview</string>
+    <string name="camera">Take Photo</string>
+    <string name="select">Select</string>
+    <string name="preview_picture">Preview Image</string>
+    <string name="one_piece">Piece</string>
+    <string name="all_image">All Image</string>
+    <string name="all_video">All Video</string>
+    <string name="all_image_video">Image And Video</string>
+    <string name="loading_picture">loading picture</string>
+    <string name="most_choose">Max</string>
+    <string name="choose_hint">Hint</string>
+    <string name="clip_video">Edit Video</string>
+    <string name="clip_video_msg">%1$s Seconds Video Only</string>
+    <string name="no_read_camera_permission">No Permission</string>
+    <string name="not_found_camera_sd_card">No SD Card</string>
+
+</resources>

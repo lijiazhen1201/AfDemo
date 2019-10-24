@@ -84,7 +84,7 @@ public class GridItemDecoration extends UniversalItemDecoration {
             decoration.right = 0;
         } else {
             position = position - mAdapter.getHeaderLayoutCount();
-            int index = position & mSize;
+            int index = position % mSize;
             if (index == 0) {//左
                 decoration.top = position == index ? (mMargin ? mHeight : 0) : 0;
                 decoration.bottom = mHeight;

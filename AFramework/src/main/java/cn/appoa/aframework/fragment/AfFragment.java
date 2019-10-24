@@ -103,7 +103,7 @@ public abstract class AfFragment<P extends BasePresenter> extends Fragment imple
         }
         ZmVolley.cancelRequest(REQUEST_TAG);
         //取消全局默认的OKHttpClient中标识为tag的请求
-        OkGo.getInstance().cancelTag(this);
+        OkGo.getInstance().cancelTag(REQUEST_TAG);
         initVariable();
     }
 

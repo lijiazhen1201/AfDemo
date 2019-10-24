@@ -10,6 +10,7 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ import com.megabox.android.slide.SlideBackActivity;
 
 import cn.appoa.aframework.R;
 import cn.appoa.aframework.dialog.DefaultLoadingDialog;
+import cn.appoa.aframework.manager.Foreground;
 import cn.appoa.aframework.presenter.BasePresenter;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
@@ -37,9 +39,7 @@ import zm.http.volley.ZmVolley;
  * Activity基类
  */
 public abstract class AfActivity<P extends BasePresenter> extends SlideBackActivity
-        implements IBaseView
-//        , Foreground.ForegroundListener
-{
+        implements IBaseView, Foreground.ForegroundListener {
 
     /**
      * Tag
@@ -112,25 +112,9 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         // 传递数据
         initIntent(getIntent());
         // 加载布局
-        rootlayout = new RelativeLayout(this);
-        layout = new LinearLayout(this);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        titlebar = initTitlebar();
-        if (titlebar != null) {
-            layout.addView(titlebar, new LinearLayout.LayoutParams(-1, -2));
-        }
-        content = new FrameLayout(this);
-        content.setId(R.id.fl_fragment);
-        initContent(savedInstanceState);
-        layout.addView(content, new LinearLayout.LayoutParams(-1, -1, 1.0f));
-        bottom = initBottomView();
-        if (bottom != null) {
-            layout.addView(bottom, new LinearLayout.LayoutParams(-1, -2));
-        }
-        rootlayout.addView(layout, new RelativeLayout.LayoutParams(-1, -1));
-        setContentView(rootlayout);
+        initContentView(savedInstanceState);
         bindButterKnife();
-//        Foreground.get(this).addForegroundListener(this);
+        Foreground.get(this).addForegroundListener(this);
         initView();
         mPresenter = initPresenter();
         if (mPresenter != null) {
@@ -138,6 +122,36 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
             onAttachView();
         }
         initData();
+    }
+
+    /**
+     * 加载布局
+     *
+     * @param savedInstanceState
+     */
+    protected void initContentView(Bundle savedInstanceState) {
+        rootlayout = new RelativeLayout(this);
+        rootlayout.setBackgroundColor(ContextCompat.getColor(mActivity, R.color.colorBgLighterGray));
+        layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        titlebar = initTitlebar();
+        if (titlebar != null) {
+            layout.addView(titlebar, new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        }
+        content = new FrameLayout(this);
+        content.setId(R.id.fl_fragment);
+        initContent(savedInstanceState);
+        layout.addView(content, new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT, 1.0f));
+        bottom = initBottomView();
+        if (bottom != null) {
+            layout.addView(bottom, new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        }
+        rootlayout.addView(layout, new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
+        setContentView(rootlayout);
     }
 
     @Override
@@ -160,8 +174,8 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         }
         ZmVolley.cancelRequest(REQUEST_TAG);
         //取消全局默认的OKHttpClient中标识为tag的请求
-        OkGo.getInstance().cancelTag(this);
-//        Foreground.get(this).removeForegroundListener(this);
+        OkGo.getInstance().cancelTag(REQUEST_TAG);
+        Foreground.get(this).removeForegroundListener(this);
     }
 
     /**
@@ -203,7 +217,9 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
      * 绑定view
      */
     public void onAttachView() {
-
+        if (mPresenter != null) {
+            mPresenter.onAttach(this);
+        }
     }
 
     /**
@@ -235,7 +251,8 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
     public void setContent(@Nullable View view) {
         if (view == null || content == null)
             return;
-        content.addView(view, new FrameLayout.LayoutParams(-1, -1));
+        content.addView(view, new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
     }
 
     @Override
@@ -361,17 +378,17 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         PermissionsManager.getInstance().notifyPermissionsChange(permissions, grantResults);
     }
 
-//    @Override
-//    public void onBecameForeground() {
-//        // 切换为前台
-//
-//    }
-//
-//    @Override
-//    public void onBecameBackground() {
-//        // 切换为后台
-//
-//    }
+    @Override
+    public void onBecameForeground() {
+        // 切换为前台
+
+    }
+
+    @Override
+    public void onBecameBackground() {
+        // 切换为后台
+
+    }
 
     public void bindButterKnife() {
         // 绑定注解

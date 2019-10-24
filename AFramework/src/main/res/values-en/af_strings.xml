@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="content_description_image_view">ImageView</string>
+    <string name="hint">Hint</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="upload_camera">Take Photo</string>
+    <string name="upload_album">Select Album</string>
+    <string name="upload_video_camera">Record Video</string>
+    <string name="upload_video_local">Select Video</string>
+    <string name="upload_cancel">Cancel</string>
+    <string name="loading">loading</string>
+    <string name="connect_error">connect error</string>
+    <string name="not_found_sd_card">not found sd card</string>
+    <string name="open_camera_permission">please open permission</string>
+    <string name="open_album_permission">please open permission</string>
+    <string name="open_save_permission">please open permission</string>
+    <string name="no_installed_qq">no installed QQ</string>
+    <string name="copy_success">copy success</string>
+    <string name="no_installed_we_chat">no installed WeChat</string>
+    <string name="no_call_phone_permission">please open permission</string>
+    <string name="no_send_sms_permission">please open permission</string>
+    <string name="download_failed">download failed</string>
+    <string name="download_success">download success %1$s</string>
+    <string name="crash_happened">sorry, the program appears unusual, will exit!</string>
+    <string name="baidu_map">Baidu Map</string>
+    <string name="gaode_map">Amap</string>
+    <string name="qq_map">QQ Map</string>
+
+</resources>

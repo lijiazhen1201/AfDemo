@@ -26,6 +26,7 @@ public class PullToRefreshOkGoPresenter extends PullToRefreshPresenter {
         for (String key : params.keySet()) {
             request.params(key, params.get(key));
         }
+        request.tag(mIPullToRefreshView.getRequestTag());
         request.execute(new StringCallback() {
 
             @Override

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- SmartRefreshLayout -->
+    <string name="content_description_image_view">ImageView</string>
+    <string name="srl_content_empty">empty content</string>
+    <string name="srl_component_falsify" formatted="false">%s 虚假区域\n代表运行时拖动的高度【%.1fdp】 \n而不会显示任何东西</string>
+    <string name="refresh_header_pulldown">pull down to refresh</string>
+    <string name="refresh_header_refreshing">refreshing</string>
+    <string name="refresh_header_loading">loading</string>
+    <string name="refresh_header_release">release to refresh</string>
+    <string name="refresh_header_finish">refresh finish</string>
+    <string name="refresh_header_failed">refresh failed</string>
+    <string name="refresh_header_lasttime">M-d HH:mm</string>
+    <string name="refresh_header_second_floor">second floor</string>
+    <string name="refresh_footer_pullup">pull up to load more</string>
+    <string name="refresh_footer_release">release to load more</string>
+    <string name="refresh_footer_loading">loading</string>
+    <string name="refresh_footer_refreshing">refreshing</string>
+    <string name="refresh_footer_finish">load more finish</string>
+    <string name="refresh_footer_failed">load more failed</string>
+    <string name="refresh_footer_allloaded">load all</string>
+
+</resources>
