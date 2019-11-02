@@ -9,6 +9,7 @@ public class DistrictList implements Serializable {
     public int area_type;
     public String geo;
     public int sup_business_area;
+	public boolean isSelected;
 
     public DistrictList() {
     }

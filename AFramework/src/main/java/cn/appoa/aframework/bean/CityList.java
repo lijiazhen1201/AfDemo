@@ -10,6 +10,7 @@ public class CityList implements Serializable {
     public int area_type;
     public String geo;
     public List<DistrictList> sub;
+	public boolean isSelected;
 
     public CityList() {
         super();

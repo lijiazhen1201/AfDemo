@@ -10,6 +10,7 @@ public class ProvinceList implements Serializable {
     public int area_type;
     public String geo;
     public List<CityList> sub;
+	public boolean isSelected;
 
     public ProvinceList() {
     }

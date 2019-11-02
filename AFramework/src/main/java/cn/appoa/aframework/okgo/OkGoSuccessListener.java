@@ -174,6 +174,7 @@ public abstract class OkGoSuccessListener extends StringCallback {
         if (!TextUtils.isEmpty(errorMessage)) {
             AtyUtils.showShort(AfApplication.appContext, errorMessage, false);
         }
+		onFinish();
     }
 
     @Override
