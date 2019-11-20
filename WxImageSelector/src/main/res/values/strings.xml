@@ -2,6 +2,7 @@
 <resources>
     <string name="content_description_image_view">ImageView</string>
     <string name="image">图片</string>
+	<string name="video">视频</string>
     <string name="image_and_video">图片和视频</string>
     <string name="confirm">确定</string>
     <string name="cancel">取消</string>

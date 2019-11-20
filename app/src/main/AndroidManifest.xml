@@ -171,7 +171,8 @@
         <!-- 头像上传 -->
         <activity android:name=".activity.UploadAvatarActivity" />
         <!-- 图片多选 -->
-        <activity android:name=".activity.UploadImageActivity" />
+        <activity android:name=".activity.UploadImageActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
         <!-- 视频上传 -->
         <activity android:name=".activity.UploadVideoActivity" />
         <!-- 本地视频 -->

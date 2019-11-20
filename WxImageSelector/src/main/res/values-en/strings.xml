@@ -2,6 +2,7 @@
 <resources>
     <string name="content_description_image_view">ImageView</string>
     <string name="image">Image</string>
+	<string name="video">Video</string>
     <string name="image_and_video">Image And Video</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>

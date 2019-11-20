@@ -24,19 +24,20 @@ public class UIUtil {
 
     /**
      * 获取视频的时间长度
+     *
      * @param path
      * @return
      */
-    public static long getVideoDuration(String path){
+    public static long getVideoDuration(String path) {
         try {
-            File file=new File(path);
-            if (!file.exists())return 0;
-            MediaMetadataRetriever mMetadataRetriever=new MediaMetadataRetriever();
+            File file = new File(path);
+            if (!file.exists()) return 0;
+            MediaMetadataRetriever mMetadataRetriever = new MediaMetadataRetriever();
             mMetadataRetriever.setDataSource(path);
-            String time=mMetadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
+            String time = mMetadataRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
             mMetadataRetriever.release();
             return stringToLong(time);
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         return 0;
@@ -44,28 +45,37 @@ public class UIUtil {
 
     /**
      * 获取视频的旋转角度
+     *
      * @param videoPath
      */
-    public static String getVideoInf(String videoPath){
-        MediaMetadataRetriever retr = new MediaMetadataRetriever();
-        retr.setDataSource(videoPath);
-        String rotation = retr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_ROTATION); // 视频旋转方向
-        Log.i("getVideoInf","rotation:"+rotation);
-        retr.release();
-        return rotation;
+    public static String getVideoInf(String videoPath) {
+        try {
+            File file = new File(videoPath);
+            if (!file.exists()) return null;
+            MediaMetadataRetriever retr = new MediaMetadataRetriever();
+            retr.setDataSource(videoPath);
+            String rotation = retr.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_ROTATION); // 视频旋转方向
+            Log.i("getVideoInf", "rotation:" + rotation);
+            retr.release();
+            return rotation;
+        } catch (Exception e) {
+
+        }
+        return null;
     }
 
     /**
      * 判断文件是否存在
+     *
      * @param path
      * @return
      */
-    public static boolean isFileExist(String path){
-        boolean exist=false;
+    public static boolean isFileExist(String path) {
+        boolean exist = false;
         try {
-            File file=new File(path);
-            exist=file.exists();
-        }catch (Exception e){
+            File file = new File(path);
+            exist = file.exists();
+        } catch (Exception e) {
 
         }
         return exist;
@@ -74,15 +84,16 @@ public class UIUtil {
 
     /**
      * string转float
+     *
      * @param str
      * @return
      */
-    public static float strToFloat(String str){
-        float value=0;
+    public static float strToFloat(String str) {
+        float value = 0;
         try {
-            Float aFloat= Float.parseFloat(str);
-            value=aFloat;
-        }catch (Exception e){
+            Float aFloat = Float.parseFloat(str);
+            value = aFloat;
+        } catch (Exception e) {
 
         }
         return value;
@@ -91,17 +102,18 @@ public class UIUtil {
 
     /**
      * 字符串转为long
+     *
      * @param str
      * @return
      */
-    public static long stringToLong(String str){
+    public static long stringToLong(String str) {
         long num = -1;
         try {
             num = Long.valueOf(str);
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-        return  num;
+        return num;
     }
 
 

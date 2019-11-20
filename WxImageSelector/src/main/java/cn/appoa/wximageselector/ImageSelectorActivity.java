@@ -6,6 +6,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.support.v4.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -49,6 +50,8 @@ import cn.appoa.wximageselector.model.ImageModel;
 import cn.appoa.wximageselector.utils.DateUtils;
 import cn.appoa.wximageselector.utils.ImageSelectorUtils;
 
+import static android.app.Activity.RESULT_OK;
+
 public class ImageSelectorActivity extends AppCompatActivity {
 
     public static int NUM_COLUMNS_PORTRAIT = 4;//竖屏显示数量
@@ -77,6 +80,7 @@ public class ImageSelectorActivity extends AppCompatActivity {
     private boolean isInitFolder;
     private boolean isSingle;
     private boolean isCamera;
+    private boolean isImage;
     private boolean isVideo;
     private int mMaxCount;
     private int videoDuration;
@@ -138,13 +142,57 @@ public class ImageSelectorActivity extends AppCompatActivity {
      */
     public static void openActivity(Activity activity, int requestCode, boolean isSingle,
                                     int maxSelectCount, boolean isCamera, boolean isVideo, int videoDuration) {
+        openActivity(activity, requestCode, isSingle, maxSelectCount, isCamera, true, isVideo, 0);
+    }
+
+    /**
+     * 启动图片视频选择器
+     *
+     * @param activity
+     * @param requestCode    请求码
+     * @param isSingle       是否单选
+     * @param maxSelectCount 最大数量
+     * @param isCamera       是否可以拍照
+     * @param isImage        是否可以选择图片
+     * @param isVideo        是否可以选择视频
+     * @param videoDuration  视频时长
+     */
+    public static void openActivity(Activity activity, int requestCode, boolean isSingle,
+                                    int maxSelectCount, boolean isCamera, boolean isImage,
+                                    boolean isVideo, int videoDuration) {
         Intent intent = new Intent(activity, ImageSelectorActivity.class);
         intent.putExtra(Constants.MAX_SELECT_COUNT, maxSelectCount);
         intent.putExtra(Constants.IS_SINGLE, isSingle);
         intent.putExtra(Constants.IS_CAMERA, isCamera);
+        intent.putExtra(Constants.IS_IMAGE, isImage);
         intent.putExtra(Constants.IS_VIDEO, isVideo);
         intent.putExtra(Constants.VIDEO_DURATION, videoDuration);
         activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * 启动图片视频选择器
+     *
+     * @param fragment
+     * @param requestCode    请求码
+     * @param isSingle       是否单选
+     * @param maxSelectCount 最大数量
+     * @param isCamera       是否可以拍照
+     * @param isImage        是否可以选择图片
+     * @param isVideo        是否可以选择视频
+     * @param videoDuration  视频时长
+     */
+    public static void openActivity(Fragment fragment, int requestCode, boolean isSingle,
+                                    int maxSelectCount, boolean isCamera, boolean isImage,
+                                    boolean isVideo, int videoDuration) {
+        Intent intent = new Intent(fragment.getActivity(), ImageSelectorActivity.class);
+        intent.putExtra(Constants.MAX_SELECT_COUNT, maxSelectCount);
+        intent.putExtra(Constants.IS_SINGLE, isSingle);
+        intent.putExtra(Constants.IS_CAMERA, isCamera);
+        intent.putExtra(Constants.IS_IMAGE, isImage);
+        intent.putExtra(Constants.IS_VIDEO, isVideo);
+        intent.putExtra(Constants.VIDEO_DURATION, videoDuration);
+        fragment.startActivityForResult(intent, requestCode);
     }
 
     @Override
@@ -158,8 +206,13 @@ public class ImageSelectorActivity extends AppCompatActivity {
         mMaxCount = intent.getIntExtra(Constants.MAX_SELECT_COUNT, 0);
         isSingle = intent.getBooleanExtra(Constants.IS_SINGLE, false);
         isCamera = intent.getBooleanExtra(Constants.IS_CAMERA, false);
+        isImage = intent.getBooleanExtra(Constants.IS_IMAGE, true);
         isVideo = intent.getBooleanExtra(Constants.IS_VIDEO, false);
         videoDuration = intent.getIntExtra(Constants.VIDEO_DURATION, 0);
+
+        if (!isImage) {//如果不能选图片，拍照也禁用
+            isCamera = false;
+        }
 
         setStatusBarColor();
         initView();
@@ -186,7 +239,7 @@ public class ImageSelectorActivity extends AppCompatActivity {
         rvImage = (GridView) findViewById(R.id.rv_image);
         rvFolder = (ListView) findViewById(R.id.rv_folder);
         tvTitle = (TextView) findViewById(R.id.tv_title);
-        tvTitle.setText(isVideo ? R.string.image_and_video : R.string.image);
+        tvTitle.setText(isVideo ? isImage ? R.string.image_and_video : R.string.video : R.string.image);
         tvConfirm = (TextView) findViewById(R.id.tv_confirm);
         tvPreview = (TextView) findViewById(R.id.tv_preview);
         btnConfirm = (FrameLayout) findViewById(R.id.btn_confirm);
@@ -656,7 +709,7 @@ public class ImageSelectorActivity extends AppCompatActivity {
      * 从SDCard加载图片。
      */
     private void loadImageForSDCard() {
-        ImageModel.loadImageForSDCard(this, isVideo, new ImageModel.DataCallback() {
+        ImageModel.loadImageForSDCard(this, isImage, isVideo, new ImageModel.DataCallback() {
             @Override
             public void onSuccess(ArrayList<Folder> folders) {
                 mFolders = folders;

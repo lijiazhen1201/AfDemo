@@ -52,7 +52,7 @@ public class FolderAdapter extends BaseAdapter {
         ViewHolder holder = null;
         if (convertView == null) {
             holder = new ViewHolder();
-            convertView = mInflater.inflate(R.layout.adapter_folder, parent,false);
+            convertView = mInflater.inflate(R.layout.adapter_folder, parent, false);
             holder.itemView = convertView;
             holder.ivImage = (ImageView) convertView.findViewById(R.id.iv_image);
             holder.ivSelect = (ImageView) convertView.findViewById(R.id.iv_select);
@@ -67,11 +67,11 @@ public class FolderAdapter extends BaseAdapter {
         holder.tvFolderName.setText(folder.getName());
         holder.ivSelect.setVisibility(mSelectItem == position ? View.VISIBLE : View.GONE);
         if (images != null && !images.isEmpty()) {
-            holder.tvFolderSize.setText(images.size() + mContext.getResources().getString(R.string.one_piece));
+            holder.tvFolderSize.setText("(" + images.size() + ")");
             Glide.with(mContext).load(new File(images.get(0).getPath())).diskCacheStrategy(DiskCacheStrategy.NONE)
                     .into(holder.ivImage);
         } else {
-            holder.tvFolderSize.setText("0" + mContext.getResources().getString(R.string.one_piece));
+            holder.tvFolderSize.setText("(0)");
             holder.ivImage.setImageBitmap(null);
         }
 

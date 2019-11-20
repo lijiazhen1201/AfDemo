@@ -7,6 +7,7 @@
         <attr name="defaultPhotoRes" format="integer" />
         <attr name="isToBase64" format="boolean" />
         <attr name="isCamera" format="boolean" />
+        <attr name="isImage" format="boolean" />
         <attr name="isVideo" format="boolean" />
         <attr name="videoDuration" format="integer" />
     </declare-styleable>
@@ -21,8 +22,8 @@
         <attr name="thumbRadius" format="dimension" />
         <attr name="thumbImageNormal" format="reference" />
         <attr name="thumbImagePressed" format="reference" />
-        <attr name="thumbColorNormal" format="reference|color"/>
-        <attr name="thumbColorPressed" format="reference|color"/>
+        <attr name="thumbColorNormal" format="reference|color" />
+        <attr name="thumbColorPressed" format="reference|color" />
     </declare-styleable>
 
 </resources>

@@ -3,10 +3,17 @@ package cn.appoa.wximageselector.model;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Environment;
 import android.provider.MediaStore;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -23,45 +30,47 @@ public class ImageModel {
      * 从SDCard加载图片
      *
      * @param context
+     * @param isImage
      * @param isVideo
      * @param callback
      */
-    public static void loadImageForSDCard(final Context context, final boolean isVideo, final DataCallback callback) {
+    public static void loadImageForSDCard(final Context context, final boolean isImage,
+                                          final boolean isVideo, final DataCallback callback) {
         // 由于扫描图片是耗时的操作，所以要在子线程处理。
         new Thread(new Runnable() {
             @Override
             public void run() {
-                // 扫描图片
-                Uri mImageUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
-                ContentResolver mContentResolver = context.getContentResolver();
-
-                Cursor mCursor = mContentResolver.query(mImageUri,
-                        new String[]{
-                                MediaStore.Images.Media._ID,
-                                MediaStore.Images.Media.DISPLAY_NAME,
-                                MediaStore.Images.Media.DATA,
-                                MediaStore.Images.Media.DATE_ADDED},
-                        null, null, MediaStore.Images.Media.DATE_ADDED);
-
                 ArrayList<Image> images = new ArrayList<>();
+                if (isImage) {
+                    // 扫描图片
+                    Uri mImageUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+                    ContentResolver mContentResolver = context.getContentResolver();
 
-                // 读取扫描到的图片
-                if (mCursor != null) {
-                    while (mCursor.moveToNext()) {
-                        long id = mCursor.getLong(mCursor.getColumnIndex(MediaStore.Images.Media._ID));
-                        // 获取图片的路径
-                        String path = mCursor.getString(mCursor.getColumnIndex(MediaStore.Images.Media.DATA));
-                        // 获取图片名称
-                        String name = mCursor.getString(mCursor.getColumnIndex(MediaStore.Images.Media.DISPLAY_NAME));
-                        // 获取图片时间
-                        long time = mCursor.getLong(mCursor.getColumnIndex(MediaStore.Images.Media.DATE_ADDED));
-                        if (!".downloading".equals(path)) { // 过滤未下载完成的文件
-                            images.add(new Image(id, path, time, name));
+                    Cursor mCursor = mContentResolver.query(mImageUri,
+                            new String[]{
+                                    MediaStore.Images.Media._ID,
+                                    MediaStore.Images.Media.DISPLAY_NAME,
+                                    MediaStore.Images.Media.DATA,
+                                    MediaStore.Images.Media.DATE_ADDED},
+                            null, null, MediaStore.Images.Media.DATE_ADDED);
+
+                    // 读取扫描到的图片
+                    if (mCursor != null) {
+                        while (mCursor.moveToNext()) {
+                            long id = mCursor.getLong(mCursor.getColumnIndex(MediaStore.Images.Media._ID));
+                            // 获取图片的路径
+                            String path = mCursor.getString(mCursor.getColumnIndex(MediaStore.Images.Media.DATA));
+                            // 获取图片名称
+                            String name = mCursor.getString(mCursor.getColumnIndex(MediaStore.Images.Media.DISPLAY_NAME));
+                            // 获取图片时间
+                            long time = mCursor.getLong(mCursor.getColumnIndex(MediaStore.Images.Media.DATE_ADDED));
+                            if (!".downloading".equals(path)) { // 过滤未下载完成的文件
+                                images.add(new Image(id, path, time, name));
+                            }
                         }
+                        mCursor.close();
                     }
-                    mCursor.close();
                 }
-
                 if (isVideo) {
                     // 扫描视频
                     String[] mediaColumns = new String[]{ //
@@ -110,7 +119,7 @@ public class ImageModel {
                     }
                 });
                 //Collections.reverse(images);
-                callback.onSuccess(splitFolder(context, isVideo, images));
+                callback.onSuccess(splitFolder(context, isImage, isVideo, images));
             }
         }).start();
     }
@@ -121,11 +130,12 @@ public class ImageModel {
      * @param images
      * @return
      */
-    private static ArrayList<Folder> splitFolder(Context context, boolean isVideo, ArrayList<Image> images) {
+    private static ArrayList<Folder> splitFolder(Context context, boolean isImage, boolean isVideo, ArrayList<Image> images) {
         ArrayList<Folder> folders = new ArrayList<>();
         folders.add(new Folder(context.getResources().getString(
-                isVideo ? R.string.all_image_video : R.string.all_image), images));
-        if (isVideo) {
+                isVideo ? isImage ? R.string.all_image_video :
+                        R.string.all_video : R.string.all_image), images));
+        if (isVideo && isImage) {
             ArrayList<Image> videos = new ArrayList<>();
             for (int i = 0; i < images.size(); i++) {
                 Image image = images.get(i);
@@ -196,4 +206,62 @@ public class ImageModel {
     public interface DataCallback {
         void onSuccess(ArrayList<Folder> folders);
     }
+
+    /**
+     * 获取视频封面
+     *
+     * @param context
+     * @param image
+     * @return
+     */
+    public static Bitmap getVideoThumbnailBitmap(Context context, Image image) {
+        Bitmap bitmap = null;
+        if (image != null && image.getId() > 0) {
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inDither = false;
+            options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+            bitmap = (MediaStore.Video.Thumbnails.getThumbnail(context.getContentResolver(), image.getId(),
+                    MediaStore.Images.Thumbnails.MINI_KIND, options));
+        }
+        return bitmap;
+    }
+
+    /**
+     * 获取视频封面
+     *
+     * @param context
+     * @param image
+     * @return
+     */
+    public static File getVideoThumbnailFile(Context context, Image image) {
+        File file = null;
+        Bitmap bitmap = getVideoThumbnailBitmap(context, image);
+        if (bitmap != null) {
+            file = new File(Environment.getExternalStorageDirectory()
+                    .getAbsolutePath() + "/DCIM/Camera", System.currentTimeMillis() + ".jpeg");
+            file.getParentFile().mkdirs();
+            BufferedOutputStream bos = null;
+            try {
+                bos = new BufferedOutputStream(new FileOutputStream(file));
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+                bos.flush();
+                bos.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (bos != null) {
+                        bos.flush();
+                        bos.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return file;
+    }
+
 }

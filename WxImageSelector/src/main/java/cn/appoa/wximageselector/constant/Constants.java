@@ -11,6 +11,8 @@ public interface Constants {
     String IS_SINGLE = "is_single";
     //是否能拍照
     String IS_CAMERA = "is_camera";
+    //是否能选图片
+    String IS_IMAGE = "is_image";
     //是否能选视频
     String IS_VIDEO = "is_video";
     //视频最大时长

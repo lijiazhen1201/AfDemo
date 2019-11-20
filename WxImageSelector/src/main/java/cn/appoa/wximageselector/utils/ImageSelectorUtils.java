@@ -1,7 +1,7 @@
 package cn.appoa.wximageselector.utils;
 
 import android.app.Activity;
-
+import android.support.v4.app.Fragment;
 import cn.appoa.wximageselector.ClipImageActivity;
 import cn.appoa.wximageselector.ImageSelectorActivity;
 
@@ -89,6 +89,38 @@ public class ImageSelectorUtils {
     public static void openPhoto(Activity activity, int requestCode,
                                  boolean isSingle, int maxSelectCount, boolean isCamera, boolean isVideo, int videoDuration) {
         ImageSelectorActivity.openActivity(activity, requestCode, isSingle, maxSelectCount, isCamera, isVideo, videoDuration);
+    }
+
+    /**
+     * 打开相册，选择图片,可多选,限制最大的选择数量。
+     *
+     * @param activity
+     * @param requestCode
+     * @param isSingle       是否单选
+     * @param maxSelectCount 图片的最大选择数量，小于等于0时，不限数量，isSingle为false时才有用。
+     * @param isCamera       是否有拍照按钮。
+     */
+    public static void openPhoto(Activity activity, int requestCode,
+                                 boolean isSingle, int maxSelectCount,
+                                 boolean isCamera, boolean isImage, boolean isVideo, int videoDuration) {
+        ImageSelectorActivity.openActivity(activity, requestCode, isSingle, maxSelectCount,
+                isCamera, isImage, isVideo, videoDuration);
+    }
+
+    /**
+     * 打开相册，选择图片,可多选,限制最大的选择数量。
+     *
+     * @param activity
+     * @param requestCode
+     * @param isSingle       是否单选
+     * @param maxSelectCount 图片的最大选择数量，小于等于0时，不限数量，isSingle为false时才有用。
+     * @param isCamera       是否有拍照按钮。
+     */
+    public static void openPhoto(Fragment fragment, int requestCode,
+                                 boolean isSingle, int maxSelectCount,
+                                 boolean isCamera, boolean isImage, boolean isVideo, int videoDuration) {
+        ImageSelectorActivity.openActivity(fragment, requestCode, isSingle, maxSelectCount,
+                isCamera, isImage, isVideo, videoDuration);
     }
 
     /**

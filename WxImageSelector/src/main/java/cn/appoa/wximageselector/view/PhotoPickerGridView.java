@@ -15,6 +15,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
+import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Base64;
@@ -57,18 +58,85 @@ import cn.appoa.wximageselector.utils.ImageSelectorUtils;
 public class PhotoPickerGridView extends GridView {
 
     public PhotoPickerGridView(Context context) {
-        super(context);
-        init(context, null);
+        this(context, null);
     }
 
     public PhotoPickerGridView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context, attrs);
+        this(context, attrs, 0);
     }
 
     public PhotoPickerGridView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
+    }
+
+    /**
+     * Context
+     */
+    private Context context;
+
+    /**
+     * Activity
+     */
+    private Activity activity;
+
+    /**
+     * Handler
+     */
+    private Handler handler;
+
+    /**
+     * 图片路径集合
+     */
+    private ArrayList<String> photoPaths;
+
+    /**
+     * 图片base64数组
+     */
+    public String[] photoBase64s;
+
+    /**
+     * 适配器
+     */
+    private PhotoPickerAdapter adapter;
+
+    /**
+     * 初始化
+     *
+     * @param context
+     */
+    private void init(Context context, AttributeSet attrs) {
+        this.context = context;
+        if (this.context instanceof Activity) {
+            activity = (Activity) this.context;
+        }
+        this.handler = new MyHandler(this);
+        PRDownloaderConfig config = PRDownloaderConfig.newBuilder()
+                .setReadTimeout(30_000)
+                .setConnectTimeout(30_000)
+                .build();
+        PRDownloader.initialize(context.getApplicationContext(), config);
+        if (attrs != null) {
+            TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.PhotoPickerGridView);
+            setMax(array.getInteger(R.styleable.PhotoPickerGridView_maxCount, 9));
+            setDefaultAddRes(array.getInteger(R.styleable.PhotoPickerGridView_defaultPhotoRes, R.drawable.btn_addpic_yes));
+            setUploadByGridView(array.getBoolean(R.styleable.PhotoPickerGridView_isUploadByGridView, true));
+            setToBase64(array.getBoolean(R.styleable.PhotoPickerGridView_isToBase64, false));
+            setCamera(array.getBoolean(R.styleable.PhotoPickerGridView_isCamera, false));
+            setImage(array.getBoolean(R.styleable.PhotoPickerGridView_isImage, true));
+            setVideo(array.getBoolean(R.styleable.PhotoPickerGridView_isVideo, false));
+            setVideoDuration(array.getInteger(R.styleable.PhotoPickerGridView_videoDuration, 0));
+            array.recycle();
+        }
+        if (photoPaths == null) {
+            photoPaths = new ArrayList<>();
+        }
+        photoPaths.add(defaultPhotoPath);
+        if (photoBase64s == null) {
+            photoBase64s = new String[max];
+        }
+        adapter = new PhotoPickerAdapter();
+        setAdapter(adapter);
     }
 
     /**
@@ -93,22 +161,26 @@ public class PhotoPickerGridView extends GridView {
     }
 
     /**
-     * 是否显示添加按钮
+     * 图片是否已达最大
      */
-    private boolean isUploadByGridView = true;
+    private boolean isPhotoFulled;
 
     /**
-     * 设置是否显示添加按钮
-     *
-     * @param isUploadByGridView
+     * 图片最大数量
      */
-    public void setUploadByGridView(boolean isUploadByGridView) {
-        this.isUploadByGridView = isUploadByGridView;
-        if (isUploadByGridView) {
-            defaultPhotoRes = R.drawable.btn_addpic_yes;
-        } else {
-            defaultPhotoRes = R.drawable.btn_addpic_no;
+    private int max = 9;
+
+    /**
+     * 设置图片最大数量
+     *
+     * @param max
+     */
+    public void setMax(int max) {
+        this.max = max;
+        if (photoBase64s != null) {
+            photoBase64s = null;
         }
+        photoBase64s = new String[max];
     }
 
     /**
@@ -131,19 +203,101 @@ public class PhotoPickerGridView extends GridView {
     }
 
     /**
-     * Context
+     * 是否显示添加按钮
      */
-    private Context context;
+    private boolean isUploadByGridView = true;
 
     /**
-     * Activity
+     * 设置是否显示添加按钮
+     *
+     * @param isUploadByGridView
      */
-    private Activity activity;
+    public void setUploadByGridView(boolean isUploadByGridView) {
+        this.isUploadByGridView = isUploadByGridView;
+        if (isUploadByGridView) {
+            defaultPhotoRes = R.drawable.btn_addpic_yes;
+        } else {
+            defaultPhotoRes = R.drawable.btn_addpic_no;
+        }
+    }
 
     /**
-     * 图片路径集合
+     * 是否转base64
      */
-    private ArrayList<String> photoPaths;
+    private boolean isToBase64 = true;
+
+    /**
+     * 是否转base64
+     *
+     * @param isToBase64
+     */
+    public void setToBase64(boolean isToBase64) {
+        this.isToBase64 = isToBase64;
+    }
+
+    /**
+     * 是否带拍照
+     */
+    private boolean isCamera;
+
+    /**
+     * 设置是否有拍照
+     *
+     * @param camera
+     */
+    public void setCamera(boolean camera) {
+        isCamera = camera;
+    }
+
+    /**
+     * 是否带图片
+     */
+    private boolean isImage;
+
+    /**
+     * 设置是否有图片
+     *
+     * @param image
+     */
+    public void setImage(boolean image) {
+        isImage = image;
+    }
+
+    /**
+     * 是否带视频
+     */
+    private boolean isVideo;
+
+    /**
+     * 视频最大时长（单位秒）
+     */
+    private int videoDuration;
+
+    /**
+     * 设置是否有视频(暂时只能选择一个视频)
+     *
+     * @param video
+     */
+    public void setVideo(boolean video) {
+        isVideo = video;
+    }
+
+    /**
+     * 设置视频最大时长（单位秒）
+     *
+     * @param videoDuration 视频最大时长大于0默认有视频
+     */
+    public void setVideoDuration(int videoDuration) {
+        this.videoDuration = videoDuration;
+        setVideo(this.videoDuration > 0);
+    }
+
+    /**
+     * @return 视频最大时长
+     */
+    public int getVideoDuration() {
+        return videoDuration;
+    }
 
     /**
      * 获取图片路径集合
@@ -193,70 +347,15 @@ public class PhotoPickerGridView extends GridView {
     }
 
     /**
-     * 图片base64数组
-     */
-    public String[] photoBase64s;
-
-    /**
-     * Handler
-     */
-    private Handler handler;
-
-    static class MyHandler extends Handler {
-
-        private WeakReference<PhotoPickerGridView> mOuter;
-
-        public MyHandler(PhotoPickerGridView activity) {
-            mOuter = new WeakReference<PhotoPickerGridView>(activity);
-        }
-
-        @Override
-        public void handleMessage(Message msg) {
-            PhotoPickerGridView outer = mOuter.get();
-            if (outer != null) {// Do something with outer as your wish.
-                if (msg.what == 9999) {
-                    // 发生异常
-                    outer.dismissLoading();
-                } else {
-                    if (TextUtils.equals(outer.defaultPhotoPath, outer.photoPaths.get(outer.photoPaths.size() - 1))) {
-                        // 最后一张是默认图
-                        if (outer.photoPaths.size() - 2 == msg.what) {
-                            outer.dismissLoading();
-                        }
-                    } else {
-                        if (outer.photoPaths.size() - 1 == msg.what) {
-                            outer.dismissLoading();
-                        }
-                    }
-                    if (outer.photoBase64s != null) {
-                        outer.photoBase64s[msg.what] = (String) msg.obj;
-                    }
-                }
-            }
-        }
-    }
-
-    /**
-     * 是否转base64
-     */
-    private boolean isToBase64 = true;
-
-    /**
-     * 是否转base64
-     *
-     * @param isToBase64
-     */
-    public void setToBase64(boolean isToBase64) {
-        this.isToBase64 = isToBase64;
-    }
-
-    /**
      * 添加数据（图片或视频）
      *
      * @param data
      */
     public void addData(Intent data) {
         if (data != null) {
+            if (getVisibility() != View.VISIBLE) {
+                setVisibility(View.VISIBLE);
+            }
             Image image = data.getParcelableExtra(ImageSelectorUtils.SELECT_VIDEO);
             if (image != null) {
                 addVideo(image);
@@ -273,10 +372,10 @@ public class PhotoPickerGridView extends GridView {
      * @param photos
      */
     public void addPhotos(ArrayList<String> photos) {
-        if (getVisibility() != View.VISIBLE) {
-            setVisibility(View.VISIBLE);
-        }
         if (photos != null && photos.size() > 0) {
+            if (getVisibility() != View.VISIBLE) {
+                setVisibility(View.VISIBLE);
+            }
             for (int i = 0; i < photos.size(); i++) {
                 String photoPath = photos.get(i);
                 photoPaths.add(photoPaths.size() - 1, photoPath);
@@ -287,8 +386,9 @@ public class PhotoPickerGridView extends GridView {
                 }
             }
             addBase64Photos();
-            if (adapter != null)
+            if (adapter != null) {
                 adapter.notifyDataSetChanged();
+            }
         }
     }
 
@@ -402,15 +502,6 @@ public class PhotoPickerGridView extends GridView {
     private Image video;
 
     /**
-     * 获取视频文件
-     *
-     * @return
-     */
-    public Image getVideo() {
-        return video;
-    }
-
-    /**
      * 视频base64
      */
     private String base64Video = "";
@@ -421,16 +512,30 @@ public class PhotoPickerGridView extends GridView {
      * @param image
      */
     public void addVideo(Image image) {
-        if (getVisibility() != View.VISIBLE) {
-            setVisibility(View.VISIBLE);
-        }
         if (image == null) {
             return;
         }
+        if (image.getId() == 0) {
+            getLocalVideo(image.getPath());
+            return;
+        }
+        if (getVisibility() != View.VISIBLE) {
+            setVisibility(View.VISIBLE);
+        }
         clearPhotos();
         video = image;
-        if (adapter != null)
+        if (adapter != null) {
             adapter.notifyDataSetChanged();
+        }
+    }
+
+    /**
+     * 获取视频文件
+     *
+     * @return
+     */
+    public Image getVideo() {
+        return video;
     }
 
     /**
@@ -447,16 +552,18 @@ public class PhotoPickerGridView extends GridView {
      */
     public void clearPhotos() {
         isPhotoFulled = false;
-        if (photoBase64s != null)
+        if (photoBase64s != null) {
             photoBase64s = null;
+        }
         photoBase64s = new String[max];
         if (photoPaths == null) {
             photoPaths = new ArrayList<>();
         }
         photoPaths.clear();
         photoPaths.add(defaultPhotoPath);
-        if (adapter != null)
+        if (adapter != null) {
             adapter.notifyDataSetChanged();
+        }
     }
 
     /**
@@ -757,66 +864,59 @@ public class PhotoPickerGridView extends GridView {
     }
 
     /**
-     * 图片最大数量
-     */
-    private int max = 9;
-
-    /**
-     * 设置图片最大数量
+     * bitmap转file
      *
-     * @param max
+     * @param bitmap
+     * @return
      */
-    public void setMax(int max) {
-        this.max = max;
-        if (photoBase64s != null) {
-            photoBase64s = null;
+    public File bitmapToFile(Bitmap bitmap) {
+        File file = null;
+        file = new File(Environment.getExternalStorageDirectory()
+                .getAbsolutePath() + "/DCIM/Camera", System.currentTimeMillis() + ".jpeg");
+        file.getParentFile().mkdirs();
+        BufferedOutputStream bos = null;
+        try {
+            bos = new BufferedOutputStream(new FileOutputStream(file));
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+        } catch (Exception e) {
+            e.printStackTrace();
+            handler.sendEmptyMessage(9999);
+        } finally {
+            try {
+                if (bos != null) {
+                    bos.flush();
+                    bos.close();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                handler.sendEmptyMessage(9999);
+            }
         }
-        photoBase64s = new String[max];
+        return file;
     }
 
     /**
-     * 图片是否已达最大
-     */
-    private boolean isPhotoFulled;
-
-    /**
-     * 适配器
-     */
-    private PhotoPickerAdapter adapter;
-
-    /**
-     * 初始化
+     * file转bitmap
      *
-     * @param context
+     * @param file
+     * @return
      */
-    private void init(Context context, AttributeSet attrs) {
-        this.context = context;
-        this.handler = new MyHandler(this);
-        PRDownloaderConfig config = PRDownloaderConfig.newBuilder()
-                .setReadTimeout(30_000)
-                .setConnectTimeout(30_000)
-                .build();
-        PRDownloader.initialize(context.getApplicationContext(), config);
-        if (attrs != null) {
-            TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.PhotoPickerGridView);
-            setMax(array.getInteger(R.styleable.PhotoPickerGridView_maxCount, 9));
-            setDefaultAddRes(array.getInteger(R.styleable.PhotoPickerGridView_defaultPhotoRes, R.drawable.btn_addpic_yes));
-            setUploadByGridView(array.getBoolean(R.styleable.PhotoPickerGridView_isUploadByGridView, true));
-            setToBase64(array.getBoolean(R.styleable.PhotoPickerGridView_isToBase64, true));
-            setCamera(array.getBoolean(R.styleable.PhotoPickerGridView_isCamera, false));
-            setVideo(array.getBoolean(R.styleable.PhotoPickerGridView_isVideo, false));
-            setVideoDuration(array.getInteger(R.styleable.PhotoPickerGridView_videoDuration, 0));
-            array.recycle();
+    @SuppressWarnings("deprecation")
+    public Bitmap fileToBitmap(File file) {
+        Bitmap bitmap = null;
+        if (file != null && file.exists()) {
+            try {
+                BitmapFactory.Options opt = new BitmapFactory.Options();
+                opt.inPreferredConfig = Bitmap.Config.RGB_565;
+                opt.inPurgeable = true;
+                opt.inInputShareable = true;
+                bitmap = BitmapFactory.decodeFile(file.getPath(), opt);
+            } catch (Exception e) {
+                e.printStackTrace();
+                handler.sendEmptyMessage(9999);
+            }
         }
-        if (context instanceof Activity)
-            activity = (Activity) context;
-        if (photoPaths == null)
-            photoPaths = new ArrayList<>();
-        photoPaths.add(defaultPhotoPath);
-        if (photoBase64s == null)
-            photoBase64s = new String[max];
-        adapter = new PhotoPickerAdapter();
-        setAdapter(adapter);
+        return bitmap;
     }
 
     /**
@@ -825,7 +925,7 @@ public class PhotoPickerGridView extends GridView {
     private PhotoPickerImageLoader imageLoader;
 
     /**
-     * 加载图片
+     * 加载图片(此方法必须调用)
      *
      * @param imageLoader
      */
@@ -908,57 +1008,20 @@ public class PhotoPickerGridView extends GridView {
         public void onClickAddPic() {
 
         }
-
     }
 
     /**
-     * 是否带拍照
+     * 是否是Fragment
      */
-    private boolean isCamera;
+    private Fragment fragment;
 
     /**
-     * 设置是否有拍照
+     * 设置是否是Fragment
      *
-     * @param camera
+     * @param fragment
      */
-    public void setCamera(boolean camera) {
-        isCamera = camera;
-    }
-
-    /**
-     * 是否带视频
-     */
-    private boolean isVideo;
-
-    /**
-     * 视频最大时长（单位秒）
-     */
-    private int videoDuration;
-
-    /**
-     * 设置是否有视频(暂时只能选择一个视频)
-     *
-     * @param video
-     */
-    public void setVideo(boolean video) {
-        isVideo = video;
-    }
-
-    /**
-     * @return 视频最大时长
-     */
-    public int getVideoDuration() {
-        return videoDuration;
-    }
-
-    /**
-     * 设置视频最大时长（单位秒）
-     *
-     * @param videoDuration 视频最大时长大于0默认有视频
-     */
-    public void setVideoDuration(int videoDuration) {
-        this.videoDuration = videoDuration;
-        setVideo(this.videoDuration > 0);
+    public void setFragment(Fragment fragment) {
+        this.fragment = fragment;
     }
 
     /**
@@ -967,13 +1030,18 @@ public class PhotoPickerGridView extends GridView {
     public void uploadPics() {
         if (isPhotoFulled) {
             Toast mToast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
-            mToast.setText(getResources().getString(R.string.most_choose) + max
-                    + context.getResources().getString(R.string.one_piece));
+            mToast.setText(getResources().getString(R.string.most_choose) + max + context.getResources().getString(R.string.one_piece));
             mToast.show();
         } else {
-            if (activity != null && imageLoader != null)
-                ImageSelectorUtils.openPhoto(activity, imageLoader.getRequestCode(), false,
-                        max - photoPaths.size() + 1, isCamera, isVideo, videoDuration);
+            if (imageLoader != null) {
+                if (fragment != null) {
+                    ImageSelectorUtils.openPhoto(fragment, imageLoader.getRequestCode(), false,
+                            max - photoPaths.size() + 1, isCamera, isImage, isVideo, videoDuration);
+                } else if (activity != null) {
+                    ImageSelectorUtils.openPhoto(activity, imageLoader.getRequestCode(), false,
+                            max - photoPaths.size() + 1, isCamera, isImage, isVideo, videoDuration);
+                }
+            }
         }
     }
 
@@ -1120,7 +1188,8 @@ public class PhotoPickerGridView extends GridView {
                                 }
                             }
                             context.startActivity(new Intent(context, ShowBigImageListActivity.class)
-                                    .putExtra("page", position).putStringArrayListExtra("images", images));
+                                    .putExtra("page", position)
+                                    .putStringArrayListExtra("images", images));
                         }
                     } else {
 
@@ -1159,60 +1228,39 @@ public class PhotoPickerGridView extends GridView {
 
     }
 
-    /**
-     * bitmap转file
-     *
-     * @param bitmap
-     * @return
-     */
-    private File bitmapToFile(Bitmap bitmap) {
-        File file = null;
-        file = new File(Environment.getExternalStorageDirectory()
-                .getAbsolutePath() + "/DCIM/Camera", System.currentTimeMillis() + ".jpeg");
-        file.getParentFile().mkdirs();
-        BufferedOutputStream bos = null;
-        try {
-            bos = new BufferedOutputStream(new FileOutputStream(file));
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
-        } catch (Exception e) {
-            e.printStackTrace();
-            handler.sendEmptyMessage(9999);
-        } finally {
-            try {
-                if (bos != null) {
-                    bos.flush();
-                    bos.close();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                handler.sendEmptyMessage(9999);
-            }
-        }
-        return file;
-    }
+    static class MyHandler extends Handler {
 
-    /**
-     * file转bitmap
-     *
-     * @param file
-     * @return
-     */
-    @SuppressWarnings("deprecation")
-    private Bitmap fileToBitmap(File file) {
-        Bitmap bitmap = null;
-        if (file != null && file.exists()) {
-            try {
-                BitmapFactory.Options opt = new BitmapFactory.Options();
-                opt.inPreferredConfig = Bitmap.Config.RGB_565;
-                opt.inPurgeable = true;
-                opt.inInputShareable = true;
-                bitmap = BitmapFactory.decodeFile(file.getPath(), opt);
-            } catch (Exception e) {
-                e.printStackTrace();
-                handler.sendEmptyMessage(9999);
+        private WeakReference<PhotoPickerGridView> mOuter;
+
+        public MyHandler(PhotoPickerGridView activity) {
+            mOuter = new WeakReference<PhotoPickerGridView>(activity);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            PhotoPickerGridView outer = mOuter.get();
+            if (outer != null) {// Do something with outer as your wish.
+                if (msg.what == 9999) {
+                    // 发生异常
+                    outer.dismissLoading();
+                } else {
+                    if (TextUtils.equals(outer.defaultPhotoPath,
+                            outer.photoPaths.get(outer.photoPaths.size() - 1))) {
+                        // 最后一张是默认图
+                        if (outer.photoPaths.size() - 2 == msg.what) {
+                            outer.dismissLoading();
+                        }
+                    } else {
+                        if (outer.photoPaths.size() - 1 == msg.what) {
+                            outer.dismissLoading();
+                        }
+                    }
+                    if (outer.photoBase64s != null) {
+                        outer.photoBase64s[msg.what] = (String) msg.obj;
+                    }
+                }
             }
         }
-        return bitmap;
     }
 
     /**
@@ -1230,4 +1278,5 @@ public class PhotoPickerGridView extends GridView {
 
         void getBase64Video(String base64);
     }
+
 }
