@@ -421,7 +421,7 @@ public abstract class PullToRefreshBaseFragment<V extends View> extends AfFragme
      */
     public void startRefresh() {
         if (refreshLayout != null) {
-            refreshLayout.autoRefresh(500);
+            refreshLayout.autoRefresh();
         }
     }
 
@@ -439,7 +439,7 @@ public abstract class PullToRefreshBaseFragment<V extends View> extends AfFragme
      */
     public void startLoadMore() {
         if (refreshLayout != null) {
-            refreshLayout.autoLoadMore(500);
+            refreshLayout.autoLoadMore();
         }
     }
 
