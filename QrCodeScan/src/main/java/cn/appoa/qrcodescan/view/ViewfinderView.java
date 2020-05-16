@@ -227,28 +227,28 @@ public final class ViewfinderView extends View {
 			// (float) (frame.top - (float) TEXT_PADDING_BOTTOM * density -
 			// bitmap.getHeight() / 2), paint);
 
-			Collection<ResultPoint> currentPossible = possibleResultPoints;
-			Collection<ResultPoint> currentLast = lastPossibleResultPoints;
-			if (currentPossible.isEmpty()) {
-				lastPossibleResultPoints = null;
-			} else {
-				if (possibleResultPoints==null){
-					possibleResultPoints = new HashSet<ResultPoint>(5);
-				}
-				lastPossibleResultPoints = currentPossible;
-				paint.setAlpha(OPAQUE);
-				paint.setColor(resultPointColor);
-				for (ResultPoint point : currentPossible) {
-					canvas.drawCircle(frame.left + point.getX(), frame.top + point.getY(), 6.0f, paint);
-				}
-			}
-			if (currentLast != null) {
-				paint.setAlpha(OPAQUE / 2);
-				paint.setColor(resultPointColor);
-				for (ResultPoint point : currentLast) {
-					canvas.drawCircle(frame.left + point.getX(), frame.top + point.getY(), 3.0f, paint);
-				}
-			}
+//			Collection<ResultPoint> currentPossible = possibleResultPoints;
+//			Collection<ResultPoint> currentLast = lastPossibleResultPoints;
+//			if (currentPossible.isEmpty()) {
+//				lastPossibleResultPoints = null;
+//			} else {
+//				if (possibleResultPoints==null){
+//					possibleResultPoints = new HashSet<ResultPoint>(5);
+//				}
+//				lastPossibleResultPoints = currentPossible;
+//				paint.setAlpha(OPAQUE);
+//				paint.setColor(resultPointColor);
+//				for (ResultPoint point : currentPossible) {
+//					canvas.drawCircle(frame.left + point.getX(), frame.top + point.getY(), 6.0f, paint);
+//				}
+//			}
+//			if (currentLast != null) {
+//				paint.setAlpha(OPAQUE / 2);
+//				paint.setColor(resultPointColor);
+//				for (ResultPoint point : currentLast) {
+//					canvas.drawCircle(frame.left + point.getX(), frame.top + point.getY(), 3.0f, paint);
+//				}
+//			}
 
 			// 只刷新扫描框的内容，其他地方不刷新
 			postInvalidateDelayed(ANIMATION_DELAY, frame.left, frame.top, frame.right, frame.bottom);
