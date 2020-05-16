@@ -47,7 +47,7 @@ ext {
             "autolayout"     : "com.zhy:autolayout:1.4.5",//屏幕适配
             "okgo"           : "com.lzy.net:okgo:3.0.4",//okgo网络访问
             "updateapp"      : "com.qianwen:update-app:3.5.2",//版本更新
-            "refreshlayout"  : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-18",//下拉刷新
+            "refreshlayout"  : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0",//下拉刷新
             "adapterhelper"  : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44",//RecyclerView的Adapter
             "ffmpeglibrary"  : "com.github.kui92:FFmpegLibrary:3.2",//视频框架
             "jpush"          : "cn.jiguang.sdk:jpush:3.3.6",//极光推送
