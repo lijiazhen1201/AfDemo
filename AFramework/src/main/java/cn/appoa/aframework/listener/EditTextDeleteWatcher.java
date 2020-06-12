@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import cn.appoa.aframework.utils.FastClickUtil;
+
 /**
  * 显示隐藏刪除
  */
@@ -35,6 +37,9 @@ public class EditTextDeleteWatcher implements TextWatcher {
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (FastClickUtil.isFastClick()) {
+                    return;
+                }
                 EditTextDeleteWatcher.this.et.setText(null);
             }
         });

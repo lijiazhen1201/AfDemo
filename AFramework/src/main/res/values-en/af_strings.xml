@@ -27,5 +27,7 @@
     <string name="baidu_map">Baidu Map</string>
     <string name="gaode_map">Amap</string>
     <string name="qq_map">QQ Map</string>
+    <string name="on_net_disconnected">net disconnected</string>
+    <string name="on_net_setting">Setting</string>
 
 </resources>

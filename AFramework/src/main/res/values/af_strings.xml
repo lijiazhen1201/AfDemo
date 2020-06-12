@@ -27,5 +27,7 @@
     <string name="baidu_map">百度地图</string>
     <string name="gaode_map">高德地图</string>
     <string name="qq_map">腾讯地图</string>
+    <string name="on_net_disconnected">网络连接断开</string>
+    <string name="on_net_setting">设置</string>
 
 </resources>

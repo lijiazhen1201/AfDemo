@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
+import com.bumptech.glide.request.target.ViewTarget;
 import com.downloader.PRDownloader;
 import com.downloader.PRDownloaderConfig;
 import com.lzy.okgo.OkGo;
@@ -64,6 +65,8 @@ public abstract class AfApplication extends Application
         } catch (Exception e) {
             e.printStackTrace();
         }
+        //Glide的Tag
+        ViewTarget.setTagId(R.id.tag_glide);
         ZmVolley.initVolley(this);
         initOkGo(OkGo.getInstance().init(this));
         initFileDownloader();

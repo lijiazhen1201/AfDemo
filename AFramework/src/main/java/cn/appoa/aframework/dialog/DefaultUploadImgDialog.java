@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import cn.appoa.aframework.R;
 import cn.appoa.aframework.listener.OnCallbackListener;
+import cn.appoa.aframework.utils.FastClickUtil;
 
 /**
  * 上传图片弹窗
@@ -41,6 +42,9 @@ public class DefaultUploadImgDialog extends BaseDialog {
 
     @Override
     public void onClick(View v) {
+        if (FastClickUtil.isFastClick()) {
+            return;
+        }
         if (listener != null) {
             if (v.getId() == R.id.tv_upload_from_camera) {
                 // 拍照

@@ -14,6 +14,7 @@ import cn.appoa.aframework.bean.CityList;
 import cn.appoa.aframework.bean.DistrictList;
 import cn.appoa.aframework.bean.ProvinceList;
 import cn.appoa.aframework.listener.OnCallbackListener;
+import cn.appoa.aframework.utils.FastClickUtil;
 import cn.appoa.aframework.widget.wheel.WheelView;
 import cn.appoa.aframework.widget.wheel.adapter.ArrayWheelAdapter;
 import cn.appoa.aframework.widget.wheel.listener.OnWheelChangedListener;
@@ -91,6 +92,9 @@ public class AreaWheelDialog extends BaseDialog
 
     @Override
     public void onClick(View v) {
+        if (FastClickUtil.isFastClick()) {
+            return;
+        }
         int id = v.getId();
         if (id == R.id.tv_dialog_confirm) {
             if (onCallbackListener != null) {

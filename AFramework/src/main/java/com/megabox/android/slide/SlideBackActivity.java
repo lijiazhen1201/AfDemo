@@ -21,7 +21,7 @@ import cn.appoa.aframework.R;
  * @author lihong
  * @since 2016/03/10
  */
-public class SlideBackActivity extends ActivityInterfaceImpl implements SlideFrameLayout.SlidingListener {
+public abstract class SlideBackActivity extends ActivityInterfaceImpl implements SlideFrameLayout.SlidingListener {
     /**
      * DEBUG
      */

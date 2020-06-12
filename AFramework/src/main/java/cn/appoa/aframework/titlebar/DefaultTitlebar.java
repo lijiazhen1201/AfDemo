@@ -24,6 +24,7 @@ import android.widget.TextView;
 import java.io.Serializable;
 
 import cn.appoa.aframework.R;
+import cn.appoa.aframework.utils.FastClickUtil;
 
 public class DefaultTitlebar extends BaseTitlebar implements OnClickListener {
 
@@ -203,7 +204,9 @@ public class DefaultTitlebar extends BaseTitlebar implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-
+        if (FastClickUtil.isFastClick()) {
+            return;
+        }
         if (v.getId() == R.id.default_title_bar_back_iv ||
                 v.getId() == R.id.default_title_bar_back_tv) {
             if (onClickBackListener != null) {

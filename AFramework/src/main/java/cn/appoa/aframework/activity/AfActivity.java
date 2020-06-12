@@ -6,9 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
@@ -31,6 +33,8 @@ import cn.appoa.aframework.manager.Foreground;
 import cn.appoa.aframework.presenter.BasePresenter;
 import cn.appoa.aframework.titlebar.BaseTitlebar;
 import cn.appoa.aframework.utils.AtyUtils;
+import cn.appoa.aframework.utils.FastClickUtil;
+import cn.appoa.aframework.utils.net.NetworkType;
 import cn.appoa.aframework.view.IBaseView;
 import zm.bus.event.BusProvider;
 import zm.http.volley.ZmVolley;
@@ -211,6 +215,15 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
      */
     public P initPresenter() {
         return null;
+    }
+
+    /**
+     * 获取主持人
+     *
+     * @return
+     */
+    public P getPresenter() {
+        return mPresenter;
     }
 
     /**
@@ -407,4 +420,23 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
         return false;
     }
 
+    @Override
+    public void onNetDisconnected() {
+        //网络连接断开
+        Snackbar.make(content, R.string.on_net_disconnected, Snackbar.LENGTH_LONG)
+                .setAction(R.string.on_net_setting, new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (FastClickUtil.isFastClick()) {
+                            return;
+                        }
+                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                    }
+                }).show();
+    }
+
+    @Override
+    public void onNetConnected(NetworkType networkType) {
+        //网络连接成功
+    }
 }

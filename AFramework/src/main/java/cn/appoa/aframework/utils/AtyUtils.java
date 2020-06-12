@@ -208,11 +208,6 @@ public class AtyUtils {
     }
 
     /**
-     * Toast
-     */
-    private static Toast toast = null;
-
-    /**
      * 短时间Toast
      *
      * @param context
@@ -222,9 +217,7 @@ public class AtyUtils {
     public static void showShort(Context context, CharSequence message, boolean isCenter) {
         if (context == null)
             return;
-        if (toast == null) {
-            toast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
-        }
+        Toast toast = Toast.makeText(context, null, Toast.LENGTH_SHORT);
         toast.setText(message);
         toast.setGravity(isCenter ? Gravity.CENTER : 81, 0, isCenter ? 0 : 176);
         toast.show();
@@ -240,9 +233,7 @@ public class AtyUtils {
     public static void showLong(Context context, CharSequence message, boolean isCenter) {
         if (context == null)
             return;
-        if (toast == null) {
-            toast = Toast.makeText(context, null, Toast.LENGTH_LONG);
-        }
+        Toast toast = Toast.makeText(context, null, Toast.LENGTH_LONG);
         toast.setText(message);
         toast.setGravity(isCenter ? Gravity.CENTER : 81, 0, isCenter ? 0 : 176);
         toast.show();

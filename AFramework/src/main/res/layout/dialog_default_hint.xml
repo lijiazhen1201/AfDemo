@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/colorTransparent">
@@ -25,21 +26,31 @@
 
         <View style="@style/HorizontalLine" />
 
-        <ScrollView
+        <cn.appoa.aframework.widget.layout.MaxHeightLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none">
+            android:minHeight="@dimen/height_large"
+            app:max_height_dimen="@dimen/height_huge">
 
-            <TextView
-                android:id="@+id/tv_hint_message"
-                style="@style/SimpleTextView"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:maxHeight="@dimen/height_huge"
-                android:minHeight="@dimen/height_large"
-                android:padding="@dimen/padding_big"
-                android:singleLine="false"
-                android:textColor="@color/colorTextDarkerGray" />
-        </ScrollView>
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="none">
+
+                <TextView
+                    android:id="@+id/tv_hint_message"
+                    style="@style/SimpleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/height_large"
+                    android:padding="@dimen/padding_big"
+                    android:singleLine="false"
+                    android:textColor="@color/colorTextDarkerGray" />
+
+            </ScrollView>
+
+        </cn.appoa.aframework.widget.layout.MaxHeightLayout>
 
         <View style="@style/HorizontalLine" />
 
@@ -58,6 +69,7 @@
                 android:paddingLeft="@dimen/padding_big"
                 android:paddingRight="@dimen/padding_big"
                 android:text="@string/cancel"
+                android:textColor="@color/colorTextLighterGray"
                 android:textSize="@dimen/text_big" />
 
             <View
@@ -73,7 +85,9 @@
                 android:paddingLeft="@dimen/padding_big"
                 android:paddingRight="@dimen/padding_big"
                 android:text="@string/confirm"
+                android:textColor="@color/colorTextDarkerGray"
                 android:textSize="@dimen/text_big" />
+
         </LinearLayout>
 
     </LinearLayout>

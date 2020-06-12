@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import cn.appoa.aframework.R;
+import cn.appoa.aframework.utils.FastClickUtil;
 import cn.appoa.aframework.utils.MapUtils;
 
 
@@ -64,6 +65,9 @@ public class MapNavigationDialog extends BaseDialog {
 
     @Override
     public void onClick(View v) {
+        if (FastClickUtil.isFastClick()) {
+            return;
+        }
         int id = v.getId();
         if (id == R.id.tv_baidu_map) {
             if (listener != null) {

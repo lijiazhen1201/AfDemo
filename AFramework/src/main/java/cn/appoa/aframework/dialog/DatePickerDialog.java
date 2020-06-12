@@ -16,6 +16,7 @@ import java.util.Locale;
 
 import cn.appoa.aframework.R;
 import cn.appoa.aframework.listener.OnCallbackListener;
+import cn.appoa.aframework.utils.FastClickUtil;
 import cn.appoa.aframework.widget.wheel.WheelView;
 import cn.appoa.aframework.widget.wheel.adapter.ArrayWheelAdapter;
 import cn.appoa.aframework.widget.wheel.listener.OnWheelChangedListener;
@@ -349,6 +350,9 @@ public class DatePickerDialog extends BaseDialog implements OnWheelChangedListen
 
     @Override
     public void onClick(View v) {
+        if (FastClickUtil.isFastClick()) {
+            return;
+        }
         int id = v.getId();
         if (id == R.id.tv_dialog_confirm) {
             // 确定

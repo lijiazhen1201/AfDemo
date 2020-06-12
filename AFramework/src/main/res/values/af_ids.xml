@@ -17,5 +17,7 @@
     <item name="default_title_bar_menu_tv" type="id" />
     <!-- 标题栏菜单 -->
     <item name="default_title_bar_menu_iv2" type="id" />
+    <!-- Glide的Tag -->
+    <item name="tag_glide" type="id" />
 
 </resources>

@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import cn.appoa.aframework.R;
 import cn.appoa.aframework.listener.OnCallbackListener;
+import cn.appoa.aframework.utils.FastClickUtil;
 
 public class DefaultUploadVideoDialog extends BaseDialog {
 
@@ -37,6 +38,9 @@ public class DefaultUploadVideoDialog extends BaseDialog {
 
     @Override
     public void onClick(View v) {
+        if (FastClickUtil.isFastClick()) {
+            return;
+        }
         if (listener != null) {
             int id = v.getId();
             if (id == R.id.tv_upload_video_camera) {

@@ -8,6 +8,7 @@ import android.widget.TextView;
 import cn.appoa.aframework.R;
 import cn.appoa.aframework.listener.DefaultHintDialogListener;
 import cn.appoa.aframework.listener.OnCallbackListener;
+import cn.appoa.aframework.utils.FastClickUtil;
 
 public class DefaultHintDialog extends BaseDialog {
 
@@ -40,6 +41,9 @@ public class DefaultHintDialog extends BaseDialog {
 
     @Override
     public void onClick(View v) {
+        if (FastClickUtil.isFastClick()) {
+            return;
+        }
         if (listener != null) {
             if (v.getId() == R.id.tv_hint_cancel) {
                 listener.clickCancelButton();
