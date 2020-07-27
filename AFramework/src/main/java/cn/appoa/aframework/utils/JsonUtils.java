@@ -4,6 +4,8 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.alibaba.fastjson.JSON;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,6 +22,11 @@ public class JsonUtils {
     public static String DATA = "data";
     public static String STATE = "state";
     public static String RESULT = "result";
+
+    /**
+     * 是否用Gson解析
+     */
+    public static boolean isGson = false;
 
     /**
      * 强制下线code
@@ -161,7 +168,12 @@ public class JsonUtils {
                     array = obj.getJSONArray(DATA);
                 }
                 if (array != null && array.length() > 0) {
-                    list = JSON.parseArray(array.toString(), t);
+                    if (isGson) {
+                        list = new Gson().fromJson(array.toString(), new TypeToken<List<T>>() {
+                        }.getType());
+                    } else {
+                        list = JSON.parseArray(array.toString(), t);
+                    }
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
